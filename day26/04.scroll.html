@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>页面滚动</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.f {
+			width: 200px;
+			height: 200px;
+			margin: auto;
+			border: 1px solid red;
+			overflow: auto;
+		}
+
+		.s {
+			width: 300px;
+		}
+	</style>
+</head>
+<body>
+
+<div class="f">
+	<div class="s">
+				everything we had is nothing
+				我们拥有的一切都是虚无
+				Nothing,nothing...
+				All i did
+				我倾尽所有
+				was try to give you all
+				尝试给你一切
+				My lovin' lovin' lovin
+				'我的挚爱
+				Baby girl you did me wrong
+				亲爱的女孩 你让我错的离谱
+				and you can see i should have known
+				你可以看到我已经明白
+				but its time to play different song
+				但是时候换首歌了
+				and now im gone
+				因为我即将离开
+				Why do you think you have to lie
+				你为什么认为你不得不说谎
+				I can see the truth right in your eyes
+				我可以在你眼中看到真相
+				girl you must have lost your mind
+				女孩你一定是失去了理智
+				what did you expect me to do
+				你到底想要我怎么做
+				after all that we've been through
+				毕竟我们经历了这么多
+				girl im wasting no more time
+				亲爱的我没有时间浪费了
+				Tell me...
+
+	</div>
+</div>
+
+<button id="btn">点击查看滚动位置</button>
+<button id="btn1">点击滚动到最底部</button>
+
+
+<script type="text/javascript">
+
+  //querySelctor只获得第一个匹配的元素
+	var f = document.querySelector(".f");
+	var btn = document.querySelector("#btn");
+	var btn1 = document.querySelector("#btn1");
+
+	btn.onclick = function(){
+		console.log("scrollwidth", f.scrollWidth);
+		console.log("scrollheight",f.scrollHeight);
+		//滚动内容的偏移量，并不是滚动条的距离
+		console.log("scrollleft", f.scrollLeft);
+		console.log("scrolltop", f.scrollTop);
+	}
+
+	btn1.onclick = function(){
+		f.scrollTop = 223;
+		console.log("scrolltop", f.scrollTop);
+	}
+
+</script>
+
+
+
+
+</body>
+</html>

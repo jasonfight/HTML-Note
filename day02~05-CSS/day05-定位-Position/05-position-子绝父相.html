@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>子绝父相</title>
+        <!--  子绝父相,父盒子位置不懂,子盒子相对于父盒子定位-->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .f {
+        width: 120px;
+        height: 40px;
+        background: #848484;
+        margin: auto;
+        margin-top: 50px;
+        position: relative;
+      }
+
+      .s {
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        border-radius: 10px;
+        color: #fff;
+        text-align: center;
+        position: absolute;
+        right: -19px;
+        top: -11px;
+      }
+    </style>
+  </head>
+  <body>
+
+   <div class="f">
+     <div class="s">0</div>
+   </div>
+
+  </body>
+</html>

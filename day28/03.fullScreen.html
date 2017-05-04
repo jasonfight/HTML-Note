@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>全屏切换</title>
+    <style media="screen">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #box {
+        width: 200px;
+        height: 200px;
+        background: yellow;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <button id="fullscreen">点击全屏</button>
+    <script type="text/javascript">
+    var box = document.getElementById("box");
+    var btn = document.getElementById("fullscreen");
+
+
+    function fullScreen(elem) {
+        if (elem.requestFullScreen) {
+            console.log("11");
+            elem.requestFullScreen();
+        } else if (elem.mozRequestFullScreen) {
+            console.log("22");
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullScreen) {
+            console.log("33");
+            elem.webkitRequestFullScreen();
+            elem.style.width = "100%";
+            elem.style.height = "100%";
+        }
+    }
+
+
+    function cancelScreen(elem) {
+        if (document.cancelFullScreen) {
+            document.cancelFullScreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitCancelFullScreen) {
+            document.webkitCancelFullScreen();
+            elem.style.width = "200px";
+            elem.style.height = "200px";
+        }
+    }
+
+    btn.onclick = function() {
+        fullScreen(box);
+    };
+
+
+    document.addEventListener("keydown", function(event) {
+        console.log(event.keyCode);
+        if (event.keyCode == 13) {
+            if (document.fullscreenElement ||document.mozFullscreenElement ||
+                document.webkitFullscreenElement) {
+                //取消全屏
+                cancelScreen(box);
+
+            } else {
+                fullScreen(box);
+            }
+        }
+
+    }, false);
+    </script>
+</body>
+
+</html>

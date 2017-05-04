@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绘制图片</title>
+</head>
+<body>
+
+
+<canvas id="canvas"></canvas>
+<script type="text/javascript">
+
+	var can = document.querySelector("#canvas");
+
+	can.width = 500;
+	can.height = 500;
+	can.style.border = "1px solid red";
+	var ctx = can.getContext("2d");
+
+
+    var img = new Image(500, 200);//创建一个图片对象
+
+    //  var start = 0;
+    //等待图片加载完毕
+    img.onload = function(){
+    	// console.log(Date.now() - start);
+
+    	//将绘制的代码填写到onload方法中
+	    ctx.drawImage(img, 100, 100, 300,300);
+    }
+
+    //设置图片的资源
+    img.src = "./image/img.jpg";
+    // start = Date.now();
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

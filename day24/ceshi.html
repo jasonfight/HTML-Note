@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>replace函数方法测试</title>
+</head>
+
+<body>
+    <script>
+
+        function f2c(x)
+        {
+              var s = String(x);
+              console.log('s=',s); //'温度:212F'
+
+              var reg = /(\d+(?:\.\d*)?)F\b/g; //正则表达式规则
+            /*
+              (?:pattern):
+                  非获取匹配，匹配pattern但不获取匹配结果，不进行存储供以后使用。
+                  这在使用或字符“(|)”来组合一个模式的各个部分时很有用。
+                  例如“industr(?:y|ies)”就是一个比“industry|industries”更简略的表达式。
+            */
+              function convert(str,p1)
+              {
+                  console.log('str=',str);  //212F  带华氏度符号的数字
+                  console.log('p1=',p1);    //212   数字
+                  var result =  ((p1-32) * 5/9) + "°C";
+                  console.log(result);       // 100°C
+                  return result;
+              }
+              return s.replace(reg, convert);  //reg:212F     convert:100°C
+        }
+
+        console.log(f2c('温度:212F'));
+
+    </script>
+</body>
+
+</html>

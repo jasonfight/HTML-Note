@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件</title>
+    <style>
+    	body {
+    		height: 1000px;
+    	}
+    	h1 {
+    		visibility: hidden;
+    	}
+    </style>
+</head>
+
+<body>
+
+    <h1>按下回车后显示</h1>
+
+    <input id="one" type="text" placeholder="keydown">
+    <input id="two" type="text" placeholder="keypress">
+    <input id="three" type="text" placeholder="keyup"> 输入的字符个数：<span id="charNum"></span>
+
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <script>
+// NOTE: keydown：用户在键盘上按下某按键是发生。一直按着某按键则会不断触发（opera浏览器除外）。
+// NOTE: keypress：用户按下一个按键，并产生一个字符时发生（也就是不管类似shift、alt、ctrl之类的键，
+//       就是说用户按了一个能在屏幕上输出字符的按键keypress事件才会触发）。一直按着某按键则会不断触发。
+// NOTE: keyup：用户释放某一个按键时触发。
+    $(function() {
+
+    	var num = 0;
+
+        $("#one").keydown(function(event) {   //键盘按下的事件
+            console.log(event.which);
+            console.log('keydown');
+
+        $("#two").keypress(function(event) {  // 按键盘操作
+            console.log(event.which);
+        });
+
+
+        $("body").keydown(function(event){
+        	if (event.which == 13){
+        		$("h1").css("visibility", "visible");
+        	}
+        });
+
+
+        $("#three").keyup(function(event){
+        	var currentVal = $(this).val();
+        	var currentNum = currentVal.length;
+
+        	if (currentNum > 10) {
+        		/*
+        		1. 需要将输入框中字符串进行切割，只要前10字符。
+        		2. 将前10个字符手写入input中
+        		*/
+
+        		var str = currentVal.slice(0,10);
+        		$(this).val(str);
+            currentNum =str.length;
+        	}
+
+        	$("#charNum").html(currentNum);
+        });
+
+
+    });
+    </script>
+</body>
+
+</html>

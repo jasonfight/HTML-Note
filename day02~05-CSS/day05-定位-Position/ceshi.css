@@ -1,0 +1,423 @@
+@charset "UTF-8";
+*{margin: 0;padding: 0;}
+a{
+  text-decoration: none;
+  color: black;
+}
+li{list-style: none;}
+#body{
+background: #f6f6f6;
+}
+.top{
+  background: #999;
+  height: 30px;
+  border-bottom: 1px solid #ddd;
+
+}
+.header{
+  margin:auto;
+  position: relative;
+  height: 140px;
+  width: 1190px;
+  /*border: 1px solid red;*/
+}
+.search{
+  position: relative;
+  width: 1190px;
+  height:60px;
+  background: white;
+  /*border: 1px solid blue;*/
+}
+.search .logo{
+  width: 190px;
+  height: 170px;
+  position: absolute;
+  bottom: -75px;
+  background: url(./京东图标.png) white;
+
+}
+.search .form{
+  position: absolute;
+  left: 320px;
+  top: 25px;
+  width: 550px;
+  height: 35px;
+  /*border: 1px solid green;*/
+}
+.search .form .text{
+  left: 0;
+  padding: 4px;
+  width: 490px;
+  height: 25px;
+  border: 1px solid #f10215;
+  line-height: 25px;
+  font-size: 14px;
+  position: absolute;
+}
+.search .form .button{
+  right: 0;
+  width: 50px;
+  height: 35px;
+  line-height: 35px;
+  border: none;
+  background-color: #f10215;
+  display: inline-block;
+  position: absolute;
+  left:500px;
+  background: url(./放大镜.png)
+}
+.search .trolley{
+  position: absolute;
+  right: 100px;
+  bottom: 0px;
+  width: 188px;
+  height: 33px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 33px;
+}
+.search .trolley:hover{
+  border: 1px solid gray;
+}
+.search .trolley .trolley-number{
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: red;
+  text-align: center;
+  line-height: 20px;
+  color: white;
+  display: inline-block;
+  position:relative;
+  top:-10px;
+}
+.search .qrcode{
+  width: 70px;
+  height: 70px;
+  background: url(./二维码.png);
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+}
+.hotwords{
+  overflow: hidden;
+  position: absolute;
+  left: 320px;
+  top: 65px;
+  width: 550px;
+  height: 20px;
+  line-height: 20px;
+}
+.hotwords ul li {
+  float: left;
+  margin-right: 10px;
+}
+.hotwords ul li a{
+  color: #999;
+  font-size: 12px;
+}
+.hotwords ul li a:hover{
+  color: red;
+}
+.navitems{
+  overflow: hidden;
+  position: absolute;
+  left: 200px;
+  bottom: 0;
+  width: 790px;
+  height: 40px;
+  border: 1px solid red;
+}
+.navitems ul li {
+
+  float: left;
+  /*margin-left: 20px;*/
+  padding-left: 20px;
+  padding-right: 15px;
+  line-height: 40px;
+}
+
+.navitems a{
+  position: relative;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #555;
+}
+.navitems a:hover{
+  color: red;
+}
+.content1 {
+  margin: auto;
+  width: 1190px;
+  height: 480px;
+  border: 1px dashed gray;
+}
+.content1 .content1-left{
+  width: 190px;
+  height: 480px;
+  /*border: 1px solid red;*/
+  color: black;
+  background: rgb(110, 101, 104);
+  color:rgb(255,255,255);
+  display: inline-block;
+  position: absolute;
+
+}
+
+.content1 .content1-left ul li {
+  width: 175px;
+  height: 30px;
+  padding-left: 15px;
+}
+.content1 .content1-left ul li a {
+  font-size: 14px;
+  color: white;
+  line-height: 30px;
+}
+.content1 .content1-left ul li a:hover{
+  color: red;
+}
+.content1 .content1-left ul li:hover{
+  background: #999395;
+}
+.content1 .content1-center{
+  width: 790px;
+  height: 480px;
+  /*background: red;*/
+  display: inline-block;
+  position: relative;;
+  left: 190px;
+  margin: 0 10px;
+}
+.content1-center .top{
+  width: 790px;
+  height: 340px;
+  background: url(./电脑.jpg);
+}
+.content1-center .bottom-left{
+  width:390px;
+  height: 130px;
+  float: left;
+  background:url(./产品-左.jpg);
+  position: relative;
+  top:5px;
+
+}
+.content1-center .bottom-right{
+  width:390px;
+  height: 130px;
+  float: right;
+  background: url(产品-右.jpg);
+  position: relative;
+  top:5px;
+}
+.content1 .content1-right{
+  width: 190px;
+  height: 480px;
+  /*background: gray;*/
+  float:right;
+}
+.content1-right .usr{
+  width: 190px;
+  height: 116px;
+  /*background: yellow;*/
+}
+
+.content1-right .usr .usr-icon {
+  width: 190px;
+  height: 75px;
+  color:rgb(101,102,102);
+  font-size: 12px;
+}
+.content1-right .usr .usr-icon img{
+  border-radius: 22.5px;
+  width: 45px;
+  height: 45px;
+  margin-left: 10px;
+  margin-top:10px;
+}
+.content1-right .usr .usr-icon span{
+position: relative;
+left: 5px;
+top: -20px;
+}
+.content1-right .usr .usr-icon a{
+  color:black;
+  font-weight: 400;
+  font-size: 12px;
+  float: left;
+  position: relative;
+  left: 65px;
+  top: -20px;
+  margin: 0px 5px;
+}
+.content1-right .usr .usr-icon a:hover{
+  color:red;
+}
+.content1-right .usr .usr-profit{
+  width: 170px;
+  height: 24px;
+  /*background: red;*/
+  margin: auto;
+}
+.content1-right .usr .usr-profit li{
+  /*display:inline-block;*/
+  width: 200px;
+  /*background: white;*/
+  font-size: 13px;
+  /*float: right;*/
+  position: relative;
+  right: 40px;
+  top:2px;
+}
+.content1-right .usr .usr-profit li a{
+  background: white;
+  padding: 0px 5px;
+  color: red;
+  border: 1px solid red;
+}
+.content1-right .usr .usr-profit li a:hover{
+  color:white;
+  background: red;
+}
+
+.content1-right .news-tab{
+  width: 190px;
+  height: 147px;
+  /*background: green;*/
+  margin: auto;
+  font-size: 12px;
+  padding: 5px 5px;
+}
+.content1-right .news-tab li{
+    padding: 5px 15px;
+    color: white;
+}
+
+.content1-right .news-tab .right{
+  position: relative;
+  left:65px;
+}
+.content1-right .news-tab .down{
+  font-size: 6px;
+  color: black;
+}
+.content1-right .news-tab a:hover{
+  color: red;
+}
+
+
+.content1-right .service{
+  width: 190px;
+  height: 210px;
+}
+.content1-right .service ul{
+  float: left;
+}
+.content1-right .service li {
+  width: 47.5px;
+  height: 70px;
+  background: white;;
+  float: left;
+  font-size: 12px;
+  line-height: 110px;
+  text-align:center;
+
+}
+.content1-right .service .image{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  /*background: url(./精灵图-service.png) 5px 5px;*/
+  border: 1px solid red;
+  position: relative;
+  left: 5px;
+  top: 5px;
+}
+
+
+.content1-right .service a{
+  color: rgb(102,102,102);
+}
+.content1-right .service a:hover{
+  color: rgb(255,0,0);
+}
+
+
+
+.content2{
+  width: 1190px;
+  height: 305px;
+  background: gray;
+  margin: auto;
+}
+.content2 .time{
+  height: 55px;
+  background: url(./time-image.png);
+
+}
+.content2 .time .time-left{
+  width: 15px;
+  height: 30px;
+  background: url(./精灵图-time.png)-195px 135px;
+  float: left;
+}
+.content2 .time .time-icon{
+  width: 30px;
+  height: 40px;
+  background: url(精灵图-time.png) 0px 150px;
+  float: left;
+}
+.content2 .time .time-title{
+  color: white;
+  line-height: 55px;
+  float: left;
+  margin: 0 15px;
+}
+
+
+.content2 .time .time-link{
+
+  height: 55px;
+  line-height: 50px;
+  width: 150px;
+  float: left;
+}
+.content2 .time .time-link .icon{
+  /*background: url(精灵图-time.png);*/
+  background: black;
+  background: url(精灵图-time.png) 68px 150px;
+  width: 20px;
+  height: 20px;
+  float: right;
+  position: relative;
+  top: 18px;
+  cursor: pointer;
+}
+
+.content2 .time a{
+  line-height: 60px;
+  color: white;
+  font-size: 14px;
+}
+.content2 .time .time-right{
+  width: 300px;
+  height: 55px;
+  float: right;
+
+}
+.content2 .time  .time-right span{
+  font-size: 14px;
+  color: white;
+}
+.content2 .time  .time-right .countdown{
+  width: 134px;
+  height: 38px;
+  background: url(./倒计时.png);
+  display: inline-block;
+  position: relative;
+  top:10px;
+}

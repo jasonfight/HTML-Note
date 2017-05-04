@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>控制语句</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+
+    var sum = 0;
+    // 指定跳出循环的位置
+    one:
+    for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 3; j++) {
+            sum++;
+            if (sum == 20) {
+                break one;
+                // break ;
+            }
+            console.log("-----");
+        }
+    }
+
+    console.log("i = " + i);
+    console.log("after one ...");
+
+
+
+    // 'use strict';//指定使用js的严格模式运行代码
+
+    var stu = {name: "lisi", age: 20};//stu就是一个对象
+    console.log(stu.name);
+
+
+    //建议少用，严格模式属于错误
+    with(stu){
+    	//访问的都是stu对象中的属性
+    	console.log(name);
+    	console.log(age);
+    }
+    </script>
+</body>
+
+</html>

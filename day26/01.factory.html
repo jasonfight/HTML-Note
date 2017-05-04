@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>工厂模式</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+    /*
+      消除了父类Super和手机相关类的依赖关系，将手机的生产推给个继承Super的子类去完成。
+    */
+
+
+    function Apple() {
+        this.name = "apple";
+    }
+
+    function Honor() {
+        this.name = "honor";
+    }
+
+    function Other() {
+        this.name = "other";
+    }
+
+
+    function Super() {}
+
+    Super.prototype = {
+        constructor: Super,
+        sellPhone: function(mode) {
+            var phone = this.createPhone(mode);
+            return phone;
+        },
+        createPhone: function(mode) {
+            throw new Error("it is a abstract class!");
+        }
+    };
+
+
+    function Sub() {
+        Super.call(this);
+    }
+
+    Sub.prototype = new Super();
+    Sub.prototype.constructor = Sub;
+
+    //覆盖了继承来的createPhone方法
+    Sub.prototype.createPhone = function(mode) {
+        var phone = null;
+
+        switch (mode) {
+            case "apple":
+                phone = new Apple();
+                break;
+            case "honor":
+                phone = new Honor();
+                break;
+            default:
+                phone = new Other();
+                break;
+        }
+
+        return phone;
+    }
+
+    //直接调用Super的createPhone是错误的
+    // var f = new Super();
+    // f.sellPhone("apple");
+
+
+    var s = new Sub();
+    console.log(s.sellPhone("apple"));
+    console.log(s.sellPhone("honor"));
+
+
+    </script>
+</body>
+
+</html>

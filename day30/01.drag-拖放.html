@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>drag 拖拽</title>
+	<style type="text/css">
+
+	.f {
+		width: 200px;
+		height: 200px;
+		border: 1px solid red;
+	}
+
+	</style>
+</head>
+<body>
+
+<a id="a" href="https://www.baidu.com">阻止默认行为:event.preventDefault(),设置了该属性方法的元素,默认行为将失效</a>
+<br>
+<img id="img" draggable="true" src="./image/zhaosi.jpg">
+<div id="box" class="f"></div>
+<div class="">
+	子元素上的drag事件: dragstart:拖动开始		<br>
+										drag:	拖动中,每隔一段时间出发该事件					<br>
+										dragend:拖放结束	<br>
+	父元素上的drag事件: dragenter:	拖动进入			<br>
+										drapover:	拖动中					<br>
+										dragleave: 拖动离开				<br>
+										drop:	拖动结束						<br>
+
+</div>
+<script type="text/javascript">
+
+  var a = document.querySelector("#a");
+    a.onclick = function(event){
+    	event.preventDefault();  	//阻止一个事件的默认行为
+    }
+
+	var box = document.querySelector("#box");
+	var img = document.querySelector("#img");
+
+/*	img.addEventListener("dragstart", function(){
+		console.log("dragstart ...");
+	}, false);
+
+	img.addEventListener("drag", function(){
+		console.log("drag ...");
+	}, false);
+
+	img.addEventListener("dragend", function(){
+		console.log("dragend...");
+	}, false);
+
+	box.addEventListener("dragenter", function(){
+		this.style.borderColor = "blue";
+	}, false);
+
+	box.addEventListener("dragleave", function(){
+		this.style.borderColor = "yellow";
+	}, false);*/
+
+
+
+    //要让一个元素完成拖拽，那么必须在dragover事件中阻止其默认行为
+	box.addEventListener("dragover", function(event){
+		console.log("dragover ...");		//每隔一段时间后就会触发
+		event.preventDefault();
+	}, false);
+
+	box.addEventListener("drop", function(){
+		console.log("drop ...");
+        //完成拖拽
+		box.appendChild(img);
+	}, false);
+
+
+</script>
+
+</body>
+</html>

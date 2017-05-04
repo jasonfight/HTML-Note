@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>绝对定位 情况二:有父元素,且父元素设置了定位,则相对于父元素定位</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .start {
+            width: 300px;
+            height: 200px;
+            background: blue;
+        }
+
+        .f {
+            width: 500px;
+            height: 300px;
+            border: 1px solid red;
+            position: relative;
+
+        }
+        /*如果盒子有父盒子(祖先盒子)并且父盒子有定位，那么这个时候我们的盒子定位是相对于父盒子的。*/
+
+        .s {
+            width: 300px;
+            height: 200px;
+            background: yellow;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="start"></div>
+    <p> 第二种：有父元素,且父元素设置了定位,相对于父元素的定位.</p>
+    <div class="f">父盒子设置为relative
+        <div class="s">子盒子设置为absolute</div>
+    </div>
+
+</body>
+
+</html>

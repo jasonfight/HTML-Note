@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数缓存</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+
+
+    /*
+    var test = function(){
+    	console.log("test ..");
+    }
+    console.log(test.name);
+    */
+
+
+/*    function fun(){
+    	console.log(fun.name);
+    	var a = 20;
+    }
+
+    fun.data = 10;
+    fun.test = function(){ console.log("...")};
+
+    console.log(fun.data);
+    console.log(fun.a);
+    fun.test();
+*/
+
+
+     //判断一个数是否为质数
+     //isPrime.result = {3: true, 4: false, 5: true};
+    function isPrime(num){
+
+        if (!isPrime.result){
+        	isPrime.result = {};
+        }
+
+        if (isPrime.result[num] != null){
+        	return isPrime.result[num];
+        }
+
+    	console.log(" num = " + num);
+
+    	var result = true;
+    	for (var i = 2; i < num; i++){
+    		if (num % i == 0){
+    			result = false;
+    			break;
+    		}
+    	}
+
+    	return   isPrime.result[num] = result;
+    }
+
+    console.log(isPrime(5));
+    console.log(isPrime(9));
+    console.log(isPrime(5));
+    console.log(isPrime(9));
+    console.log(isPrime(6));
+
+
+    console.log(isPrime.result);
+
+
+
+
+
+
+</script>
+	
+</body>
+</html>

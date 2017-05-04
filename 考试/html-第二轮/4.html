@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>产生一个可以设置透明度的颜色的函数</title>
+  </head>
+  <body>
+    <script>
+    var color = 'rgba(';
+    function randomColor(alpha){
+      for (i=0;i<3;i++){
+        var Num = randomNum(0,255);
+        color += Num+',';
+      }
+      
+      color = color + alpha +')';
+       function randomNum(min,max){
+            return Math.floor(Math.random()*(max-min+1)+min)
+          }
+    return color
+    }
+    console.log(randomColor(0.1))
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>伪类选择器</title>
+    <style>
+
+    /* 为了兼容其他浏览器，link visited hover active的顺序固定的*/
+    /*默认修改为red*/
+
+
+      a:link {
+        color: gray;
+      }
+
+      /*访问之后的样式*/
+      a:visited {
+        color: yellow;
+      }
+
+     /*鼠标放上去的样式*/
+      a:hover {
+        color: blue;
+      }
+
+      /*鼠标按下去的样式*/
+      a:active {
+        color: green;
+      }
+
+      div:link{
+        color:gray;
+      }
+      div:hover {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+
+    <a href="https://www.baidu.com">百度</a>
+
+    <div>这是div元素</div>
+
+  </body>
+</html>

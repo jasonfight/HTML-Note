@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery选择器</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      table {
+        border: 1px solid gray;
+        width: 500px;
+        height: 300px;
+        text-align: center;
+        margin: auto;
+
+        border-collapse: collapse; /*用于取消表格的内部间距*/
+      }
+
+      td {
+        border: 1px solid gray;
+      }
+    </style>
+</head>
+
+<body>
+
+  <table>
+    <tr>
+      <td>姓名</td>
+      <td>年龄</td>
+      <td>性别</td>
+    </tr>
+    <tr>
+      <td>姓名</td>
+      <td>年龄</td>
+      <td>性别</td>
+    </tr>
+    <tr>
+      <td>姓名</td>
+      <td>年龄</td>
+      <td>性别</td>
+    </tr>
+    <tr>
+      <td>姓名</td>
+      <td>年龄</td>
+      <td>性别</td>
+    </tr>
+    <tr>
+      <td>姓名</td>
+      <td>年龄</td>
+      <td>性别</td>
+    </tr>
+    <tr>
+      <td>姓名</td>
+      <td>年龄</td>
+      <td>性别</td>
+    </tr>
+    <tr>
+      <td>姓名</td>
+      <td>年龄</td>
+      <td>性别</td>
+    </tr>
+
+
+  </table>
+
+    <script src="./js/jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        // $("table tr:even").css("backgroundColor", "lightgray"); //偶数项设置
+        // $("table tr:odd").css("backgroundColor", "lightyellow"); //奇数项设置
+
+        // $("table tr:nth-child(2n+1)").css("backgroundColor", "red"); //奇数项设置
+        // $("table tr:nth-child(2n)").css("backgroundColor", "gray"); //偶数项设置
+        $("table tr:nth-child(3n)").css("backgroundColor", "gray");//3的倍数项设置
+    </script>
+</body>
+
+</html>

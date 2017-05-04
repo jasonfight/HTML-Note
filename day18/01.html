@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap首页</title>
+    <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
+    <style type="text/css">
+    body {
+        height: 2000px;
+    }
+    
+    .nav-1 {
+        background-color: #222;
+        border: none;
+        border-radius: 0;
+    }
+    
+    .nav-1 .navbar-brand:hover {
+        color: #fff;
+    }
+    
+    .nav-1.navbar-default .navbar-nav>li>a:hover {
+        color: #fff;
+    }
+    
+    .nav-1.navbar-default .navbar-nav>li>a {
+        color: #9d9d9d;
+    }
+    /* and 左右加空格  */
+    
+    @media screen and (min-width:768px) and (max-width:992px) {
+        .nav-1 {
+            background-color: orange;
+        }
+    }
+    
+    .banner.jumbotron {
+        text-align: center;
+        padding: 100px 0;
+        margin-bottom: 0;
+    }
+    
+    .contact {
+        text-align: center;
+        border-bottom: 1px solid lightgray;
+    }
+    
+    .contact ul {
+        list-style: none;
+        margin-bottom: 0;
+    }
+    
+    .contact ul li {
+        display: inline-block;
+        margin-right: 50px;
+        height: 40px;
+        line-height: 40px;
+    }
+    
+    .web-show {
+        text-align: center;
+        padding-top: 50px;
+    }
+    
+    .web >.row .col{
+        border: 1px solid lightgray;
+        height: 330px;
+        max-width: 310px;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+
+
+    .web >.row .col a {
+        display: block;
+    }
+    
+    .web .row .cap {
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="nav-1 navbar navbar-default  navbar-fixed-top">
+        <div class="container">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Bootstrap中文网</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class=""><a href="#">Bootstrap2.0文档 <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Bootstrap2.0文档</a></li>
+                        <li><a href="#">Bootstrap2.0文档</a></li>
+                        <li><a href="#">Bootstrap2.0文档</a></li>
+                        <li class="hidden-sm"><a href="#">Bootstrap2.0文档</a></li>
+                    </ul>
+                    <ul class=" hidden-sm nav navbar-nav navbar-right">
+                        <li><a href="#">关于</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="banner  jumbotron  ">
+        <div class="container">
+            <h1>Bootstrap中文网</h1>
+            <p>简洁、直观、强悍的前端开发框架，让web开发更迅速、简单</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Bootstrap3.3.7文档</a></p>
+            <p><a href="#" role="button">Bootstrap2.3.2文档</a></p>
+        </div>
+    </div>
+    <div class="contact container-fluid">
+        <ul>
+            <li><a href="#"> Bootstrap技术交流群：318630708</a></li>
+            <li><a href="#"> Bootstrap技术交流群：318630708</a></li>
+            <li><a href="#"> Bootstrap技术交流群：318630708</a></li>
+        </ul>
+    </div>
+    <div class="web-show container">
+        <h1>Bootstrap相关优质项目推荐</h1>
+        <p>
+            这些项目或者是对Bootstrap进行了有益的补充，或者是基于Bootstrap开发的
+        </p>
+    </div>
+    <div class="web container">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+                <div class="col">
+                    <a href="#"><img class=" center-block img-responsive" src="./images/1.png"></a>
+                    <div class="cap">
+                        <h3><a href="#">Bootstrap 编码规范 <br> by @mdo</a></h3>
+                        <p>Bootstrap 编码规范：编写灵活、稳定、高质量的 HTML 和 CSS 代码的规范。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+                <div class="col">
+                    <a href="#"><img class=" center-block img-responsive" src="./images/1.png"></a>
+                    <div class="cap">
+                        <h3><a href="#">Bootstrap 编码规范 <br> by @mdo</a></h3>
+                        <p>Bootstrap 编码规范：编写灵活、稳定、高质量的 HTML 和 CSS 代码的规范。</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+                <div class="col">
+                    <a href="#"><img class=" center-block img-responsive" src="./images/1.png"></a>
+                    <div class="cap">
+                        <h3><a href="#">Bootstrap 编码规范 <br> by @mdo</a></h3>
+                        <p>Bootstrap 编码规范：编写灵活、稳定、高质量的 HTML 和 CSS 代码的规范。</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+                <div class="col">
+                    <a href="#"><img class=" center-block img-responsive" src="./images/1.png"></a>
+                    <div class="cap">
+                        <h3><a href="#">Bootstrap 编码规范 <br> by @mdo</a></h3>
+                        <p>Bootstrap 编码规范：编写灵活、稳定、高质量的 HTML 和 CSS 代码的规范。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

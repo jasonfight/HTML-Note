@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>DOM节点的操作</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .f {
+            width: 600px;
+            height: 100px;
+            border: 1px solid red;
+            font-size: 20px;
+            margin: auto;
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <img class="img-1" src="./images/1.jpg" alt="">
+
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+        //当整个页面的节点都解析完毕时，执行一个函数
+        $(document).ready(function() {
+            console.log($("img"));
+
+            $("<h1>appendTo函数,添加到目标内部的后面</h1>").appendTo("body");
+            $("body").append("<h3>append函数,添加到目标内部的后面,与appendTo不同的是,待添加内容和目标的书写位置不同.</h3>");
+
+            $("<h2>prependto方法,添加到目标中的最前面.</h2>").prependTo("body");
+
+            $("<p>insertAfter()函数,添加到目标的后面</p>").insertAfter(".img-1");
+            $("<p> insertBefore()函数,添加到目标的前面</p>").insertBefore(".img-1");
+
+
+            // jQuery 的链式调用, 都是针对同一元素的操作(因为每一个方法的返回值都是该元素本身)
+            $("<div>").html("<p><a href='#'>新创建的div</a></p>").appendTo("body");
+
+            console.log($("body").html());//输出 body中的所有内容.所有的内容都以字符串的形式输出
+
+        });
+    </script>
+</body>
+
+</html>

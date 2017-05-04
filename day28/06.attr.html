@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自定义属性dataset</title>
+</head>
+<body>
+	
+
+	<div id="f" name="test"  data-abc-efg-hjk="abc" data-name="lisi" data-score="100">测试</div>
+
+
+    <script src="./js/jquery-3.0.0.min.js" ></script>
+	<script type="text/javascript">
+		
+		var f = document.querySelector("#f");
+		f.setAttribute("name", "测试");
+		console.log(f.getAttribute("name"));
+		console.log(f.dataset.name);
+		console.log(f.dataset.score);
+		f.dataset.name = "zhaosi";
+
+		f.removeAttribute('name'); //删除属性.
+		
+        //操作dataset属性时，属性的名称应该是按照驼峰法命名
+		console.log(f.dataset.abcEfgHjk);
+		//console.log($("#f").data("abcEfgHjk"));
+		f.dataset.add = "add";//data-add="add"
+
+
+	</script>
+</body>
+</html>

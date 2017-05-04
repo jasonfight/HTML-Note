@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>节点属性</title>
+    <style >
+        button {
+            color: green;
+            font-size: 40px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn" class="btn1">点击</button>
+
+
+    <div id="f">
+        <div id="s">子节点</div>
+    </div>
+
+    <script type="text/javascript">
+
+    var btn = document.getElementById("btn");
+    console.log(btn.id);//btn
+    console.log(btn.getAttribute("id"));//btn
+
+    console.log(btn.class);
+    console.log(btn.getAttribute("class"));//
+    console.log(btn.className);
+
+
+    //访问DOM属性
+    btn.className = "btn2 btn3";//直接覆盖所有的类名
+
+    //修改样式
+    // btn.style.cssText = "color:red;";
+    btn.style.cssText = "font-size: 60px";//cssText不能叠加，后边会覆盖前边的
+
+    btn.style.backgroundColor = "yellow";
+    btn.style.border = "5px solid pink";
+    console.log(btn.style);
+
+
+
+    var f = document.getElementById("f");
+    var s = document.getElementById("s");
+
+    // f.removeChild(s);
+
+    var cloneNode = s.cloneNode(true);
+    document.body.appendChild(cloneNode);
+    </script>
+</body>
+
+</html>

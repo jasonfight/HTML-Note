@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>驴妈妈注册</title>
+    <link rel="stylesheet" href="./lv.css" />
+    <!-- <link rel="stylesheet" href="//pics.lvjs.com.cn/styles/new_v/ob_login/register_new.css?v=021601" /> -->
+</head>
+
+<body>
+    <div id="login_main" class="login_main">
+        <div class="login_top zhfs_logo_top">
+            <span class="login_logo">
+				<a href="http://www.lvmama.com"><img src="//pics.lvjs.com.cn/img/new_v/ob_login/login_logo.jpg"></a> <label class="text">|</label> <a class="text">免费注册</a>
+			</span>
+            <span class="login_hotline">1010-6060</span>
+        </div>
+        <div class="register_center">
+            <div class="w_overflow" id="w_overflow">
+                <div class="w_max" id="w_max">
+                    <div class="fl" id="sj_div">
+                        <div class="reg_sjyx_allStep">
+                            <div class="register_stepWidth" id="register_stepWidth">
+                                <form action="/nsso/register/registerUser.do" id="sjRegForm" method="post">
+                                    <input id="geetest_challenge" name="geetestChallenge" value="" type="hidden">
+                                    <input id="geetest_validate" name="geetestValidate" value="" type="hidden">
+                                    <input id="geetest_seccode" name="geetestSeccode" value="" type="hidden">
+                                    <input type="hidden" value="token" name="struts.token.name" /><input type="hidden" name="token" value="E5P8IOAEPQ9OU29LFSHCENICMQB8ML1U" />
+                                    <input type="hidden" name="channel" value="PAGEREG" />
+                                    <ul style="" class="register_form register_sj_form">
+                                        <li><label class="csmm_form_col w90"><i class="red">*</i> 您的手机号</label><input type="text" class="zhfs_form_input" id="sso_mobile" name="mobile"></li>
+                                        <!--是否显示图形验证码 -->
+                                        <li>
+                                            <label class="csmm_form_col w90"><i class="red">*</i>图形验证码</label>
+                                            <input type="text" class="zhfs_form_input zhfs_w99" id="sso_verifycode1" style="margin-left:-6px" name="verifycode">
+                                            <p class="dynamic">请填写计算结果或验证码</p>
+                                            <img id="image" src="/captcha/account/checkcode/register.htm" width="100" height="32" onClick="refreshCheckCode('image');return false;">
+                                        </li>
+                                        <li><label class="csmm_form_col w90"><i class="red">*</i>手机验证码</label><input type="text" class="zhfs_form_input zhfs_w99" id="sso_verifycode2" name="authenticationCode"><a href="javascript:void(0)" class="yaz_code">获取验证码</a>
+                                            <span class="dis_time"><em id="countdown">60</em>秒后重发</span>
+                                        </li>
+                                        <li><label class="csmm_form_col w90"><i class="red">*</i> 设置密码</label><input type="password" class="zhfs_form_input" id="sso_password" name="password"></li>
+                                        <li><label class="csmm_form_col w90"><i class="red">*</i> 确认密码</label><input type="password" class="zhfs_form_input" id="sso_againPassword" name="againPassword"></li>
+                                        <li style="display:none"><label class="csmm_form_col w90"> 所在地</label><select id="captialId" class="province"><option value="">--请选择--</option></select><select id="cityId" class="city" name="cityId"><option>--请选择--</option></select></li>
+                                        <li><label class="csmm_form_col w90"> </label><input type="checkbox" class="gray_ipt" checked id="terms">我已阅读并接受<a class="link_blue" href="javascript:void(0)" onClick="agreement('http://login.lvmama.com/nsso/register/agreement.do')">《驴妈妈旅游网会员服务条款》</a>
+                                            <div id="terms_xx"></div>
+                                        </li>
+                                        <div id="popup-captcha" style="display:block"></div>
+                                        <input class="btn" id="popup-submit" type="hidden" value="提交">
+                                        <li><label class="csmm_form_col w90"></label><a href="#" class="register_submit" id="submitBtn">同意服务条款并注册</a></li>
+                                        <li class="gray_wz"><label class="csmm_form_col w90"> </label>已有账号，<a href="#" class="link_blue">直接登录>&nbsp;</a></li>
+                                        <li class="other_account">
+                                            <h4><span>合作网站账号登录</span></h4>
+                                            <div class="icon clearfix">
+                                                <a href="#" onClick="union_login('/nsso/cooperation/tencentQQUnionLogin.do')" class="qq" title="QQ"></a>
+                                                <a href="#" onClick="union_login('/nsso/cooperation/tencentWeiXinUnionLogin.do')" class="weix" title="微信"></a>
+                                                <a href="#" onClick="union_login('/nsso/cooperation/sinaUnionLogin.do')" class="sina" title="新浪微博"></a>
+                                                <a href="$" onClick="union_login('/nsso/cooperation/alipayUnionLogin.do')" class="alpay" title="支付宝"></a>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="register_right">
+                <p class="register_r_b"><img src=" " /></p>
+                <img src=" " />
+            </div>
+            <div class="reg_clear"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>

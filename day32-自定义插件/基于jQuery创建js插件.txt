@@ -1,0 +1,23 @@
+要创建jQuery自定义插件,在html文件中自然要引入jQuery的创建的js文件.
+插件创建方法;
+一:创建对象方法:
+1.使用匿名函数,将插件中的变量变为私有变量,这样可以保证变量不被污染:
+(function($){doing something....})(jQuery)
+2.在匿名函数中创建插件:调用$.fn方法,就可以将插件内容添加到元素中.方法:
+  $.fn.pluginname = function(){doing something....}
+  注: 为了保证jQuery中的链式调用,该函数需要返回对象本身.
+插件创建完成后,在需要应用该插件的html或js文件中引用,然后就可以调用了,调用方法为:
+$().pluginname()    $()为jQuery对象.
+
+除了使用$.fn方法,另外一种添加自定义插件的方式为:
+  $.fn.extend({
+    pluginname1:function(){diong something...},
+    pluginname2:function(){doing something...}
+  });
+  注:extend方法的参数为一个对象,
+二:创建全局插件:
+方法一:.$.pluginname = function(){doing something...}
+方法二: $.extend($,{
+    pluginname1:function(){diong something...},
+    pluginname2:function(){diong something...}
+});

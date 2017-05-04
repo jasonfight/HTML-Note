@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+/*
+ 函数
+*/
+
+body {
+	font-size: 20px;    
+}
+
+h1 {
+	background-color: lighten(red, 30%); //color * 30%;
+	font-size: 1.6rem;
+}
+
+h2 {
+	background-color: darken(#ff9999, 30%); // color / 30%;
+	font-size: 1.2rem;
+}
+
+
+
+$baseFont: 10px;
+
+/* @function  @return */
+@function pxToRem($px) {
+	@return  $px / $baseFont * 1rem;
+}
+
+
+@function sizeSet($px1, $px2) {
+	@return  $px1 + $px2;
+}
+
+.class-1 {
+	font-size: pxToRem(20px);
+}
+
+.class-2 {
+	font-size: sizeSet(10px, 20px);
+}
+
+
+.class-3 {
+	color: #234567 - #123456;
+}
+
+
+/*
+  @if  @else 
+ */
+
+
+$size: 10px;
+
+.class-4 {
+	@if $size == 10px {
+		color: red;
+		font-size: 20px;
+		text-align: center;
+	} @else if $size == 20px {
+		color: yellow;
+	} @else if  $size == 30px {
+		color: green;
+	} @else {
+		color: black;
+	}
+}
+
+.class-5 {
+	@if $size > 10px {
+		color: red;
+	} @else if $size == 10px {
+		color: yellow;
+	} @else {
+		color: black;
+	}
+}
+
+
+
+//三目运算符, 结果由第一添加是否为真决定。
+$test: false;
+
+.class-6 {
+	font-size: if($test, 20px, 30px);
+}

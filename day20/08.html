@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>节点属性</title>
+</head>
+
+<body>
+    <div id="f" class="f"  f-value="10">
+        <div id="s" class="s" s-value="20"></div>
+    </div>
+
+    <button id="btn">点击</button>
+
+
+    <script type="text/javascript">
+    var f = document.getElementById("f");
+    var s = document.getElementById("s");
+    var btn = document.getElementById("btn");
+
+    console.log(f.getAttribute("f-value"));
+    console.log(s.getAttribute("s-value"));
+
+    f.setAttribute("f-value", 101);
+    s.setAttribute("s-value", 201);
+
+
+    btn.setAttribute("disabled",  null);//添加disabled
+    btn.removeAttribute("disabled");//移除disabled
+
+
+    btn.setAttribute("class", "btn  btn1  btn2");
+    // btn.removeAttribute("class");//移除class
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>绝对定位 情况三 没有父元素,相对于body定位</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .start {
+            width: 200px;
+            height: 200px;
+            background: blue;
+        }
+
+        .f {
+            width: 200px;
+            height: 100px;
+            border: 1px solid red;
+            position: absolute;
+            top: 50px;
+            left: 100px;
+            background: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <p> absolute的三种情况: <br>第三种：没有父元素：相对于body的定位. </p>
+    <div class="start"></div>
+    <div class="f"> </div>
+    <p>设置了absolute,元素会脱离标准流, 该段落本身在灰色方块的下面,
+        <br>在灰色方块将定位设置为absolute后, 出现在蓝色方块下面
+    </p>
+</body>
+
+</html>

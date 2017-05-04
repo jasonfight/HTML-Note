@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>钟表</title>
+    <style media="screen">
+    body{
+      background: lightblue;
+    }
+      .dial{
+        width: 190px;
+        height: 190px;
+        margin: 0 auto;
+        margin-top: 100px;
+        border: 10px solid black;
+        border-radius: 50%;
+        position: relative;
+        /*transform-origin: bottom;*/
+      }
+      .scale{
+        width: 5px;
+        height: 190px;
+        background: black;
+        position: absolute;;
+        left:92.5px;
+      }
+      .scale:nth-child(2){
+        width: 5px;
+        height: 190px;
+        background: gray;
+        position: absolute;;
+        transform: rotate(30deg);
+      }
+      .scale:nth-child(3){
+        width: 5px;
+        height: 190px;
+        background: gray;
+        position: absolute;;
+        transform: rotate(60deg);
+      }
+      .scale:nth-child(4){
+        width: 5px;
+        height: 190px;
+        background: black;
+        position: absolute;;
+        transform: rotate(90deg);
+      }
+      .scale:nth-child(5){
+        width: 5px;
+        height: 190px;
+        background: gray;
+        position: absolute;;
+        transform: rotate(120deg);
+      }
+       .scale:nth-child(6){
+        width: 5px;
+        height: 190px;
+        background: gray;
+        position: absolute;;
+        transform: rotate(150deg);
+      }
+      .dial_2{
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        position: absolute;
+        background: lightblue;
+        left: 5%;
+        top:5%;
+        }
+        .clock{
+          width: 4%;
+          height: 25%;
+          background: black;
+          position: absolute;
+          left:48.125%;
+          top: 25%;
+          animation: clock 60s infinite linear;
+          transform-origin: bottom;
+          animation: minite 43200s infinite linear;
+        }
+        .minite{
+          width: 2%;
+          height: 30%;
+          background: black;
+          position: absolute;
+          left:49.125%;
+          top: 20%;
+          transform-origin: bottom;
+          animation: minite 3600s infinite linear;
+        }
+        .second{
+          width: 1%;
+          height: 35%;
+          background: black;
+          position: absolute;
+          left:49.625%;
+          top: 15%;
+          transform-origin: bottom;
+          animation: second 60s  infinite steps(60);
+        }
+        @keyframes second {
+          from{ transform: rotate(0deg)}
+          to{ transform: rotate(360deg)}
+        }
+        @keyframes minite {
+          from{ transform: rotate(0deg)}
+          to{ transform: rotate(360deg)}
+        }
+        @keyframes clock {
+          from{ transform: rotate(0deg)}
+          to{ transform: rotate(360deg)}
+        }
+    </style>
+  </head>
+  <body>
+    <div class="dial">
+      <div class="scale"></div>
+      <div class="scale"></div>
+      <div class="scale"></div>
+      <div class="scale"></div>
+      <div class="scale"></div>
+      <div class="scale"></div>
+      <div class="dial_2">
+      </div>
+      <div class="clock">
+      </div>
+      <div class="minite">
+      </div>
+      <div class="second">
+
+      </div>
+    </div>
+  </body>
+</html>

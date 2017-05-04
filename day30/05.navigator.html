@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>navigator</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    console.log(navigator);
+    console.log(navigator.userAgent); //浏览器代理,判断是电脑端还是手机端,
+    console.log(navigator.language); // 用户默认语言
+    console.log(navigator.platform); // 操作系统平台
+    console.log(navigator.vendor); //浏览器厂商
+
+     var reg = /android|iphone/gi;
+
+   /*
+    //判断用户代理
+    if (reg.test(navigator.userAgent)){
+    	location.href = "https://m.jd.com";
+    } else {
+    	location.href = "http://www.jd.com";
+    }
+    */
+     //查看插件
+     console.log('-------');
+     for (var i = 0; i < navigator.plugins.length; i++){
+     	console.log(navigator.plugins[i].name);
+     }
+
+    </script>
+</body>
+
+</html>

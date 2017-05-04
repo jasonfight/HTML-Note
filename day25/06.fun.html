@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>高阶函数(将函数作为参数，并且返回一个函数)</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+	//判断是否是偶数
+	function even(num){
+		return  (num % 2 == 0) ? true : false;
+	}
+
+
+
+    //not函数用于将原函数的结果给取反
+	function not(fn){
+		return  function(){
+			// console.log(fn);
+			var ret = fn.apply(null, arguments);
+			return !ret;
+		};
+	}
+
+	var odd = not(even);
+	console.log(odd(3));//true
+	// console.log(odd(4));//false
+
+
+
+//
+//
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

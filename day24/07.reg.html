@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>reg</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var reg = /a*123de/; //*表示*前边的字符出现任意次 相当于{0,}
+	console.log('1',reg.test("aa123de"));
+
+	reg = /a+123de/;//  匹配1到无穷个a,相当于{1,}
+	console.log(reg.test("aaaaa123de"));
+
+	reg = /a?123/; //	匹配 0-1个a,相当于{0,1}
+	console.log(reg.test("aaaaa123de"));
+
+	console.log('---------------------');
+	reg = /a+?123/;
+	/*
+	  *如果不用？，那么默认是贪婪匹配(匹配尽可能多的字符)，
+	   如果使用? ，那么就不会进行贪婪匹配，尽可能少的匹配符合条件的字符
+	*/
+	console.log(reg.test("a123de"));
+
+
+	reg = /a{5}/;
+	console.log(reg.test("aa123de"));
+
+
+	reg = /hello|world|hehe/;
+	console.log(reg.test("heheskjgjhjk"));
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

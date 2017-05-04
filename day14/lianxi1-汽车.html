@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>汽车</title>
+    <style media="screen">
+      .f{
+        width: 1000px;
+        margin:  0 auto;
+        margin-top: 400px;
+      }
+      img{
+        width: 100px;
+        animation:drive 2s   infinite linear 1s;
+        transform: skewX(20deg);
+      }
+      @keyframes drive {
+        0%{
+
+        }
+        20%{
+          transform: skewX(30deg) translateX(200px);
+        }
+
+        80%{
+          transform: translateX(800px);
+        }
+
+        100%{
+          transform: skewX(-20deg) translateX(1000px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="f">
+      <img src="./image/img3/car.jpg" alt="" />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原生的click事件处理</title>
+</head>
+<body>
+
+<button id="btn">单击触发</button>
+
+<script>
+    //获得一个元素对象
+	var  btn = document.getElementById("btn");
+
+    //DOM0级的事件添加方式
+	btn.onclick = function(){
+		console.log("btn onclick one ....");
+	};
+
+    //覆盖了之前的处理函数
+	btn.onclick = function(){
+		console.log("btn onclick two ....");
+	};
+
+	btn.onclick = null; //清空onclick事件.
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>事件触发的快捷方式</title>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <label> 用户名：
+        <input type="text">
+    </label>
+
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <script>
+    $(function() {
+
+        $("#btn").click(function(){
+            $("input").focus();
+        });
+
+
+    });
+    </script>
+</body>
+
+</html>

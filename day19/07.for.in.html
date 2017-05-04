@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>for ..in 循环</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+	var obj = {a:1, b:2, c:3}; // NOTE: a 为属性,1为属性值
+    //主要用于访问对象
+    for (var key in obj) {
+    	console.log(key);//得到是对象上的属性名称
+    	console.log(obj[key]);//得到对应属性的值
+
+    	console.log(key + "===>" + obj[key]);
+    }
+</script>
+
+</body>
+</html>

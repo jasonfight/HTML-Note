@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>元素的替换 elem.replaceWith() </title>
+  </head>
+  <body>
+
+    <div class="one">
+      <li>11111</li>
+      <li>11111</li>
+      <li>11111</li>
+    </div>
+
+
+    <script src="./js/jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $(".one li").replaceWith("<h3>555555555555</h3>");//将 li标签  用h3替换
+        });
+    </script>
+
+  </body>
+</html>

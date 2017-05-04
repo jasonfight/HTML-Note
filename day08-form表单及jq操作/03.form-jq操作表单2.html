@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery操作表单</title>
+  </head>
+  <body>
+
+    <form action="" method="get">
+     姓名：  <input name="name" type="text"> <br><br>
+     密码：  <input name="passwd" type="password"> <br><br>
+      <input name="gender" checked value="100" type="checkbox">
+      <br><br>
+
+      <input type="submit" value="登录">
+    </form>
+
+    <button class="btn1">点击获取姓名</button>
+    <button class="btn2">设置默认姓名</button>
+
+    <script src="./js/jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        console.log($("input[type=checkbox][name=gender]:checked").val());
+
+        $("button.btn1").click(function(){
+          var name = $("form input[name=name]").val();
+          $("<h1>").html(name).appendTo("body");
+        });
+
+        $("button.btn2").click(function(){
+          $("form input[name=name]").val("张三");
+        });
+
+      });
+    </script>
+  </body>
+</html>

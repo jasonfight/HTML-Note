@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>数字类型</title>
+  </head>
+  <body>
+    <div >
+      数字类型: <br>
+
+      小数的精度为17位 <br>
+          计算机在计算小数时,是现将其转化为二进制数,然后再进行计算,<br>
+      而0.1与0.2均不能用有限位数的二进制数进行表示,所以会有些误差.<br>
+      NaN 即(Not a Number),是一个特殊的数值,用于表示一个本来要返回数值的操作数没有 <br>
+      返回数值的情况,(这样就不会抛出错误了)
+    </div>
+    <script type="text/javascript">
+      var a = 123;
+      var b = 0123;// 8进制，以'0'开头 结果为64+16+3=83
+      var c = 0x123;// 16进制， 以"0x"开头,结果为 256+32+3=291
+
+      console.log("a = " + a);
+      console.log("b = " + b);
+      console.log("c = " + c);
+
+      var f = 12.123;
+      console.log(f);//12.123
+
+      var e = 3.14e-2;
+      console.log(e);//0.0314
+
+      /*
+       小数点运算有精度误差
+      */
+      var  sum = 0.1 + 0.2;//结果为 0.30000000000000004 而不是0.3.
+      console.log(sum);
+
+      // NaN: 能够转换成数字额类型,不是NaN,不能够转化为数字的,为NaN.
+      console.log(typeof NaN);//类型为 number
+      console.log(isNaN(NaN));//true
+      console.log(isNaN(10));//false
+      console.log(isNaN('10'));//false
+      console.log(isNaN('nihao'));//true
+      console.log(isNaN(true));//结果为false, true 可以转换为0,为数字,所以不是NaN
+
+    </script>
+
+  </body>
+</html>

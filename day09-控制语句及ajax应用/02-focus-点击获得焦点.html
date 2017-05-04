@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      .alert {
+        visibility: hidden;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="">
+      使用 dom对象.focus() 获得焦点.
+    </div>
+    <div><input class="name" type="text"> <span class="alert">请输入中文姓名</span>
+    </div>
+    <button class="btn">点击获得焦点</button>
+
+    <script src="./js/jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script>
+
+      $(function(){
+        $(".name").focus(function(){
+          console.log("获得焦点。。。。");
+          $(".alert").css({"visibility":"visible",'color':'red'});
+        })            //函数返回值为函数与本身，所以可以通过后面加 .新函数的方法来链接新的函数:元素.函数一.函数二
+        .blur(function(){
+          console.log("失去焦点....");
+          $(".alert").css("visibility", "hidden");
+        });
+
+        $(".btn").click(function(){
+          $(".name").focus();
+        });
+      });
+
+
+
+
+
+
+      (function(){
+        console.log("helloworld");
+      })();
+    </script>
+  </body>
+</html>

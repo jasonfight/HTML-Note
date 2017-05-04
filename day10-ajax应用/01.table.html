@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+
+	  table {
+	  	width: 200px;
+	  	height: 200px;
+			/* NOTE: 用于列表清楚内在边框 */
+	  	border-collapse: collapse;
+	  	text-align: center;
+	  	box-shadow: 0px 0px 10px 1px green;	/* (x,y,模糊值，外延值，color，inset（如果添加，则为内部阴影） */
+	  }
+	  table,tr,td {
+	  	border:1px solid gray;
+	  }
+
+	  tr:hover {
+	  	/*background: yellow;*/
+	  }
+
+	</style>
+</head>
+<body>
+
+   <table>
+   	<tr>
+   		<td>1-1</td>
+   		<td>1-2</td>
+   		<td>1-3</td>
+   	</tr>
+   	<tr>
+   		<td>2-1</td>
+   		<td>2-2</td>
+   		<td>2-3</td>
+   	</tr>
+   	<tr>
+   		<td>3-1</td>
+   		<td>3-2</td>
+   		<td>3-3</td>
+   	</tr>
+   </table>
+
+   <script src="./js/jquery-3.0.0.min.js"></script>
+   <script>
+	 /*
+	 hover函数的使用：hover（function(){ 鼠标悬停时的效果},function(){鼠标移除后的效果 }）;
+	 */
+   	$(function(){
+   		$("table tr").hover(function(){
+   			$(this).css("backgroundColor", "yellow");
+   		}, function(){
+   			$(this).css("backgroundColor", "#fff");
+   		});
+   	});
+   </script>
+
+
+</body>
+</html>

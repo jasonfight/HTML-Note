@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+      <h4>onload事件:window.onload 是整个页面的所有资源都被加载完毕之后才会触发</h4>
+      <h4>$(document).ready(function(){}) 等价于  $(function(){})</h4>
+     <img src="./images/1.jpg" alt="">
+
+
+    <script src="./js/jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+       $(document).ready(function(){
+        console.log("jQuery 中的 ready被触发 。。。。");
+       });
+      // 完全等价于$(document).ready(function(){}); ======  $(function(){});
+
+      //表示注册了window上的onload事件
+      window.onload = function(){
+        //当触发了onload事件时，该函数会被调用
+        //onload 是整个页面上所有的资源都被加载完毕(包括图片等)之后才会触发。
+        console.log("onload ......");
+      }
+
+    </script>
+  </body>
+</html>

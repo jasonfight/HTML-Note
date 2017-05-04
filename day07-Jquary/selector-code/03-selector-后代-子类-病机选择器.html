@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery选择器</title>
+</head>
+
+<body>
+
+    <div id="divId" class="f">
+
+        <p> 这是div>p </p>
+        <h1>这是h1</h1>
+        <div>
+            <p> 这是div>div>p </p>
+        </div>
+
+    </div>
+
+    <h2>这是单独的h2标签</h2>
+
+    <script src="./js/jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        console.log($(".f  h1")); //后代选择器
+        console.log($("#divId  h1"));//后代选择器
+        // console.log($("*"));
+        console.log($("div h1,h2"));  //并集选择器
+
+        console.log($("div.f > p")); //子类选择器，只能匹配子类
+    </script>
+</body>
+
+</html>

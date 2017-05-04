@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn1">按钮1</button>
+
+     <form id="form" method="get" action="">
+     	 <input type="text" name="name">
+     	 <input type="submit" value="点击提交">
+     	 <input type="reset" value="点击重置">
+     </form>
+
+
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+
+    window.onload = function() {
+        //等整个页面的所有资源都加载完毕之后才能执行
+        var btn1 = document.getElementById("btn1");  // NOTE: document.getElementById('#id') 可以将该id的对象赋值给一个对象,然后可以对该对象进行操作.
+        console.log(btn1);
+        console.log($("#btn1")[0]); //将jQuery对象转换为原生DOM对象
+
+        //DOM0 进行单击时间的注册, 是使用dom0层级的方法来定义
+        btn1.onclick = function(event) {
+            console.log("click 111");
+        };
+        btn1.onclick = null;  // NOTE: 注销onclick事件,
+
+
+        var form = document.getElementById("form");
+        //添加在form元素上
+        form.onsubmit = function(){
+        	console.log("触发submit。。。。");
+        };
+
+        form.onreset = function(){
+        	console.log("触发 reset 。。。");
+        };
+    };
+
+    </script>
+</body>
+
+</html>

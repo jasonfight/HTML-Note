@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原生的click事件处理</title>
+</head>
+<body>
+
+<button id="btn">单击击触发</button>
+
+<script>
+    //获得一个元素对象
+	var  btn = document.getElementById("btn");
+   
+    //DOM2级的事件添加方式
+    function clickHandlerOne(){
+    	console.log("click one ....");
+    }
+
+    function clickHandlerTwo(){
+    	console.log("click two....");
+    }
+
+
+    //addEventListener removeEventListener 都是现代浏览器支持的方法，低版本的ie没有的
+    btn.addEventListener("click", clickHandlerOne, false);
+    btn.addEventListener("click", clickHandlerTwo, false);
+
+    btn.removeEventListener("click", clickHandlerOne, false);
+
+
+</script>
+	
+</body>
+</html>

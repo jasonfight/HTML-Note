@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>京东效果图</title>
+    <style media="screen">
+      .clearfix::before,
+      .clearfix::after{
+        content: '';
+        display: block;
+        height: 0;
+        line-height: 0;
+        clear: both;
+        visibility: : hidden;
+      }
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      ul{
+        list-style:none;
+      }
+      .nav{
+        position: absolute;
+        right: 0;
+        width: 900px;
+        height: 30px;
+        border: 1px solid gray;
+        border-bottom: none;
+      }
+      .nav li{
+        padding:0 10px;
+        line-height: 30px;
+        float: right;
+        position: relative;
+      }
+      .nav li:hover{
+        border: 1px solid red;
+        border-bottom: 2px solid white;;
+        z-index: 2;
+      }
+      .nav span{
+        float: right;
+        line-height: 30px;
+      }
+
+      .content{
+        width: 1920px;
+        height: 1000px;
+        border: 1px solid red;
+        position: relative;
+        top: 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <script src ='../js/jquery.min.js'> </script>
+      <div class="nav clearfix">
+        <ul>
+          <script>
+
+          </script>
+        </ul>
+
+      </div>
+
+      <div class="content"></div>
+      <script>
+      var list = ['服装1','服装2','服装3','服装4','服装5','服装6','服装7','服装8','服装9','服装10']
+      for (var i in list) {
+          console.log(i);
+          console.log(list[i]);
+          $('.nav ul').append('<li>' + list[i] + '</li>'+'<span>|</span>');
+      }
+          $('li').hover(function(){
+            // $(this).css({'border':'1px solid red','border-bottom':'2px yellow','z-index':'2'});
+            $('.content').append($(this).text());
+
+          },function(){
+            // $(this).css({'border':'none','z-index':'0'});
+            $('.content').html('');
+          })
+      </script>
+
+  </body>
+</html>

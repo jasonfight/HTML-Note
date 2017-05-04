@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>函数</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+       var a = 10, b = 20;
+       var c = 11, d = 21;
+
+       /*函数的定义
+         其中arg1, arg2 为该函数的参数
+       */
+       function sum(arg1, arg2){
+         console.log("arg1 = " + arg1);
+         console.log("arg2 = " + arg2);
+         console.log(arg1 + arg2);
+       }
+
+       //函数的调用
+       sum(a,b);//30
+       sum(c,d);//32;
+       sum(200,300);
+      //  sum();
+       sum(1,2,3,4,5,6);//只识别前两个参数.结果为3.
+
+      //使用赋值的方式声明函数时,需要建议在花括号后面加分号.
+      var minus = function(arg1, arg2){
+        console.log(arg1 - arg2);
+      };
+      minus(a, b);//-10
+
+
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>海浪</title>
+    <style media="screen">
+      body{
+          background: #1196ad;
+      }
+      img:nth-child(1){
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        animation: wave1 3s infinite linear 0s ;
+      }
+      img:nth-child(2){
+        position: absolute;
+        bottom: 100px;
+        animation:  wave2 3s infinite linear;
+      }
+      .sun{
+        width: 100px;
+        height: 100px;
+        background: white;
+        border-radius: 200px;
+        position: absolute;
+        top: 100px;
+        left: 200px;
+        background-image: radial-gradient(50px at center,white 50% , rgba(0,0,0,0.2), rgba(0,0,0,0.1));
+        /*border: 20px solid rgba(0,0,0,0.3)*/
+
+      }
+
+      @keyframes wave1 {
+      50%{
+        transform: translateY(-100px);
+      }
+      }
+      @keyframes wave2 {
+      50%{
+        transform: translateY(100px);
+      }
+      }
+
+    </style>
+  </head>
+  <body>
+    <img src="./image/img3/wave1.png" alt="" />
+    <img src="./image/img3/wave2.png" alt="" />
+    <div class="sun">
+
+    </div>
+  </body>
+</html>

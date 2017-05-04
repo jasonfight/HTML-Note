@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>函数绑定</title>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <script type="text/javascript">
+    var btn = document.getElementById("btn");
+    btn.data = 10;
+    var data = 20;
+
+    function handler() {
+        console.log(this.data);  //这里的this 相当于window
+    }
+
+    // btn.addEventListener("click", handler, false);//10
+
+    btn.addEventListener("click", function() {
+    	console.log(this);
+        handler();//20
+    }, false);
+
+
+    </script>
+</body>
+
+</html>

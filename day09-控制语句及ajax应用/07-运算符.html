@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>运算符</title>
+</head>
+<body>
+
+ <script>
+    var a = 10, b = 20;
+
+    var sum = a + b;
+    console.log("sum = " , sum);
+
+    var minus = a - b;
+    console.log("minus = " , minus);
+
+    var mul = a * b; 
+    console.log("mul = " , mul);
+
+    var div = a / b;//求最终的值， ******不是求商********
+    console.log("div = " , div);
+
+    var  yu = 10 % 20; //求余数
+    console.log("yu = " , yu);
+
+
+    var  c = 100;
+    c++;
+    c++;
+    c++;
+    console.log("c = ", c);
+
+    var d = 100;
+    d--;
+    d--;
+    d--;
+    console.log("d = ", d);
+
+    //10属于常量，不可变
+    // error console.log(10++);
+
+
+    var e = 100;
+    var ee = ++e;
+    console.log("e = ", e);
+    console.log("ee = ", ee);
+
+    var f = 100;
+    var ff = f++; //f++是一个表达式，它的值不一定是f的值。
+    console.log("f = ", f);
+    console.log("ff = ", ff);
+
+
+    var  g = 100;
+    // g = g + 2;
+    g += 2;//102
+    g -= 2;//100
+    g *= 2;//200
+    g /= 2;//100
+    g %= 10;//0
+    console.log("g = ", g);
+
+
+   /*
+    js中可以的对变量进行重复定义
+    var g = 200;
+    var g = 300;
+    console.log(g);
+    */
+
+    
+    var stus = ["lisi", "zhangsan", "wangwu", "zhaosi", 1200];
+    var len = stus.length;//获得数组的长度(元素的个数)；
+    console.log("len = ", len);
+
+	for( var i = 0; i < len ; i++){
+    	console.log(stus[i]);
+    }
+
+
+
+
+
+ </script>
+</body>
+</html>

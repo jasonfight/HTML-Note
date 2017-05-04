@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>undefined类型</title>
+  </head>
+  <body>
+    <div class="">
+      undefined类型: <br>
+      当只定义了一个变量,但是没有任何赋值的时候,该变量的类型为undefined. <br>
+      当没有定义一个变量,直接使用 typeof 进行检测时,显示为 undefined. <br>
+      如果一个变量没有定义,而直接使用 console.log()在控制台进行输出,则显示出错
+
+    </div>
+    <script type="text/javascript">
+       var a;
+       console.log( typeof a);//undefined
+       console.log(typeof b);//没有定义变量时，仍然出现undefined,如果没有定义而直接输出,则会报错.
+
+
+       var b = null;
+       console.log(b);//null
+       console.log(typeof b);//object null为对象.
+
+    </script>
+  </body>
+</html>

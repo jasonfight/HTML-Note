@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery对象和DOM对象的相互转换</title>
+</head>
+
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <script>
+    var btns = $("button");
+    console.log(btns);
+
+    console.log(btns.eq(0));
+
+
+    console.log("----------");
+
+    //jquery----》dom
+    //1.按照索引访问
+    console.log(btns[0]);
+    console.log(btns[1]);
+    console.log(btns[2]);
+
+    console.log("----------");
+    //2.使用get()方法
+    console.log(btns.get(0));
+    console.log(btns.get(1));
+    console.log(btns.get(2));
+
+
+    //dom ---> jquery  直接使用$()方法
+    var btnss = document.getElementsByTagName("button");
+    console.log(btnss);
+    console.log($(btnss));
+    console.log($(btnss[0]));
+    $(btnss[0]).css("color", "red");
+
+    </script>
+</body>
+
+</html>

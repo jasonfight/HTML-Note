@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>replace方法</title>
+</head>
+<body>
+
+
+	<!-- replace方法关键是 替换函数的返回值？？？？？                    -->
+	<script type="text/javascript">
+
+		//将 - 连接的属性名称转换为驼峰法命名？？？
+		var str =  "border-top-width";
+		var reg = /(-([a-z]))/g ;
+		str = str.replace(reg, function(match, p1, p2){
+			console.log("match = " + match);
+			console.log("p1 = " + p1);
+			console.log("p2 = " + p2);
+			return p2.toUpperCase();
+		});
+		console.log(str);
+
+
+         //将驼峰法命名的属性名称变为 - 连接
+		 var str1 =  "borderTopWidth";
+		 reg = /[A-Z]/g; //T
+		 str1 = str1.replace(reg, function(match){
+		 	return "-" + match.toLowerCase();
+		 });
+		console.log(str1);
+
+
+
+        //可以使用内置的符号替换
+		var name = "zhao si";
+		reg = /([a-z]+) ([a-z]+)/;
+		name = name.replace(reg, "$2 $1");
+		console.log(name);
+
+
+
+
+	</script>
+</body>
+</html>

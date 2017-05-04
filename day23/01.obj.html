@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>对象的创建</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    /**********************************************/
+    // 1.    使用字面量，定义对象
+    var obj = {}; // 空对象，没有自己的属性和方法
+    console.log(typeof obj);
+
+    //添加属性和方法
+    obj.name = "lisi";
+    obj.age = 10;
+    obj.say = function(str) {
+        console.log(str);
+    };
+    console.log(obj);
+
+    //访问属性，调用方法
+    console.log(obj.name)
+    console.log(obj.age)
+    obj.say("hello world!");
+    obj.say("world hello!");
+
+
+    /**********************************************/
+    //2.   构造函数方式,生成对象
+    function Person(name, age) {
+
+        //那个对象调用Person，this就指向那个对象
+        console.log(this);
+
+        this.name = name;
+        this.age = age;
+        this.say = function(str) {
+            console.log("say: " + str);
+        };
+    }
+
+    /*
+    //直接在全局上调用 Person函数，所有添加的属性和方法都属于window对象的，也就是全局属性和方法
+
+    Person("lisi", 22);
+    console.log(window.name);
+    console.log(window.age);
+    window.say("hehe");
+
+
+    say("hello----");
+    console.log(name);
+    console.log(age);
+
+    var  value = 1000;
+    console.log(window.value);
+    */
+
+
+    var one = new Person("zhangsan", 18);
+    console.log(one);
+
+    var two = new Person("wangwu", 28);
+    console.log(two);
+
+
+
+
+    /**********************************************/
+    //3. 使用原型模式创建对象
+    //   原型作用域链？？？？
+
+    function Person() {}
+    Person.prototype.name = "lisi";
+    Person.prototype.age = 12;
+
+    one = new Person();
+    one.name = "zhangsan";
+    console.log(one);
+
+    two = new Person();
+    two.name = "wangwu";
+    console.log(two);
+
+
+    /**********************************************/
+    // 4. 构造函数模式和原型模式结合
+
+    function Stu(name, age) {
+
+    	//属性被封装到构造函数中
+        this.name = name;
+        this.age = age;
+    }
+
+    Stu.prototype.say = function(str){
+    	console.log("say: " + str);
+    };
+
+    Stu.prototype.eat = function(str){
+    	console.log("eat: " + str);
+    };
+
+    one = new Stu("liwu", 20);
+    console.log(one);
+    one.say("wo shi one ");
+    one.eat("wdudongshuo shi");
+
+    two = new Stu("liliu", 30);
+    console.log(two);
+    one.say("wo shi two");
+
+
+
+    </script>
+</body>
+
+</html>

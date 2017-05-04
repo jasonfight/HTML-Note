@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul li {
+            border: 5px solid red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="f">测试使用的元素</div>
+
+<ul>
+    <li>11111</li>
+    <li>11111</li>
+    <li>11111</li>
+    <li>11111</li>
+</ul>
+
+<script src="./jquery-3.0.0.min.js"></script>
+<script src="./jquery.setcolor.js"></script>
+<script src="./jquery.sum.js"></script>
+
+<script>
+
+    $("#f").setTextColor("blue");
+    $("#f").setBackgroundColor("yellow");
+    $("ul li").setTextColor("pink");
+    $("ul li").setBorderColor("purple");
+
+    console.log($.sum(1,2,3,4,5));
+    console.log($.mul(1,2,3,4,5));
+
+</script>
+
+</body>
+</html>

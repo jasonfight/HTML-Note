@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文件</title>
+</head>
+<body>
+
+<input id="files" type="file"  multiple>
+
+<script type="text/javascript">
+	var f = document.querySelector("#files");
+
+	f.onchange = function(event){
+		for (var i = 0; i < f.files.length; i++){
+			console.log(f.files[i].name  +  "     " + parseInt(f.files[i].size/1024) + "KB");
+		}
+
+		var file = f.files[0];
+
+		var reader = new FileReader();
+		reader.addEventListener("load", function(){
+
+			//只有读取完毕之后，才可以访问result
+			console.log(reader.result);
+		}, false);
+
+		reader.readAsText(file);
+
+	}
+
+
+
+
+</script>
+	
+</body>
+</html>

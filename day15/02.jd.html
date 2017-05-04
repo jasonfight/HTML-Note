@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jd轮播图</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        list-style: none
+    }
+
+    .box {
+        width: 790px;
+        height: 340px;
+        margin: auto;
+        position: relative;
+    }
+
+    .box > img {
+        display: none;
+    }
+
+    .right {
+        width: 31px;
+        height: 60px;
+        background: url("./jd/right.jpg");
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img style="display: inline;" src="./jd/58afea9fN1c9025e3.jpg">
+        <img src="./jd/58b78909N296393be.jpg">
+        <img src="./jd/58b7af30Nf1d9fbd2.jpg">
+        <img src="./jd/58b7b01cNa7a93fd8.jpg">
+        <img src="./jd/58b7f027N270db1b2.jpg">
+        <div class="right"></div>
+    </div>
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var clickNum = 0;
+        $(".right").click(function(event) {
+            clickNum++;
+            //判断是否点击的次数越界
+            if (clickNum > 4) {
+                clickNum = 0;
+            }
+            $(".box > img").eq(clickNum).fadeIn(500).siblings("img").hide();//siblings  括号内元素的所有兄弟元素
+        });
+    });
+    </script>
+</body>
+
+</html>

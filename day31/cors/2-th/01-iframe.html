@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window.location.hash</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .f {
+            width: 1000px;
+            height: 300px;
+            margin: 100px auto;
+            border: 1px solid #a94442;
+        }
+
+        #frame {
+            width: 100%;
+            height: 100%;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1 id="h">我是源窗口</h1>
+
+<div class="f">
+    <iframe id="frame" src="./test-iframe.html" frameborder="0"></iframe>
+</div>
+
+<script>
+
+    window.onload  = function () {
+        var h = document.querySelector("#h");
+        var frame = document.querySelector("#frame");
+
+
+        //frame.contentWindow是嵌套页面的window
+        frame.contentWindow.document.querySelector("h1").style.color = 'red';
+
+
+        var originUrl = frame.src;
+
+        var num = 0;
+        
+        setInterval(function () {
+            //改变子窗口的hash,通过hash传递数据
+            frame.contentWindow.location.href = originUrl + '#' + num++;
+        }, 1000);
+
+        //监听自己的hash的变化
+        window.onhashchange = function () {
+            h.innerHTML = window.location.hash;
+        };
+
+    };
+</script>
+
+
+</body>
+</html>

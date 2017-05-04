@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> 布尔类型</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+      // 数字:非0为真,0为假.
+      // 字符串:非空为真,空字符为假.
+       var a = 10;//非0数字,为true
+       //直接转换为bool类型
+       console.log(Boolean(a));//true
+
+       var b = "hello";//非空字符,为true
+       console.log(Boolean(b)); //true
+
+       var c = 0;//0为false
+       console.log(Boolean(c));//false
+
+       var d = "";   //空字符,为false
+       console.log(Boolean(d));//false
+
+       //将a隐式转换为boolean类型
+       if (a){
+         console.log("is true ...");
+       }
+
+    </script>
+
+  </body>
+</html>

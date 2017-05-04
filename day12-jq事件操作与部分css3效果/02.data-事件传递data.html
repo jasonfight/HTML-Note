@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>event 传递数据 data</title>
+</head>
+
+<body>
+    <button id="btn">点击累加</button>
+    <h1>数量为: <span id="show-num">0</span></h1>
+
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <script>
+    $(function() {
+        var num = 0;
+        // NOTE: on 的第二个参数为data,在函数中使用时 event.data 即为传递的data
+        $("#btn").on("click", 1 , function(event) {
+            num += event.data;
+            $("#show-num").html(num);
+        });
+    });
+    </script>
+</body>
+
+</html>

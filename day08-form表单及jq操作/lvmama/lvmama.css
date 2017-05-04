@@ -1,0 +1,155 @@
+@charset "UTF-8";
+body{font-size: 12px;color: #888888;}
+*{  margin: 0;  padding:0;}
+a{ text-decoration: none; color:black}
+ul{list-style: none;}
+.clear{ clear: both;}
+.red{color: red;}
+.login_top{
+  width: 1000px;
+  height: 60px;
+  padding-top: 15px;
+  border-bottom: 1px solid  gray;
+  margin: 0 auto;
+}
+.login_logo {
+  /*margin-top: -5px;*/
+  width: 285px;
+  height: 57px;
+  float: left;
+  font-size: 22px;
+  color: #707070;
+  background: url(lv_logo.png) no-repeat;
+}
+.login_logo .text {
+    position: relative;
+    top: 6px;
+    font-weight: normal;
+}
+.login_logo a {
+    color: #666;
+    width: 175px;
+    height: 57px;
+    display: inline-block;
+}
+.login_logo a.text {
+    width: auto;
+    height: 37px;
+    line-height: 37px;
+    text-indent: 10px;
+    margin-left: 4px;
+    border-left: 1px solid #CCCCCC;
+    font-size: 22px;
+    color: #666666;
+    font-weight: normal;
+    top: -10px;
+}
+.login_hotline {
+    position: relative;
+    top: 6px;
+    float: right;
+    display: block;
+    width: 175px;
+    overflow: hidden;
+    padding-top: 15px;
+    font: normal 20px/34px "Arial", "PingFang SC", "Microsoft Yahei", "SimSun", sans-serif;
+    color: #dd3388;
+    background: url(./head_call_bg.gif) no-repeat right top;
+}
+
+.register_center{
+  margin: 0 auto;
+  width: 1000px;
+  height: 750px;
+  border: 1px solid red;
+  position: relative;
+}
+.register_center .left{
+  width: 710px;
+  height: 548px;
+  border: 1px solid green;
+  /*display: inline-block;*/
+  float: left;
+}
+.register_center .left li{
+  margin-left: 50px;
+  width:700px;
+  height: 34px;
+  /*border: 1px solid black;*/
+  margin-bottom: 18px;
+  color: #333;
+  line-height: 34px;
+}
+.register_center .left li .mobile_num{
+  width: 230px;
+  height: 30px;
+  margin-left: 6px;
+  visibility:
+}
+.left li span{
+   /*display: none;*/
+  visibility: hidden;
+}
+.register_center .left li .verifycode{
+  width: 128px;
+  height: 28px;
+  margin-left: 6px;
+  /*display: inline-block;*/
+}
+.register_center .left li .mobilecode{
+  width: 128px;
+  height: 28px;
+  margin-left: 6px;
+  /*display: inline-block;*/
+}
+
+.register_center .left li .password{
+  width: 238px;
+  height: 28px;
+  margin-left: 6px;
+}
+.register_center .left li a{
+  color: #09c;
+}
+.register_cente
+r .left li a:hover{
+  color: #f80;
+  text-decoration: underline;
+}
+.register_center .left .position{
+  /*position: absolute;;*/
+  position:relative;
+  left: 60px;
+}
+.register_center .left .register_submit {
+    display: inline-block;
+    outline: none;
+    width: 250px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 18px;
+    border-radius: 2px;
+    color: #fff;
+    text-align: center;
+    background: #e38;
+}
+
+
+
+.register_center .right {
+  width: 270px;
+  height: 490px;
+  /*background: red;*/
+  /*display: inline-block;*/
+  float: right;
+}
+.register_center .right p{
+  /*background: url(./regist_ad.jpg)*/
+}
+.register_center .bottom{
+  position: relative;
+  margin: 0 auto;
+  width: 1000px;
+  height: 100px;
+  background: black;
+}

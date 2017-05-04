@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>扑克</title>
+    <style media="screen">
+      body{
+        background: lightgreen;
+      }
+      *{
+        margin: 0;
+        height: 0;
+      }
+      .f{
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+        margin-top: 300px;
+        /*background: white;*/
+      }
+      img{
+        width: 167px;
+        height: 310px;
+        position: absolute;
+        transform-origin: left top;
+        transition: all 0.5s linear;
+      }
+      div:hover img:nth-child(1){
+        transform: rotate(0deg);
+      }
+
+      div:hover img:nth-child(2){
+        transform: rotate(60deg);
+      }
+
+      div:hover img:nth-child(3){
+        transform: rotate(120deg);
+      }
+      div:hover img:nth-child(4){
+        transform: rotate(180deg);
+      }
+      div:hover img:nth-child(5){
+        transform: rotate(240deg);
+      }
+      div:hover img:nth-child(6){
+        transform: rotate(300deg);
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="f">
+        <img src="./image/img1/pk1.png" alt="" />
+        <img src="./image/img1/pk1.png" alt="" />
+        <img src="./image/img1/pk1.png" alt="" />
+        <img src="./image/img1/pk1.png" alt="" />
+        <img src="./image/img1/pk1.png" alt="" />
+        <img src="./image/img1/pk1.png" alt="" />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建ajax对象</title>
+</head>
+<body>
+	
+
+	<script>
+	/*
+		// 兼容低版本ie浏览器的代码,对于现代浏览器可以省略部分代码
+		function createXHR(){
+			if (typeof XMLHttpRequest != "undefined"){
+				return new XMLHttpRequest();
+			} else if (typeof ActiveXObject != "undefined"){
+				   if (typeof arguments.callee.activeXString != "string"){
+					var versions = [ "MSXML2.XMLHttp.6.0", "MSXML2.XMLHttp.3.0",
+					"MSXML2.XMLHttp"], i, len;
+					for (i=0,len=versions.length; i < len; i++){
+						try {
+							new ActiveXObject(versions[i]);
+							arguments.callee.activeXString = versions[i];
+							break;
+						} catch (ex){
+                    //跳过
+                		}
+            		}
+        	     }
+        	     return new ActiveXObject(arguments.callee.activeXString);
+    		}else {
+    			throw new Error("No XHR object available.");
+    		}
+		}
+        //函数的返回值就是一个可以进行ajax操作对象
+        var xhr =  createXHR();
+        */
+
+      
+
+       
+        //编码和解码的函数
+       /* var url = "http://127.0.0.1/test.php?name=lisi &age=12&#$=10";
+        var encodeURL = encodeURIComponent(url);
+        console.log(encodeURL);
+
+        var decodeURL = decodeURIComponent(encodeURL);
+        console.log(decodeURL);
+
+
+        function addURLParam(url, name, value){
+        	url += url.indexOf('?') == -1 ? '?' : '&';
+        	url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
+        	return url;
+        }
+*/
+
+
+
+  
+        //直接创建一个xhr对象
+        var xhr = new XMLHttpRequest();
+
+
+    //接收服务端的响应
+    // 对xhr注册一个状态改变的处理函数
+      xhr.onreadystatechange = function(){
+        //请求数据完成
+        if (xhr.readyState == 4){
+               //要求http状态码必须是2xx
+                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+                 alert(xhr.responseText);
+                } else {
+                 alert("response error !");
+                }
+            }
+        };
+
+
+        //调用open方法是，准备发起一次http请求
+        xhr.open("get", "./test.php?name=lisi&passwd=123456", true);
+        //真正发送一次请求
+        xhr.send(null);//send可以不发送数据，但是必须调用
+        
+
+</script>
+</body>
+</html>

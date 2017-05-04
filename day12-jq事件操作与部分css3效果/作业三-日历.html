@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>日历</title>
+    <style media="screen">
+      *{
+        margin: 0;
+        padding: 0;
+      }
+        .bg{
+          margin: 0 auto;
+          margin-top: 100px;
+          width: 540px;
+          height: 370px;
+          background: url(./images/calendar.jpg);
+          position: relative;
+        }
+        .bg .calender{
+          width: 400px;
+          height: 300px;
+          /*background: red;*/
+          position: absolute;;
+          bottom: 0px;
+          padding: 4px;
+        }
+        table{
+          width: 400px;
+          height: 300px;
+          border-collapse: collapse;
+        }
+        tr{
+          border-bottom:  1px solid black;
+          text-align: center;
+        }
+        tr td:nth-child(6)>a,tr td:nth-child(7)>a{
+          color: red ;
+        }
+        #other>a {
+          color: black !important;
+        }
+        a{
+          text-decoration: none;
+          color: black;
+          text-align: center;
+          display: inline-block;
+          box-sizing: border-box;
+          width: 50px;
+          height: 50px;
+          margin-top: 5px;
+        }
+        a p{
+          font-size: 12px;
+        }
+        a:hover{
+          border: 3px solid yellow;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="bg">
+      <div class="calender">
+        <table>
+          <tr>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+          </tr>
+          <tr>
+
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+          </tr>
+          <tr>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+          </tr>
+          <tr>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+          </tr>
+          <tr style="border-bottom:none;">
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#"><span>19</spaan><p>初九</p></a></td>
+            <td><a href="#" id="other"><span>19</spaan><p>初九</p></a></td>
+          </tr>
+        </table>
+        <!-- <script src='./js/jquery-3.0.0.min.js'> </script>
+        <script>
+          $(function(){
+            $('td').hover(function(){
+              $(this).$('a').css('background','yellow');
+            },function(){
+              $(this).$('a').css('background','white');
+            })
+          });
+        </script> -->
+      </div>
+    </div>
+  </body>
+</html>

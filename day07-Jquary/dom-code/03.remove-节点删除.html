@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>元素的删除 remove  empty detach </title>
+  </head>
+  <body>
+
+    <div class="one">
+      <p>one中p元素1111111</p>
+    </div>
+
+    <div class="two">
+      <p>two中的p</p>
+    </div>
+
+    <div class="three">
+      <p>three中的p</p>
+    </div>
+
+
+
+    <script src="./js/jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $(".one p").remove();//删除整个匹配的节点，删除节点本身
+          $(".two p").empty();//清空节点内容.
+          var deleteP = $(".three p").detach();//删除节点，但是会保存删除的节点为一个对象,在需要时可以再次调用
+          console.log(deleteP);
+          $(".three").append(deleteP);//重新将删除的节点插入
+        });
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+
+<body>
+    <button>按钮0</button>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+    function fun1() {
+        var a = 10;
+        return function() {
+            //使用了同一个作用域中的变量a,因此变量a会常驻于内存，不会消失.
+            console.log(a);
+        };
+    }
+
+    var ret = fun1();
+    console.log(ret);
+
+    //访问其他函数的私有变量
+    ret();
+
+    /********************************************************/
+
+    //可以动态的生成一些东西
+    function fun2(arg) {
+        return function() {
+            console.log(arg);
+        };
+    }
+
+    var one = fun2(10);
+    var two = fun2(20);
+    one();
+    two();
+
+
+
+    /********************************************************/
+
+
+    function fun3() {
+        var a = 10;
+        return function() {
+            for (var i = 0; i < 5; i++) {
+                a++;
+            }
+            console.log(a);
+        };
+    }
+
+
+    //one和two之间没有任何关联，都拥有自己的a
+    one = fun3();
+    one(); //15
+    one(); //20
+
+
+
+    two = fun3();
+    two(); //15
+    two(); //20
+
+    /********************************************************/
+
+    //减少全局变量的定义，可以减少命名空间的污染
+    function fun4() {
+        var count = 0;
+        return function() {
+            count++;
+            return count;
+        }
+    }
+
+    ret = fun4();
+    //每调用一次进行计数加1
+    console.log(ret());
+    console.log(ret());
+    console.log(ret());
+    console.log(ret());
+    console.log(ret());
+
+    /********************************************************/
+    function fun5() {
+
+        var btns = $("button");
+        for (var i = 0; i < btns.length; i++) {
+
+            (function(i) {
+            	console.log("i = ", i);
+                btns.eq(i).click(function() {
+                    console.log(i);
+                });
+            })(i);
+        }
+    }
+
+    fun5();
+    </script>
+</body>
+
+</html>

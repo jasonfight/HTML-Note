@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>drag 拖拽</title>
+	<style type="text/css">
+
+	.f {
+		width: 200px;
+		height: 200px;
+		border: 1px solid red;
+	}
+
+	</style>
+</head>
+<body>
+
+
+
+<img id="img" draggable="true" src="./image/zhaosi.jpg">
+
+<div id="box" class="f"></div>
+<div class="">
+	在拖放开始时,使用dataTransfer.setData('name','lisi')在子元素中添加数据. <br>
+	在拖放结束 drop 时, 父元素可以通过dataTransfer.getData('name')得到数据.
+</div>
+<script type="text/javascript">
+
+	var box = document.querySelector("#box");
+	var img = document.querySelector("#img");
+
+	img.addEventListener("dragstart", function(event){
+		console.log("dragstart ...");
+		event.dataTransfer.setData("name", "lisi");        //设置要传递的数据
+	}, false);
+
+	box.addEventListener("dragover", function(event){
+		event.preventDefault();
+	}, false);
+
+
+	box.addEventListener("drop", function(event){
+		box.appendChild(img);//完成拖放
+		console.log(event.dataTransfer.getData("name"));	//获得传递过来的数据
+	}, false);
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+
+<script src="./js/jquery-3.0.0.min.js"></script>
+<script>
+
+ /*
+  var str = "<stu><name>lisi</name><passwd>123456</passwd></stu>";
+  var xmlDoc = $.parseXML(str);
+  console.log($(xmlDoc).find("name").text());
+  */
+
+
+  //需要传递xml数据，需要添加processData: false。
+
+$.ajax({
+		method: "GET",
+		url: "./login.php",
+		// data: {name: "lisi", passwd: "123456"}, //jQuery默认帮你转成：name=lisi&passwd=123
+		data: str,
+		processData: false,
+		}).done(function(data, textStatus, jqXHR){
+			console.log(jqXHR.status);
+			console.log(data);
+		}).fail(function(jqXHR, textStatus, errorThrown){
+			console.log(jqXHR.status);
+			console.log(errorThrown);
+		});
+
+	</script>
+	</body>
+</html>

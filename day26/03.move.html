@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>利用offset实现动画</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		#f {
+			width: 50px;
+			height: 50px;
+			background: yellow;
+			position: absolute;
+			left: 0;
+			top: 80px;
+		}
+	</style>
+</head>
+<body>
+
+<button id="btn1">点击移动到800像素位置</button>
+<button id="btn2">点击回到初始0位置</button>
+
+<div id="f"></div>
+
+
+<script src="./move.js" ></script>
+<script type="text/javascript">
+	var btn1 = document.getElementById("btn1");
+	var btn2 = document.getElementById("btn2");
+	var f = document.getElementById("f");
+
+
+	var timer = null;
+
+	btn1.onclick = function(){
+		clearTimeout(timer);
+		timer = setInterval(function(){
+			f.style.left = f.offsetLeft + 10 + "px";
+			if (f.offsetLeft >= 800){
+				clearInterval(timer);
+			}
+		}, 10);
+	};
+
+
+	btn2.onclick = function(){
+		clearTimeout(timer);
+		timer = setInterval(function(){
+			f.style.left = f.offsetLeft - 10 + "px";
+			if (f.offsetLeft <= 0) {
+				clearInterval(timer);
+			}
+		},30);
+	};
+
+
+
+    //  btn1.onclick = function(){
+    //  	// move(f, 800);
+    //  	easeIn(f, 800);
+    //  };
+		 //
+    //  btn2.onclick = function(){
+    //  	// move(f, 0);
+    //  	easeIn(f, 0);
+    //  };
+
+
+
+
+</script>
+
+</body>
+</html>

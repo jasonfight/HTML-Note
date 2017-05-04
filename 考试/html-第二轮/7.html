@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>调整字符排列方式</title>
+  </head>
+  <body>
+    <script>
+        var str = 'name=lisi&age=10&hobby=swim&hobby=basketball&score=80&hobby=football'
+        var obj = {};
+        var arr1 = str.split('&');//["name=lisi", "age=10", "hobby=swim", "hobby=basketball", "score=80", "hobby=football"]
+        var arr2 = [];
+        var result = '';
+        var reg =/hobby=(.*)/
+        //使用for循环,数组中的元素再分割为两部分,并通过键值对的形式保存到对象obj中.
+        //得到Object {name: "lisi", age: "10", hobby: "swim,basketball,football", score: "80"}
+        for (var i in arr1){
+              console.log(arr1[i])
+              arr2 = arr1[i].split('=');
+              console.log(arr2);
+              if (!obj[arr2[0]]) {      //如果键不存在,则创建键值对
+                obj[arr2[0]] = arr2[1];
+              }else{
+                obj[arr2[0]]= obj[arr2[0]] + ',' + arr2[1];  //如果键存在,则将值进行拼接.
+              }
+          }
+          console.log(obj);
+          //将对象obj进行拆分与重组,组成最终的字符串.
+          //得到name=lisi&age=10&hobby=swim,basketball,football&score=80&
+          for(var j in obj){
+            str = j+'='+obj[j]+'&';   //以  键 + 值 + &  的形式保存为字符串.
+            result += str
+          }
+          result = result.slice(0,-1);   //去掉最后一个 "&";
+          console.log(result);//name=lisi&age=10&hobby=swim,basketball,football&score=80
+    </script>
+  </body>
+</html>

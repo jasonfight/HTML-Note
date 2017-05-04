@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+/*
+  继承
+*/
+
+h1 {
+	color: red;
+	font-size: 50px;
+}
+
+.box {
+	padding: 10px;
+}
+
+.box-1 {
+	margin-left: 20px;
+}
+
+.class-1 {
+	@extend h1;
+	@extend .box; //继承
+	background: yellow;
+}
+
+
+
+/* % 占位器，可以减小css文件大小*/ 
+%test {
+	color: red;
+	margin: auto;
+	background: yellow;
+}
+
+.class-2 {
+	@extend %test;
+	font-size: 20px;
+}

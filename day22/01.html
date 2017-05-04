@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+    // 'use strict';
+
+    var num = 0;
+    var timer = null;
+
+    function outPut() {
+        console.log("num = ", num);
+        num++;
+        if (num == 10) {
+        	return;
+        }
+        setTimeout(outPut, 1000);
+        // setTimeout(arguments.callee, 1000);
+    }
+    outPut(10);
+
+
+/*    setTimeout(function(){
+    	console.log("num = ", num);
+        num++;
+        if (num == 10) {
+        	return;
+        }
+
+        //arguments.callee在严格模式下不允许使用。。。。
+        setTimeout(arguments.callee, 1000);
+    }, 1000);
+*/
+
+
+
+
+
+    </script>
+</body>
+
+</html>

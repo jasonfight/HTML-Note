@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>setInterval定时器</title>
+</head>
+
+<body>
+    <button id="start">点击开始定时器</button>
+    <button id="end">点击取消定时器</button>
+    <button id="add">点击</button>
+    <script>
+    function fun() {
+        console.log("hello");
+        // for (var i = 0; i < 1000000; i++) {
+        //     console.log("i = ", i);
+        // }
+    }
+
+    //先获取对象.
+    var end = document.getElementById("end");
+    var start = document.getElementById("start");
+    //定义一个全局变量,用来供计时函数的开始和结束函数使用.
+    var si;
+
+      //注册计时点击事件.
+    start.onclick = function() {
+        si = setInterval(fun, 500);
+        console.log(si);
+    }
+    //解除计时点击事件
+    end.onclick = function() {
+        clearInterval(si);
+    }
+
+
+
+    var add = document.getElementById("add");
+    add.onclick = function() {
+        console.log("add click ....");
+    }
+    </script>
+</body>
+
+</html>

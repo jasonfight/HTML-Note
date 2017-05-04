@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>对象的创建</title>
+  </head>
+  <body>
+    <script>
+    function CreateDog(name,color){
+      this.name = name;
+      this.color = color;
+    };
+    //继承了 Creatdog的属性.
+    CreateDog.prototype.swiming = function(){
+      console.log(this.color+'的'+this.name + '在游泳');
+    };
+     var dog = new CreateDog('二哈','黑白');
+     dog.swiming();
+     console.log(dog instanceof CreateDog);
+
+     function Animal(name){
+       this.name = name;
+     };
+     Animal.prototype.say = function(){
+       console.log('wuwuwwuwuwuwuwuuwwuwu.......');
+     };
+     var erha = new Animal('二哈');
+     erha.say();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 1226px;
+            height: 460px;
+            margin: 50px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .image {
+            height: 460px;
+            width: 400%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .image li {
+            float: left;
+        }
+
+        .point {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .point span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-right: 5px;
+            background: gray;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .point span.current {
+            background: #fff;
+        }
+
+    </style>
+</head>
+<body>
+
+   <div class="box" id="box-id">
+       <ul class="image" id="img-id">
+           <li><a href="#"><img src="./mi/1.jpg" alt=""></a></li>
+           <li><a href="#"><img src="./mi/2.jpg" alt=""></a></li>
+           <li><a href="#"><img src="./mi/3.jpg" alt=""></a></li>
+           <li><a href="#"><img src="./mi/4.jpg" alt=""></a></li>
+       </ul>
+       <div class="point" id="point-id"></div>
+   </div>
+
+
+   <script src="./js/jquery-3.0.0.min.js" ></script>
+   <script src="./js/move.js" ></script>
+
+   <script type="text/javascript">
+       
+       var box = $("#box-id");
+
+       var boxWidth = box.width();//1226px
+
+       var ul = $("#img-id");//jQuery对象
+       var lis = ul.children();
+       var point = $("#point-id");
+
+       var timer = null;
+       var ulIndex = spanIndex = 0;//初始的索引值
+
+       for (var i = 0; i < lis.length; i++){
+           $("<span>").appendTo(point);
+       }
+
+       var spans = point.children();
+       spans.eq(0).addClass("current");
+
+       for (var i = 0; i < spans.length; i++){
+         spans.eq(i).on("click", i, function(event){
+
+            //播放必须的两个操作，偏移，设置小圆点
+            move(ul[0], -event.data * boxWidth);
+            spans.eq(event.data).addClass("current").siblings('span').removeClass("current");
+
+            //保证全局的索引不断变化
+            ulIndex = spanIndex = event.data;
+            console.log(spanIndex);
+         });
+       }
+
+
+       timer = setInterval(autoPlay,2000);
+       function autoPlay(){
+           ulIndex++;
+           if (ulIndex > spans.length - 1){
+               ulIndex = 0;
+           }
+
+           //ul[0]是一个DOM对象
+           move(ul[0], -ulIndex * boxWidth);
+
+           spanIndex++;
+           if (spanIndex > spans.length - 1){
+               spanIndex = 0;
+           }
+            spans.eq(spanIndex).addClass("current").siblings('span').removeClass("current");
+       }
+
+
+     box.hover(function(){
+        clearInterval(timer);
+     }, function(){
+        timer = setInterval(autoPlay, 2000);
+     });
+
+
+
+   </script>
+
+
+
+
+</body>
+</html>

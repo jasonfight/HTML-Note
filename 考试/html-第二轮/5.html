@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>求字符串的长度(汉字占两个字符)</title>
+  </head>
+  <body>
+      <script>
+        var str = '你好ni,,我nn';
+        var reg = /[\u4E00-\u9FA5]/g;
+        var length = str.length + str.match(reg).length;
+        console.log(length);
+      </script>
+  </body>
+</html>

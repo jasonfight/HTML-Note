@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax登录</title>
+	<style>
+
+	  .hint {
+	    	color: red;
+	    	visibility: hidden;
+	    }
+		.btn {
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+
+ <div class="login">
+    <p class="hint">用户名或者密码不能为空!</p>
+
+ 	用户名： <input class="name" type="text" placeholder="邮箱/手机"><br><br>
+ 	密 &nbsp;&nbsp; 码： <input class="passwd" type="password" placeholder="密码"> <br><br>
+
+ 	<button class="btn">登录</button>
+ </div>
+
+ <script src="./js/jquery-3.0.0.min.js"></script>
+ <script>
+    $(function(){
+    	$(".btn").click(function(){
+    		var name = $(".name").val();  //获得输入框的name值
+    		var  passwd = $(".passwd").val(); //获得passd的值
+    		// console.log("name = ", name);
+    		// console.log("passwd = ", passwd);
+    		/*
+    		判断用户名和密码是否不为空?
+    		为空：提示不能为空，数据不能提交
+    		不为空： 数据正常发送给后台处理程序
+    		*/
+    		if ( (name != "")  && (passwd != "")){
+    			/*数据正常提交*/
+    			var xhr = new XMLHttpRequest();  					// NOTE: 第一步,先生成一个对象
+                xhr.onreadystatechange = function(){	// NOTE: 响应服务器发回的数据,写在前面,用于监听;
+                	if (xhr.readyState == 4){
+                		if (xhr.status >= 200 && xhr.status < 300){
+                			//判断后台的响应数据
+                			if (xhr.responseText == "OK"){
+                				alert("登录成功");
+                			} else {
+                				alert("用户名和密码错误！");
+                			}
+                		} else {
+                        alert("响应失败！！！！");
+                		}
+                	}
+                };
+    			xhr.open("post", "./login.php", true); 			// NOTE: 第二步:预发送,确定上传数据方式,后台处理程序,及是否异步处理(异步请求)
+    			xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    			var data = "name=" + name + "&passwd=" + passwd;	// NOTE: 第三步:发送数据
+             	 xhr.send(data);
+              	}
+								else {
+    			/*数据不完整，不能提交*/
+    			$(".hint").css("visibility", "visible");
+    		}
+    	});
+    });
+ </script>
+</body>
+</html>

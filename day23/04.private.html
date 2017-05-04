@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>私有变量</title>
+</head>
+<body>
+
+
+  <script type="text/javascript">
+  	
+  	function F(name,age, value){
+  		 //私有变量，可以闭包来访问
+  		var count = value;
+
+         //私有方法
+  	    var say = function(str){
+  			console.log("say: " + str);
+  		} 
+
+  		this.name = name;
+  		this.age = age;
+  		this.showCount = function(){
+  			console.log(count);
+  		};
+
+  		this.addCount = function(){
+  			count++;
+  		};
+
+  		this.say = function(str){
+  			return say(str);
+  		}
+  	}
+
+
+    var one = new F("lisi", 10, 0);
+    console.log(one.name);
+    console.log(one.count);//undefined
+    one.showCount();
+    one.addCount();
+    one.showCount();
+
+    var two = new F("zhang", 33, 100);
+    two.showCount();
+
+    two.say("hello");
+
+
+
+  </script>
+	
+</body>
+</html>

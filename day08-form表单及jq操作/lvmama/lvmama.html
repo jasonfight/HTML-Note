@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>驴妈妈注册页 </title>
+    <link rel="stylesheet" href="./lvmama.css" media="screen" title="no title">
+  </head>
+  <body>
+  <div class="login_top">
+    <span class="login_logo">
+      <a href="http://www.lvmama.com"></a>
+      <a href="#" class="text">免费注册</a>
+    </span>
+    <span class="login_hotline">1010-6060</span>
+  </div>
+  <div class="register_center">
+    <div class="left">.
+      <form  action="#" method="get">
+        <ul>
+            <li><i class="red">*</i>您的手机号
+              <input  class="mobile_num" type="text" name="mobile">
+              <span>请填写您真实的手机号码,作为驴妈妈的登录账号</span>
+            </li>
+            <li>
+              <i class="red">*</i>图形验证码
+              <input class="verifycode" type="text" name="verifycode" value="请填写计算结果或验证码">
+              <img src="./yanzheng.jpg" alt="" />
+              <span>请输入验证码</span>
+            </li>
+            <li>
+                <i class="red">*</i>手机验证码
+                <input class="mobilecode" type="text" name="name" value="">
+                <button type="button" name="button">获取验证码</button>
+            </li>
+            <li>
+                <i class="red">*</i>设置密码
+                <input  class="password" type="password" name="password" value="">
+                <span>密码必须为8~16位数字和字母组成</span>
+              </li>
+            <li>
+                <i class="red">*</i>确认密码
+                <input  class="password"type="password" name="name" value="">
+                <span>请再次输入密码</span>
+            </li>
+            <li class="position">
+              <input type="checkbox" name="checkbox" value="">
+              我已同意并接受
+              <a  href="#">《驴妈妈旅游网会员服务条款》</a>
+            </li>
+            <li class="register_submit position">
+                同意服务条款并注册
+            </li>
+            <li class="position">
+            已有账号，
+            <a href="#">直接登录></a>
+          </li>
+        </ul>
+
+      </form>
+    </div>
+    <div class="right">
+      <p> <img src="./regist_ad.jpg" alt="" /></p>
+      <img src="./regist_ad1.jpg" alt="" />
+    </div>
+    <div class="clear">
+
+    </div>
+    <div class="bottom">
+
+    </div>
+  </div>
+
+    <script src='../js/jquery-3.0.0.min.js'></script>
+    <script>
+      $(document).ready(function(){
+        $(' li input').focus(function(){
+          console.log($('.left li span'));
+          $('.left li span').css('visibility','visible')
+        });
+      });
+    </script>
+
+  </body>
+</html>

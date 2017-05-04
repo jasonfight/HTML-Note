@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+/*
+@mixin @include 
+*/
+
+
+//无参数@mixin
+
+@mixin  marginSet {
+	margin-left: 100px;
+	margin-top: 100px;
+}
+
+.class-1 {
+	@include marginSet;
+}
+
+
+//带参数 mixin,参数可以有默认值
+@mixin opacity($opacity:60){
+	opacity: $opacity/100;
+}
+
+.class-2 {
+	@include opacity(50);
+}
+
+
+@mixin fontSet($size: 1em) {
+	font-size: 10 * $size;
+}
+.class-3 {
+	@include fontSet(2em);
+}
+
+
+
+/*多参数, 默认值得参数必须从右向左，不能从左向右*/
+@mixin borderSet($border, $padding: 10px) {
+	border: $border;
+	padding: $padding;
+}
+
+.class-4 {
+	@include borderSet(1px solid yellow);
+}
+
+
+/* ... 表示多组值*/
+@mixin shadow($shadow...){
+	box-shadow: $shadow;
+}
+
+.class-5 {
+	@include shadow(1px 1px 1px green, 2px 2px 1px yellow, 3px 3px 1px red);
+}
+
+
+
+
+/* @content   包含内容*/
+
+@mixin max-screen($res){
+  @media only screen and ( max-width: $res )
+  {
+    @content;  //将include中的样式包含在media中
+  }
+}
+
+
+@include max-screen(480px) {
+	font-size: 20px;
+	color: yellow;
+	padding: 10;
+}
+
+@include max-screen(1000px) {
+	font-size: 30px;
+	color: blue;
+}
+
+@include max-screen(300px){
+	//media没有样式
+}
+
+

@@ -1,0 +1,215 @@
+@charset "UTF-8";
+.cn-common-topbar {
+    font-size: 10px;
+    font-family: tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #999;
+    width: 100%;
+    height: 28px;
+    position: relative;
+    background-color: #fff;
+    text-align: center;
+    display: none!important;
+    cursor: default
+}
+
+@media screen and (min-width:768px) {
+    .cn-common-topbar {
+        display: block!important
+    }
+}
+
+.cn-common-topbar .cct-anchor, .cn-common-topbar a, .cn-common-topbar a:visited {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer
+}
+
+.cn-common-topbar .cct-anchor:hover, .cn-common-topbar a:hover {
+    color: #ec4f2f;
+    text-decoration: none
+}
+
+.cn-common-topbar .cct-inner-content {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    font-size: 1.2em;
+    position: relative;
+    background-color: #fff
+}
+
+@media screen and (min-width:1190px) {
+    .cn-common-topbar .cct-inner-content {
+        width: 1190px
+    }
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs, .cn-common-topbar .cct-inner-content .cct-wrap-user {
+    display: inline-block;
+    height: 100%;
+    line-height: 28px
+}
+
+.cn-common-topbar .cct-inner-content .cct-split {
+    color: #ccc
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-user {
+    float: left
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-user .cct-wrap-tologin {
+    display: none
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-user .cct-wrap-tologin .cct-split {
+    padding: 0 .4em
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-user .cct-wrap-tologin .cct-trigger-login {
+    color: #ec4f2f
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-user .cct-wrap-logined {
+    display: none
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-user .cct-wrap-logined .cct-trigger-logout {
+    padding-left: .4em
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs {
+    float: right
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs ol {
+    padding: 0;
+    margin: 0;
+    display: block
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs ol li>a, .cn-common-topbar .cct-inner-content .cct-wrap-navs ol li>span {
+    line-height: 26px;
+    height: 26px;
+    border: 1px solid transparent;
+    display: inline-block
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li {
+    position: relative;
+    margin-left: 1px;
+    display: inline-block
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li>.cct-anchor, .cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li>a {
+    padding: 0 8px;
+    z-index: 1
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li>.cct-anchor .iconfont, .cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li>a .iconfont {
+    font-size: 12px
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li .cct-split {
+    position: absolute;
+    left: -4px;
+    z-index: 0
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li>.cct-anchor {
+    position: relative;
+    padding-right: 12px
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li>.cct-anchor>.cct-icon {
+    position: absolute;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    right: 3px;
+    top: 11px;
+    border: 3px solid transparent
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li>.cct-anchor>.cct-icon.cct-up {
+    border-bottom-color: #999;
+    margin-top: -2px;
+    display: none
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li>.cct-anchor>.cct-icon.cct-down {
+    margin-top: 1px;
+    border-top-color: #999
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li>.cct-anchor:hover>.cct-icon.cct-up {
+    border-bottom-color: #ec4f2f
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li>.cct-anchor:hover>.cct-icon.cct-down {
+    border-top-color: #ec4f2f
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li>ol {
+    display: none;
+    position: absolute;
+    z-index: 9010;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 6px 0
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li>ol>li {
+    display: block;
+    padding: 0 6px
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li>.cct-decbar {
+    display: none;
+    position: absolute;
+    z-index: 9011;
+    border-top: 2px solid #fff;
+    margin-top: -1px;
+    margin-left: 1px
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li:first-child .cct-split {
+    display: none
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li:hover>.cct-anchor>.cct-icon.cct-up {
+    display: block
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li:hover>.cct-anchor>.cct-icon.cct-down {
+    display: none
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li.cct-dir:hover .cct-anchor, .cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li.cct-dir:hover>a {
+    border-color: #ccc
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li.cct-dir:hover>.cct-split {
+    display: none
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li.cct-dir:hover>.cct-decbar, .cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li.cct-dir:hover>ol {
+    display: block
+}
+
+.cn-common-topbar .cct-inner-content .cct-wrap-navs>ol>li.last-child>a {
+    padding-right: 0
+}
+
+.cn-common-topbar.cct-logined .cct-inner-content .cct-wrap-user .cct-wrap-tologin {
+    display: none
+}
+
+.cn-common-topbar.cct-logined .cct-inner-content .cct-wrap-user .cct-wrap-logined, .cn-common-topbar.cct-tologin .cct-inner-content .cct-wrap-user .cct-wrap-tologin {
+    display: block
+}
+
+.cn-common-topbar.cct-tologin .cct-inner-content .cct-wrap-user .cct-wrap-logined {
+    display: none
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery选择器</title>
+  </head>
+  <body>
+
+    <div>老大大</div>
+    <div id="divId" class="f">
+      老大
+    </div>
+    <div>老二</div>
+    <div>老三</div>
+    <div>老四</div>
+    <p>别人家的老五</p>
+    <div>老五</div>
+
+
+    <script src="./js/jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      console.log($(".f + div").text()+'hahahahah');//相邻下一个兄弟选择器
+      console.log($(".f + div + div").text()+'heheheh');//相邻下一个兄弟选择器
+      console.log($(".f ~ p").text());// 后面的所有兄弟
+      console.log($(".f ~ div").text());//
+    </script>
+  </body>
+</html>

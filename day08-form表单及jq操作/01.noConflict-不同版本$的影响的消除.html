@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>页面加载多个包含$符号的库的冲突解决
+      1.使用匿名函数
+      2.使用noConflict()函数.
+    </title>
+  </head>
+  <body>
+
+
+    <ul>
+      <li name="tyz1"></li>
+      <li name="tyz2"></li>
+      <li name="tyz3"></li>
+    </ul>
+
+
+    <script src="./js/jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script src="" charset="utf-8"></script>
+    <script type="text/javascript">
+
+       //定义一个匿名函数，并且立刻执行，只执行一次
+       //解决$符号冲突的方式
+      //  (function($){
+      //     console.log($);
+      //  })(jQuery);
+
+        console.log($);
+        var $$ = jQuery.noConflict();
+
+        var a = $$("ul li[name*='tyz']");
+        console.log(a);
+    </script>
+
+  </body>
+</html>

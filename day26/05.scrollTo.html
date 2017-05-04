@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>scrollTo</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body,html {
+			height: 2000px;
+		}
+
+		.top {
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			background: blue;
+
+			/*相对于浏览器的可视窗口*/
+			position: fixed;
+			bottom: 50px;
+			right: 30px;
+			text-align: center;
+			color: #fff;
+			cursor: pointer;
+
+			display: none;
+		}
+
+	</style>
+</head>
+<body>
+
+<h1>测试window.scrollTo方法</h1>
+<div class="top hide">顶部</div>
+
+
+<script  src="./scroll.js"></script>
+<script type="text/javascript">
+
+ var up = document.querySelector(".top");
+
+ up.onclick = function(){
+
+ 	//.scrollTo(x,y)
+ 	//x是水平的偏移值
+ 	//y是垂直的偏移量
+ 	window.scrollTo(0, 0);
+ };
+
+
+  window.onscroll = function(){
+  	//如何获得整个window的滚动值
+  	console.log(getScroll().top);
+  	console.log(up);
+  	var currentTop = getScroll().top;
+  	if (currentTop >= 200){
+  		up.style.display = "block";
+  	} else {
+  		up.style.display = "none";
+  	}
+  }
+
+
+</script>
+
+</body>
+</html>

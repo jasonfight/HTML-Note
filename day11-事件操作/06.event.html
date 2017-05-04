@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    	* {
+    		margin: 0;
+    		padding: 0;
+    	}
+
+    	body {
+    		height: 1000px;
+    	}
+
+    	#f {
+    		width: 200px;
+    		height: 200px;
+    		background: yellow;
+    		margin: auto;
+    	}
+    </style>
+</head>
+
+<body>
+    <div id="f">
+        <button id="btn1">按钮1</button>
+        <button id="btn2">按钮2</button>
+
+    </div>
+
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <script>
+    $(function() {
+
+        function clickHandlerOne(event) {
+            console.log("------------")
+            console.log(event);
+            console.log("------------")
+        }
+
+        $("#btn1").on("click", function(event){
+        	console.log("btn1 ....");
+        	//停止btn1的事件冒泡
+        	event.stopPropagation();
+        });
+
+
+        $("#f").on("click", clickHandlerOne);
+
+
+        $("body").on("click", function(event){
+        	console.log(event.pageX + " : " + event.pageY);
+        });
+
+
+    });
+    </script>
+</body>
+
+</html>

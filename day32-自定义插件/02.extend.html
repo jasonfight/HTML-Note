@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+    <script  src="./jquery-3.0.0.min.js"></script>
+	<script type="text/javascript">
+		var object1 = {
+			apple: 0,
+			banana: { weight: 52, price: 100 },
+			cherry: 97
+		};
+
+		var object2 = {
+			banana: { price: 200, color: "yellow" },
+			durian: 100
+		};
+
+
+		/*
+		*  只要执行$.extend进行合并，那么被合并的对象就会被改变
+		* */
+
+		//浅合并
+        //console.log($.extend(object1, object2));
+
+		//深度合并
+		console.log($.extend(true,object1, object2));
+
+		console.log(object1);
+        console.log(object2);
+
+	</script>
+	
+</body>
+</html>

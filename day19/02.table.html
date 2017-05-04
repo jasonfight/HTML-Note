@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>生成表格</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		table {
+			border: 1px solid gray;
+			text-align: center;
+			border-collapse: collapse;
+			width: 500px;
+			margin: auto;
+		}
+
+		tr,td,th {
+			border: 1px solid gray;
+		}
+	</style>
+</head>
+<body>
+
+ <table class="stu">
+ </table>
+	
+	<script src="js/jquery-3.0.0.min.js" ></script>
+	<script type="text/javascript">
+		$(function(){
+
+
+			var stus = [["001", "lisi", "18"],["002", "zhangsan", "20"], ["003","wangwu", "22"], ["004", "zhaosi", "24"]];
+
+			var str = "<tr><th>学号</th><th>姓名</th><th>年龄</th></tr>";
+
+			for (var i = 0; i < stus.length; i++){
+				str +="<tr><td>" + stus[i][0] + "</td><td>" + stus[i][1] + "</td><td>" + stus[i][2] + "</td></tr>" ; 
+			}
+			
+			$(".stu").append(str);
+			console.log(str);
+		});
+	</script>
+</body>
+</html>

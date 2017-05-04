@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>media媒体查询</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        height: 100%;
+        font-size: 50px;
+    }
+
+    .f {
+        background: blue;
+    }
+
+    .s {
+        width: 1000px;
+        height: 200px;
+        background: red;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    .h {
+        width: 1000px;
+        height: 200px;
+        background: blue;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+
+    /* 500px < width < 1000px */
+    @media all and (min-width:500px) and (max-width:1000px) {
+        body {color: green;}
+        div {color: red;}
+        .f {background: yellow;}
+    }
+    /*  width < 600px   或者  width > 900px*/
+    /* 只有and ,not 没有 or*/
+
+    @media screen and (max-width: 600px) {
+        .s { width: 80%; color: yellow;}
+    }
+
+    @media screen and (min-width: 900px) {
+        .s {width: 80%;color: yellow; }
+    }
+
+    /* height < 500px*/
+    @media screen and (max-height: 500px) {
+        .h {  background: pink;color: gray;  }
+    }
+
+    @media screen and (max-height: 300px) {
+        .h {  background: purple;color: yellow; }
+    }
+    </style>
+</head>
+
+<body>
+    body中的文本
+    <div class="f">body中的div元素.....</div>
+    <div class="s"> body中的s 元素</div>
+    <div class="h">div中的h元素</div>
+</body>
+
+</html>

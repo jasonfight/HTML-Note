@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/* 循环 */
+.test1 {
+  background-image: url("./image/test1.jpg"); }
+
+.test2 {
+  background-image: url("./image/test2.jpg"); }
+
+.test3 {
+  background-image: url("./image/test3.jpg"); }
+
+.test4 {
+  background-image: url("./image/test4.jpg"); }
+
+h1 {
+  font-size: 1em; }
+
+h2 {
+  font-size: 2em; }
+
+h3 {
+  font-size: 3em; }
+
+.box1 {
+  box-shadow: 1px 1px 1px green; }
+
+.box2 {
+  box-shadow: 2px 2px 1px blue; }
+
+.box3 {
+  box-shadow: 3px 3px 1px yellow; }
+
+/* @for循环 */
+.box-1 {
+  font-size: 10px; }
+
+.box-2 {
+  font-size: 20px; }
+
+.box-3 {
+  font-size: 30px; }
+
+.box-4 {
+  font-size: 40px; }
+
+.box-1 {
+  font-size: 10px; }
+
+.box-2 {
+  font-size: 20px; }
+
+.box-3 {
+  font-size: 30px; }
+
+.box-4 {
+  font-size: 40px; }
+
+.box-5 {
+  font-size: 50px; }
+
+/*# sourceMappingURL=07.css.map */

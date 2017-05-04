@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery选择器</title>
+</head>
+
+<body>
+
+    <div class="test">
+        <p>A元素</p>
+        <p>B元素</p>
+        <div>C元素</div>
+        <p>D元素</p>
+    </div>
+
+    <script src="./js/jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        console.log($("p:nth-child(3)"));//编号从1开始,所有子元素都有编号
+        console.log($("div p:eq(2)"));//eq从0开始，并且只有符合条件的才会被编号
+    </script>
+</body>
+
+</html>

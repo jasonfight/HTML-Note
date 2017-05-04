@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>凹凸</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.f {
+			font-size: 180px;
+			font-weight: bolder;
+			text-align: center;
+			width: 100%;
+			height: 500px;
+			background: gray;
+			color: gray;
+		}
+
+		.f p:first-child {
+            text-shadow: -1px -1px 1px #000, 1px 1px 1px #fff;
+						/*凹的效果,左上角使用亮色阴影,右下角使用暗色阴影*/
+						/*文字颜色要与北京颜色相一致*/
+		}
+
+		.f p:last-child {
+            text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+						/*凸的效果,左上角使用暗色阴影,右下角使用亮色阴影*/
+		}
+
+
+	</style>
+</head>
+<body>
+
+ <div class="f">
+ 	<p>凹的文字</p>
+ 	<p>凸的文字</p>
+ </div>
+
+</body>
+</html>

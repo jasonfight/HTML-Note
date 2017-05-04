@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery中的ajax接口</title>
+</head>
+<body>
+	
+	<script src="./js/jquery-3.0.0.min.js"></script>
+	<script>
+/*		$.ajax({
+			method: "POST",
+			url: "./login.php",
+			data: {name: "lisi", passwd: "123"}, //jQuery默认帮你转成：name=lisi&passwd=123
+			success: function(data, textStatus, jqXHR){
+				console.log(data);
+				console.log("success textStatus = " , textStatus);
+				if (data == "OK"){
+					// ;
+				}
+			},
+			error: function(jqXHR, textStatus, errorThrown){
+				console.log(errorThrown);
+				console.log("error textStatus = " , textStatus);
+			}
+		});
+		*/
+
+		$.ajax({
+			method: "GET",
+			url: "../login.php",
+			data: {name: "lisi", passwd: "123"}, //jQuery默认帮你转成：name=lisi&passwd=123
+			
+			success: function(data, textStatus, jqXHR){
+				console.log(jqXHR.status);//200, http code 
+				//console.log("success textStatus = " , textStatus);
+				//console.log(data);
+				if (data == "OK"){
+					// ;
+				}
+			},
+			error: function(jqXHR, textStatus, errorThrown){
+				console.log(jqXHR.status);//404, http code 
+				console.log(errorThrown);
+				console.log("error textStatus = " , textStatus);
+			}
+		});
+
+	</script>
+</body>
+</html>

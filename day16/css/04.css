@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/*
+@mixin @include 
+*/
+.class-1 {
+  margin-left: 100px;
+  margin-top: 100px; }
+
+.class-2 {
+  opacity: 0.5; }
+
+.class-3 {
+  font-size: 20em; }
+
+/*多参数, 默认值得参数必须从右向左，不能从左向右*/
+.class-4 {
+  border: 1px solid yellow;
+  padding: 10px; }
+
+/* ... 表示多组值*/
+.class-5 {
+  box-shadow: 1px 1px 1px green, 2px 2px 1px yellow, 3px 3px 1px red; }
+
+/* @content   包含内容*/
+@media only screen and (max-width: 480px) {
+  font-size: 20px;
+  color: yellow;
+  padding: 10; }
+@media only screen and (max-width: 1000px) {
+  font-size: 30px;
+  color: blue; }
+
+/*# sourceMappingURL=04.css.map */

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+
+       //创建单例对象的一中方法，使用匿名函数
+	   var obj =  (function(){
+	   		var privateA = 1;
+	   		var privateB = 2;
+
+	   		function privateFn1(){return privateA;}
+	   		function privateFn2(){return privateB;}
+
+
+	   		return {
+	   			publicA: 3,
+	   			publicB: 4,
+	   			publicFn1: function(){
+	   				return privateFn1();
+	   			},
+	   			publicFn2: function(){
+	   				return privateFn2();
+	   			}
+	   		}
+	   })();
+
+     console.log(obj);
+	   console.log(obj.publicA);
+	   console.log(obj.publicB);
+	   console.log(obj.publicFn1());
+	   console.log(obj.publicFn2());
+
+
+
+       //使用惰性方式创建单例对象
+       var mySingleton = (function(){
+       	var exist = null;
+       	function Singleton(){
+       		var privateA = 10;
+       		var privateB = 20;
+
+       		function privateFn1(value){
+       			privateA = value;
+       		}
+
+       		function privateFn2(){
+       			return privateA;
+       		}
+
+       		return {
+       			publicA: 30,
+       			publicB: 40,
+       			setPrivateA: function(value){
+       				privateFn1(value);
+       			},
+       			getPrivateA: function(){
+       				return privateFn2();
+       			}
+       		};
+       	}
+
+       	return {
+       		getInstance: function(){
+       			if (!exist){
+       				exist = Singleton();
+       			}
+       			return exist;
+       		}
+       	};
+       })();
+
+       console.log(mySingleton);
+
+       //singleOne就是一个全局唯一的单例对象
+       //singleOne 和singleTwo 是同一个对象
+       var singleOne = mySingleton.getInstance();
+       var singleTwo = mySingleton.getInstance();
+
+       singleOne.publicA = 300;
+       console.log(singleOne);
+       console.log(singleTwo);
+
+
+
+
+
+	</script>
+
+</body>
+</html>

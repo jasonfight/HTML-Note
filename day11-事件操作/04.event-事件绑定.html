@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<button id="btn">点击触发</button>
+
+<script src="./js/jquery-3.0.0.min.js"></script>
+<script>
+  $(function(){
+
+ /* 	$("#btn").click(function(){
+  		console.log("click one ");
+  	});
+
+  	$("#btn").click(function(){
+  		console.log("click two");
+  	});
+*/
+
+    function clickHandlerOne(){
+    	console.log("click one ");
+    }
+
+    function clickHandlerTwo(){
+    	console.log("click Two");
+    }
+
+     $("#btn").bind("click", clickHandlerOne);
+     $("#btn").bind("click", clickHandlerTwo);
+     $("#btn").unbind("click");
+
+  });
+	
+</script>
+	
+</body>
+</html>

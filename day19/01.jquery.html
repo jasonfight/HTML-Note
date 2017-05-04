@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>引入多个jQuery版本</title>
+</head>
+<body>
+
+
+  <script src="js/jquery-3.0.0.min.js"></script>
+  <script src="js/jquery.min.js"></script> 
+
+  <script>
+
+   //查看jQuery的版本
+   console.log($.fn.jquery);
+   var $$ = jQuery.noConflict();
+
+   //$$ 表示的是 2.1.4
+   console.log($$.fn.jquery);
+
+   // $表示 3.0.0
+   console.log($.fn.jquery);
+
+
+  </script>
+
+</body>
+</html>

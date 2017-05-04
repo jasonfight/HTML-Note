@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绘制图片</title>
+</head>
+<body>
+
+<img src="./image/zhaosi.jpg">
+
+<canvas id="canvas"></canvas>
+
+<script type="text/javascript">
+
+	window.onload = function(){
+		var can = document.querySelector("#canvas");
+		var img = document.querySelector("img");
+		console.log(img);
+
+		can.width = 500;
+		can.height = 500;
+		can.style.border = "1px solid red";
+		var ctx = can.getContext("2d");
+
+		ctx.drawImage(img, 300, 0);
+
+		// ctx.drawImage(img, 0, 0,  200, 200 * 121/121);
+
+		// ctx.drawImage(img, 0, 300,  50, 50 * 121/121);
+
+
+		// ctx.drawImage(img, 32, 10, 40, 40, 300,300, 200, 200);
+
+
+
+	};
+</script>
+
+</body>
+</html>

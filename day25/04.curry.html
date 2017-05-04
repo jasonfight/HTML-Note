@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用函数柯里化(提前传递一些默认参数)</title>
+</head>
+<body>
+	
+
+	<script type="text/javascript">
+		
+
+		/*
+		功能： 对函数进行柯里化
+		@fn, 用于计算的函数
+		@rate, 提前传递给fn的参数
+		*/
+		function curry(fn,rate){
+			var preArg = Array.prototype.slice.call(arguments,1);
+			return function(){
+				var  arg = preArg.concat(Array.prototype.slice.call(arguments,0));
+				//不进行this的绑定，只是为了得到arg参数
+				return fn.apply(null, arg);
+			}
+		}
+
+		function count(price){
+			console.log("商品结算价格为：" + arguments[0] * arguments[1]);
+		}
+
+        var newCount = curry(count, 0.8);
+        newCount(400);
+
+
+        newCount = curry(count, 0.5);
+        newCount(400);
+
+
+	</script>
+</body>
+</html>

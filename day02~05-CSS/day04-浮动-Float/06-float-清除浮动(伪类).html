@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>多个元素浮动, 清除浮动方法</title>
+    <style>
+            * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .clearfix::after,
+        .clearfix::before {
+            content: "";
+            height: 0;
+            line-height: 0;
+            display: block;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .clearfix {
+          zoom: 1; //兼容ie
+        }
+
+
+            ul {
+                list-style: none;
+                /* ul元素没有设置高度，而他的子元素都浮动了，那么高度为0*/
+            }
+            ul li {
+                width: 300px;
+                height: 300px;
+                float: left;
+            }
+            ul li.one {
+                background: yellow;
+            }
+            ul li.two {
+                background: red;
+            }
+            ul li.three {
+                background: blue;
+            }
+    </style>
+</head>
+
+<body>
+
+    <ul class="clearfix">
+        <li class="one">one</li>
+        <li class="two"> two</li>
+        <li class="three">three</li>
+    </ul>
+
+    <p>看就烧烤公交看见帅哥看见看见就看过监控大家会看到客户家乐福卡好久来看附件花费就好看房交会</p>
+
+</body>
+
+</html>

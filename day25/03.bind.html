@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>bind方法传递参数</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+	function fn(){
+		console.log("参数的总个数：" + arguments.length);
+		for (var i = 0; i < arguments.length; i++){
+			console.log(arguments[i]);
+		}
+	}
+
+	// fn(1,2,3);
+
+	//bind方法还可以提前给函数传递一些参数
+	var newFn = fn.bind(this,4,5,6,7,8);
+	newFn(1,2,3);
+
+
+	console.log("*************************************");
+
+
+    //实现一个完整的bind寒素
+    function bind(fn, context){
+        var preArg = Array.prototype.slice.call(arguments,2);
+    	return function(){
+    		var  arg = preArg.concat(Array.prototype.slice.call(arguments,0));
+    		return fn.apply(context, arg);
+    	}
+    }
+
+    var newFn1 = bind(fn,this,1,2,3,4);
+    newFn1(5,6,7,8);
+
+
+	
+/*	//注意为伪数组
+    function test(arg1, arg2){
+
+    	//arguments是一个伪数组，没有slice方法
+    	// console.log(arguments.slice(0));
+
+    	//使用call方法，可以将假数组当做真数组使用
+    	console.log(Array.prototype.slice.call(arguments, 0));
+    }*/
+
+</script>
+	
+</body>
+</html>

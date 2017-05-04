@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>作业1</title>
+    <style media="screen">
+    *{
+      margin: 0;
+      padding: 0px;
+    }
+    .f{
+
+      width: 900px;
+      height: 1000px;
+      margin: 0 auto;
+      margin-top: 200px;
+    }
+      .father_box{
+        height: 200px;
+        width: 200px;
+        float: left;
+        border: 1px solid black;
+      }
+      .son_box{
+        margin: auto;
+        margin-top: 10px;;
+        width: 90%;
+        height: 90%;
+        border: 1px solid red;
+      }
+      .box1-1{
+        border-radius: 90px;
+      }
+      .box1-2{
+        border-radius: 90px 90px 0 0 ;
+      }
+      .box1-3{
+        /*padding-top:90px;*/
+        border-radius: 180px 180px 0 0 /180px 180px 0 0 ;
+      }
+      .box1-4{
+        border-radius: 90px 0 0 0 ;
+      }
+      .box2-1{
+        width: 90px;
+        height: 90px;
+        border: 1px solid red;
+        margin-left: 60px;
+        margin-top: 60px;
+        border-radius: 90px 0 0 0;
+      }
+      .box2-2{
+        margin-top: 45px;
+        height:  90px;
+        border-radius: 90px/45px;
+      }
+      .box2-3{
+        width: 90px;
+        border-radius: 45px /90px;
+      }
+      .box2-4{
+        height: 45px;
+        margin-top:55px;
+        border-radius: 180px 180px 0 0/90px 90px 0 0 ;
+      }
+      .box3-1{
+        border-radius: 90px;
+        background: red;
+      }
+      #box3_1_1{
+        width: 40px;
+        height: 40px;
+        background: white;
+        position: relative;
+        left:70px;
+        top: 70px;
+        border-radius: 20px
+      }
+      .box3-2{
+        border-radius: 90px;
+        background: red;
+      }
+      #box3_2_2{
+        width: 40px;
+        height: 40px;
+        background: white;
+        position: relative;
+        left:70px;
+        top: 70px;
+      }
+      .box3-3{
+        border-radius: 90px 0;
+        background: red;
+      }
+      #box3_3_3{
+        width: 40px;
+        height: 40px;
+        background: white;
+        position: relative;
+        left:70px;
+        top: 70px;
+        border-radius: 20px 0;
+      }
+      .box3-4{
+        background: red;
+      }
+      #box3_4_1{
+        width: 0;
+        height: 0;
+        border-left: 90px solid green;
+        border-right: 90px solid blue;
+        border-top: 90px solid red;
+      }
+      #box3_4_2{
+        width: 0;
+        height: 0;
+        border-left: 90px solid green;
+        border-right: 90px solid blue;
+        border-bottom: 90px solid yellow;
+      }
+      .box4-1{
+        background: red;
+      }
+      #box4_1_1{
+        width: 0;
+        height: 0;
+        border-left: 90px solid green;
+        border-right: 90px solid white;
+        border-top: 90px solid red;
+      }
+      #box4_1_2{
+        width: 0;
+        height: 0;
+        border-left: 90px solid green;
+        border-right: 90px solid white;
+        border-bottom: 90px solid yellow;
+      }
+      .box4-2{
+        width:0;
+        height:0;
+        border-radius:90px;
+        border-width:90px;
+        border-style:solid;
+        border-color: red white red red;
+        overflow:hidden;
+        margin: 10px auto;
+      }
+      .box4-3{
+        width: 180px;
+        height: 90px;
+        background: red;
+        border-color: green;
+        border-style: solid;
+        border-width: 0px 0px 100px 0px;
+        border-radius: 100%;
+        position: relative;
+      }
+      .box5-1 {
+        width: 180px;
+        height: 90px;
+        background: red;
+        border-color: green;
+        border-style: solid;
+        border-width: 0px 0px 100px 0px;
+        border-radius: 100%;
+        position: relative;
+      }
+
+      .box5-1:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        background: red;
+        border: 33px solid green;
+        border-radius: 100%;
+        width: 24px;
+        height: 24px;
+      }
+
+      .box5-1:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: green;
+        border: 33px solid red;
+        border-radius: 100%;
+        width: 24px;
+        height: 24px;
+      }
+      .box5-2 {
+            margin-left: 30px;
+            width: 120px;
+            height: 80px;
+            background: red;
+            position: relative;
+            border-radius: 10px;
+        }
+
+        .box5-2:before {
+            content: "";
+            position: absolute;
+            right: 100%;
+            top: 26px;
+            width: 0;
+            height: 0;
+            border-top: 13px solid transparent;
+            border-right: 26px solid red;
+            border-bottom: 13px solid transparent;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="f">
+      <div class="father_box ">
+        <div class="son_box box1-1">
+
+        </div>
+      </div>
+    <div class="f">
+      <div class="father_box ">
+        <div class="son_box box1-2" >
+
+        </div>
+      </div>
+    <div class="f">
+      <div class="father_box ">
+        <div class="son_box box1-3"style="height:100px;">
+
+        </div>
+      </div>
+    <div class="f">
+      <div class="father_box ">
+        <div class="son_box box1-4">
+
+        </div>
+      </div>
+    <div class="f">
+      <div class="father_box ">
+        <div class=" box2-1">
+
+        </div>
+      </div>
+    <div class="f">
+      <div class="father_box ">
+        <div class="son_box box2-2">
+
+        </div>
+      </div>
+    <div class="f">
+      <div class="father_box ">
+        <div class="son_box box2-3">
+
+        </div>
+      </div>
+    <div class="f">
+      <div class="father_box ">
+        <div class="son_box box2-4">
+
+        </div>
+      </div>
+    <div class="f">
+      <div class="father_box ">
+        <div class="son_box box3-1">
+          <div id='box3_1_1'>
+
+          </div>
+        </div>
+      </div>
+    <div class="f">
+      <div class="father_box ">
+        <div class="son_box box3-2">
+          <div id="box3_2_2">
+
+          </div>
+
+        </div>
+      </div>
+    <div class="f">
+      <div class="father_box ">
+        <div class="son_box box3-3">
+            <div id="box3_3_3">
+
+            </div>
+        </div>
+      </div>
+    <div class="f">
+      <div class="father_box ">
+        <div class="son_box box3-4">
+            <div id="box3_4_1">
+            </div>
+            <div id = 'box3_4_2'>
+
+            </div>
+        </div>
+      </div>
+    <div class="f">
+      <div class="father_box ">
+        <div class="son_box box4-1">
+            <div id="box4_1_1">
+            </div>
+            <div id="box4_1_2">
+            </div>
+        </div>
+      </div>
+    <div class="f">
+      <div class="father_box ">
+        <div class="son_box box4-2">
+
+        </div>
+      </div>
+    <div class="f">
+      <div class="father_box ">
+        <div class="son_box box4-3">
+
+        </div>
+      </div>
+    <div class="f">
+      <div class="father_box ">
+        <div class="son_box box4-4">
+
+        </div>
+      </div>
+    <div class="f">
+      <div class="father_box ">
+        <div class="son_box box5-1">
+
+        </div>
+      </div>
+    <div class="f">
+      <div class="father_box ">
+        <div class="son_box box5-2">
+
+        </div>
+      </div>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>日期</title>
+</head>
+<body>
+
+<script>
+	var start = new Date();
+	console.log(start);
+	console.log(start.toDateString());
+	console.log(start.toTimeString());
+
+
+    // 月份，从0~11, 需要注意
+	var end = new Date("2017-10-11 11:11:11");
+
+	console.log(start.getTime() - end.getTime());
+
+
+</script>
+	
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>location对象</title>
+</head>
+
+<body>
+    <button id="btn">点击跳转</button>
+    <script type="text/javascript">
+    console.log(window.location);
+
+    console.log(location.hash);
+    console.log(location.href);
+    console.log(location.search);
+    console.log(location.host);
+    console.log(location.hostname);
+    console.log(location.protocol);
+    console.log(location.port);
+
+//跳转网页的方法: location.assign('href')   location ='href'
+//              location.href = 'href'
+//                loccation.replace('href')
+//                location.reload()
+    var btn = document.querySelector("#btn");
+    btn.onclick = function() {
+        // location.assign("https://www.baidu.com");
+        // location = "https://www.baidu.com";
+        // location.href = "https://www.baidu.com";
+
+        //没有后退
+        // location.replace("https://www.baidu.com");
+        // location.reload();
+
+        // 	location.search = "?name=lisi&age=10";
+        // 	location.hash = "#123";
+        // 	location.port = 80 ;
+
+
+        location.href = "https://www.baidu.com";
+
+    }
+    </script>
+</body>
+
+</html>

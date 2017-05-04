@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    	* {
+    		margin: 0;
+    		padding: 0;
+    	}
+
+    	#f {
+    		width: 200px;
+    		height: 200px;
+    		background: yellow;
+    		margin: auto;
+    	}
+    </style>
+</head>
+
+<body>
+    <div id="f">
+        <button id="btn1">按钮1</button>
+        <button id="btn2">按钮2</button>
+
+    </div>
+
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <script>
+    $(function() {
+
+        function clickHandlerOne(event) {
+            console.log("click one ");
+            console.log("------------")
+            console.log(event);
+            console.log("------------")
+        }
+
+        function clickHandlerTwo(evevt) {
+            console.log("click Two");
+        }
+
+        // #btn1参数，表示只有点击了父元素中指定选择器的子元素，那么才会触发事件
+        // $("#f").on("click", "#btn1", clickHandlerOne);
+        // $("#f").on("click", "#btn1", clickHandlerTwo);
+        //$("#f").off("click", clickHandlerTwo);
+
+        $("#f").on("click", clickHandlerOne);
+
+
+    });
+    </script>
+</body>
+
+</html>

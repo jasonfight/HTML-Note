@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+
+
+    <canvas id="canvas">当前浏览器不支持canvas</canvas>
+    <script type="text/javascript">
+
+       //1. 获得DOM 对象
+       var can = document.querySelector("#canvas");
+       can.width = 500;
+       can.height = 500;
+       can.style.border = "1px solid red" ;
+
+
+       //2. 获取上下文
+       var cxt = can.getContext("2d");
+
+       cxt.beginPath();//重新开始一次新的绘制
+       cxt.strokeStyle = "blue";
+       cxt.fillStyle= "yellow";
+       cxt.lineWidth = 10;
+
+       cxt.moveTo(10,10);//起点
+       cxt.lineTo(10,100);//
+       cxt.lineTo(30,50);//
+       cxt.lineTo(10,10);//
+       cxt.stroke();
+       cxt.fill();
+
+
+
+        cxt.beginPath();
+        cxt.lineWidth = 1;
+
+        // font和css的设置规则是一样
+        cxt.font = "800 30px  宋体";
+        cxt.fillText("我喜欢钱", 100,100);
+        cxt.strokeText("我喜欢钱", 100,200);
+
+        console.log(cxt.measureText("中国人").width);//90px
+        cxt.closePath();
+
+ /******************************************************/
+
+        cxt.beginPath();
+        cxt.strokeStyle = "red";
+        cxt.font = "25px 宋体";
+        cxt.moveTo(400,0);
+        cxt.lineTo(400,500);
+        cxt.stroke();
+        cxt.fillText("abcdefgh",400,80);
+        cxt.closePath();
+
+        cxt.beginPath();
+        cxt.strokeStyle = "red";
+
+        //用于设置文本的对齐
+        cxt.textAlign = "end"; 
+        cxt.fillText("abcdefgh",400,100);
+        cxt.closePath();
+
+        cxt.beginPath();
+        cxt.textAlign = "center"; 
+        cxt.fillText("abcdefgh",400,150);
+        cxt.closePath();
+
+
+ /******************************************************/
+
+        cxt.beginPath();
+        cxt.strokeStyle = "black";
+        cxt.moveTo(0, 300);
+        cxt.lineTo(500, 300);
+        cxt.stroke();
+        cxt.closePath();
+
+
+        cxt.beginPath();
+        cxt.textAlign = "start";
+        cxt.fillText("abcdefgh", 0, 300);
+
+        cxt.beginPath();
+        //可以设置文本在垂直方向的位置
+        cxt.textBaseline = "top";
+        cxt.fillText("abcdefgh", 100, 300);
+
+        cxt.beginPath();
+        cxt.textBaseline = "middle";
+        cxt.fillText("abcdefgh", 200, 300);
+
+
+         //绘制圆弧
+         cxt.beginPath();
+         cxt.strokeStyle = "black";
+         cxt.fillStyle = "black";
+         cxt.moveTo(200,200);//变为扇形必须要指定圆心位置
+         cxt.arc(200,200,100, 90 * Math.PI/180 , Math.PI, false);//顺时针
+         cxt.stroke();
+         cxt.fill();
+
+
+
+
+
+     
+
+
+    </script>
+</body>
+
+</html>

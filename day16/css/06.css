@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/*
+ 函数
+*/
+body {
+  font-size: 20px; }
+
+h1 {
+  background-color: #ff9999;
+  font-size: 1.6rem; }
+
+h2 {
+  background-color: red;
+  font-size: 1.2rem; }
+
+/* @function  @return */
+.class-1 {
+  font-size: 2rem; }
+
+.class-2 {
+  font-size: 30px; }
+
+.class-3 {
+  color: #111111; }
+
+/*
+  @if  @else 
+ */
+.class-4 {
+  color: red;
+  font-size: 20px;
+  text-align: center; }
+
+.class-5 {
+  color: yellow; }
+
+.class-6 {
+  font-size: 30px; }
+
+/*# sourceMappingURL=06.css.map */

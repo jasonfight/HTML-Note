@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>3d转换</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        height: 2000px;
+        transform-style: preserve-3d; /*让子元素具有3d效果, 设置在父元素上*/
+        perspective: 100px;/*为了让3d效果明显，需要设置在父元素上*/
+    }
+    
+    .f {
+        width: 200px;
+        height: 200px;
+        margin: auto;
+        margin-top: 50px;
+        background: yellow;
+
+
+        transition: all 1s linear;
+    }
+
+    .f:nth-child(1):hover {
+        transform: translate3d(20px, -20px, 20px);
+    }
+
+    .f:nth-child(2):hover {
+        transform: scale3d(1.2,1.2,1.2);
+    }
+
+    .f:nth-child(3):hover {
+        transform: rotate3d(1, 2, 3, 10deg);/*10deg, 20deg, 30deg*/
+    }
+
+    .f:nth-child(4):hover {
+        transform: skew(10deg, 10deg);
+    }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="f"> 1</div>
+    <div class="f">2</div>
+    <div class="f">3</div>
+    <div class="f">4</div>
+
+</body>
+
+</html>

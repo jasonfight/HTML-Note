@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+        *{
+          margin:0;
+          padding: 0;
+        }
+        #canvas{
+          margin-top: 100px;
+        }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas">如果该文字显示,则浏览器版本不支持该标签</canvas>
+    <script>
+      // 第一步:获得DOM对象
+      var can = document.querySelector('#canvas');
+      can.width = 400;
+      can.height = 400;   // NOTE: canvas可以在script中直接设置宽高,其他标签需要通过style才能设置.
+      // 第二步:获取上下文对象:
+      var  cont  = can.getContext('2d');
+      cont.beginPath();
+      cont.moveTo(10,10);
+      cont.lineTo(10,100);
+      cont.lineTo(100,100);
+      cont.lineTo(10,10);
+      cont.stroke();
+      cont.closePath();
+
+      //画扇形
+      // cont.arc(x,y,r.startAngle,endAngle,是够逆时针(默认false))
+
+      cont.beginPath();
+
+      cont.fillStyle =  'pink';
+      cont.strokeStyle = 'pink';
+      cont.moveTo(200,200);
+      cont.arc(200,200,100,0*Math.PI/180,90*Math.PI/180,false);
+      cont.stroke();
+      cont.fill();
+      cont.closePath();
+
+
+      cont.beginPath();
+
+      cont.fillStyle = 'purple';
+      cont.strokeStyle = 'purple';
+
+      cont.moveTo(200,200);
+      cont.arc(200,200,100,90*Math.PI/180,180*Math.PI/180,false);
+      cont.stroke();
+      cont.fill();
+
+      cont.beginPath();
+      cont.fillStyle = 'red';
+      cont.strokeStyle = 'red';
+      cont.moveTo(200,200);
+      cont.arc(200,200,100,180*Math.PI/180,270*Math.PI/180,false);
+      cont.stroke();
+      cont.fill();
+
+      cont.beginPath();
+      cont.fillStyle = 'black';
+      cont.strokeStyle = 'black';
+      cont.moveTo(200,200);
+      cont.arc(200,200,100,270*Math.PI/180,360*Math.PI/180,false);
+      cont.stroke();
+      cont.fill();
+
+      // 第一个三角形
+      cont.beginPath();
+      cont.strokeStyle = 'black';
+      var x = 200 + 100*(Math.cos(45*Math.PI/180))+20;
+      var y = 200 + 100*(Math.sin(45*Math.PI/180))+20;
+      console.log(x);
+      console.log(y);
+      cont.moveTo(x,y);
+      cont.lineTo(x+10,y+100);
+      cont.lineTo(x+100,y+100);
+      cont.lineTo(x,y);
+      cont.stroke();
+      cont.closePath();
+
+      //第二个三角
+
+      cont.beginPath();
+      cont.strokeStyle = 'black';
+      var x = 200 + 100*(Math.cos(135*Math.PI/180))-20;
+      var y = 200 + 100*(Math.sin(135*Math.PI/180))+20;
+      console.log(x);
+      console.log(y);
+      cont.moveTo(x,y);
+      cont.lineTo(x+10,y+100);
+      cont.lineTo(x+100,y+100);
+      cont.lineTo(x,y);
+      cont.stroke();
+      cont.closePath();
+
+      //第三个三角
+
+      cont.beginPath();
+      cont.strokeStyle = 'black';
+      var x = 200 + 100*(Math.cos(225*Math.PI/180))-20;
+      var y = 200 + 100*(Math.sin(225*Math.PI/180))-20;
+      console.log(x);
+      console.log(y);
+      cont.moveTo(x,y);
+      cont.lineTo(x+10,y+100);
+      cont.lineTo(x+100,y+100);
+      cont.lineTo(x,y);
+      cont.stroke();
+      cont.closePath();
+
+      //第四个三角
+
+      cont.beginPath();
+      cont.strokeStyle = 'black';
+      var x = 200 + 100*(Math.cos(315*Math.PI/180))+20;
+      var y = 200 + 100*(Math.sin(315*Math.PI/180))-20;
+      console.log(x);
+      console.log(y);
+      cont.moveTo(x,y);
+      cont.lineTo(x+10,y+100);
+      cont.lineTo(x+100,y+100);
+      cont.lineTo(x,y);
+      cont.stroke();
+      cont.closePath();
+
+      cont.beginPath();
+      cont.strokeStyle = 'black';
+      var x = 200 + 100*(Math.cos(315*Math.PI/180))+20;
+      var y = 200 + 100*(Math.sin(315*Math.PI/180))-20;
+      // cont.moveTo(x,y);
+      cont.fillText('123',x,y)
+
+    </script>
+
+
+  </body>
+</html>

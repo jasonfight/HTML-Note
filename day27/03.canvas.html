@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+
+
+    <canvas id="canvas">当前浏览器不支持canvas</canvas>
+    <script type="text/javascript">
+
+       //1. 获得DOM 对象
+       var can = document.querySelector("#canvas");
+       can.width = 500;
+       can.height = 500;
+       can.style.border = "1px solid red" ;
+
+
+       //2. 获取上下文
+       var cxt = can.getContext("2d");
+
+       cxt.beginPath();//重新开始一次新的绘制
+       cxt.fillStyle = "red";
+
+       cxt.moveTo(10,10);//起点
+       cxt.lineTo(10,100);//
+       cxt.lineTo(30,50);//
+       cxt.lineTo(10,10);//
+
+       // cxt.stroke();//绘制一条线
+       cxt.fill();//
+       cxt.closePath();
+
+       cxt.beginPath();
+       cxt.fillStyle = "yellow";
+
+       cxt.moveTo(200,200);
+       cxt.lineTo(300,200);
+       cxt.lineTo(300,300);
+       cxt.lineTo(200,300);
+       cxt.lineTo(200,200);
+       cxt.fill();//填充
+
+
+        //直接绘制矩形
+       cxt.rect(400,400,100,100);
+       cxt.fill();
+
+
+       cxt.fillRect(50,0,100,100);
+       cxt.strokeRect(180,0,100,100);
+
+       cxt.clearRect(450,450,10,10);
+
+       cxt.closePath();
+
+
+    </script>
+</body>
+
+</html>

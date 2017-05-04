@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+	<ul class="one">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+
+	<ul class="two">
+		<li>a</li>
+		<li>b</li>
+		<li>c</li>
+		<li>d</li>
+		<li>e</li>
+		<li>f</li>
+	</ul>
+
+
+	<script src="./js/jquery-3.0.0.min.js"></script>
+	<script type="text/javascript">
+		var lis = $(".one li");
+		var cons = $(".two li");
+
+
+		console.log(lis.length);//5
+		console.log(cons.length);//6
+
+
+    //使用jQuery中的 .data()方法解决索引问题
+		for (var i = 0; i < lis.length; i++){
+			//使用.data方法，添加数据
+			lis.eq(i).data("index", i);
+
+			lis.eq(i).mouseover(function(){
+				cons.eq($(this).data("index")).css("color", "red").siblings().css("color", "black");
+			});
+		}
+
+
+    //避免添加事件时出现索引值不对的问题，使用匿名函数解决
+		for (var i = 0; i < lis.length; i++){
+/*
+			(function(i){
+				lis.eq(i).click(function(){
+					console.log(i);
+				});
+			})(i);*/
+		}
+        //使用on绑定事件，可以给事件对象event添加数据，直接使用event.data访问即可
+		for (var i = 0; i < lis.length; i++){
+              lis.eq(i).on("click", i, function(event){
+              	console.log(event.data);//将是0,1,2,3
+								console.log(i);//i的值会全部是4
+              });
+		}
+
+
+	</script>
+
+</body>
+</html>

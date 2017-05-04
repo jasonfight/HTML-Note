@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>进度条</title>
+    <meta http-equiv="X-UA-Copatible" content="IE=edge"> <!-- NOTE: 用来兼容ie浏览器 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- NOTE: 用来适用移动端 -->
+    <link rel="stylesheet" href="./bootstrap-3.3.7/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow='40' aria-valuemin='0' aria-valuemax='100' style="width:40%">
+              40%
+
+          </div>
+      </div>
+
+    </div>
+
+    <script src='./js/jquery-3.1.1.min.js'></script>
+    <script >
+      $(function(){
+        console.log($('.progress-bar').attr('aria-valuenow'));
+        $('.progress-bar').attr('aria-valuenow',80);
+        $('.progress-bar').attr('style','width:80%;')
+        $('.progress-bar').html('80%');
+      });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

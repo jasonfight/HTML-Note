@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!--  novalidate : 布尔属性,判定表单是否输入检测合法性, autocomplete = 'on`' 自动补全开启-->
+    <form id='teacher' action="#" method="get" novalidate="" autocomplete="off">
+        邮箱:<input type="email" list = 'dataId' name="email" placeholder='请输入邮箱'> <br><br>
+            <datalist id="dataId">
+              <option value="">xxx@126.com</option>
+              <option value="">xxx@163.com</option>
+              <option value="">xxx@hotmail.com</option>
+            </datalist>
+        url:<input type="url" name="url"  > <br><br>
+        数字:<input type="number" name="number" min="1" max="10" step="2"> <br><br>
+        范围:<input type="range" name="range" value="5" min="0" max="10" step="0.1"> <br><br>
+        <input type="submit" name="submit" value="提交">
+        <input type="submit" name="resubmit" value="覆盖提交" formaction="#"> <br><br>
+    </form>
+      其他: <input type="text" name="other" value="" form="teacher">
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>元素的包裹 wrap   wrapAll  unwrap </title>
+  </head>
+  <body>
+
+    <div class="one">
+      <li>11111</li>
+      <li>11111</li>
+      <li>11111</li>
+    </div>
+
+    <div class="two">
+      <ul><li>2222</li></ul>
+      <ul><li>2222</li></ul>
+      <ul><li>2222</li></ul>
+      <ul><li>2222</li></ul>
+    </div>
+
+
+    <script src="./js/jquery-3.0.0.min.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+          $(document).ready(function(){
+          $(".one li").wrap("<ul></ul>");//将所有匹配元素都单独包裹
+          $(".one li").wrapAll("<ul></ul>");  //在匹配的元素总体的头和尾,添加 相应标签
+          $(".two ul li").unwrap();   //将 li标签的 父元素标签移除
+        });
+    </script>
+
+  </body>
+</html>

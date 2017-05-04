@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery中自定义事件</title>
+</head>
+
+<body>
+
+    <button id="btn1">需要点击</button>
+    <button id="btn2" disabled>不需要点击</button>
+
+    <h1>数值变化：<span id="show-num">0</span></h1>
+    <button id = 'btn3'>点击测试</button>
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <script>
+    $(function() {
+        var num = 0;
+        var sum = 0;
+        //自定义了一个事件 incNum
+        $("#show-num").on("incNum", function(event){
+              sum = num++;
+              $(this).html(num+sum);
+        });
+
+        $("#btn1").on("click", function(event) {
+            //手动触发自定义事件
+            $("#show-num").trigger("incNum");
+            //手动触发btn2的click事件
+            $("#btn2").trigger("click");
+        });
+        $("#btn2").on("click", function(event) {
+            console.log("btn2 clicked ....");
+        });
+        $('#btn3').click(function(event){
+            console.log('nihao');
+        });
+
+
+    });
+    </script>
+</body>
+
+</html>

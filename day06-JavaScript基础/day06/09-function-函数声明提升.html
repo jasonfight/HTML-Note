@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>函数声明的提升</title>
+  </head>
+  <body>
+
+    <div class="">
+      函数的声明会被提升到代码的顶部,所以在函数调用时,不用搭理函数调用的位置.<br>
+    </div>
+    <script type="text/javascript">
+
+       var a = 10, b = 20;
+       var result = sum(a,b);
+       console.log("result = " + result);
+
+       //函数的声明会被提升到代码的顶部
+       function sum(arg1, arg2){
+         //返回计算结果
+         return arg1 + arg2;
+        // return; //undefined
+       }
+
+
+    </script>
+
+  </body>
+</html>

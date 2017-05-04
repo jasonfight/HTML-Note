@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>钟表</title>
+    <style media="screen">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+      .biaopan{
+        width: 600px;
+        height: 600px;
+        margin:0 auto;
+        margin-top: 40px;
+        position: relative;
+        background: url(./image/clock图片/clock.jpg);
+      }
+      .hour{
+        position: relative;
+        left: 285px;
+      }
+      .minute{
+        position:relative;
+        left: 251px;
+      }
+      .second{
+        position: relative;
+        left: 217px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="biaopan">
+      <img class="hour" src="./image/clock图片/hour.png" alt="">
+      <img class="minute" src="./image/clock图片/minute.png" alt="">
+      <img class="second" src="./image/clock图片/second.png" alt="">
+    </div>
+    <script src='./js/jquery-3.0.0.min.js'> </script>
+    <script>
+      var hour = $('.hour');
+      var minute = $('.minute');
+      var second = $('.second')
+      console.log(hour);
+
+      //以下代码为根据系统当前时间设置当前指针位置:
+      var d = new Date();
+      var time = d.toLocaleTimeString().split(':'); //['下午7','22','40']
+      console.log(time);   // 下午11:22:40
+      console.log('++++++++++=');
+
+      //获得当前时间的时,分,秒:
+      var locale_hour = parseInt(time[0].slice(2));//7
+      var locale_minute = parseInt(time[1]);//22
+      var locale_second = parseInt(time[2]);//40
+
+      //计算出当前时间每个指针应该旋转的度数
+      var hour_deg_now = locale_hour*30+locale_minute/2+locale_second/10;
+      var minute_deg_now = locale_minute*6+locale_second/10;
+      var second_deg_now = 6*locale_second;
+
+      //设置当前的表盘所有指针的位置
+      // hour.css('transform','rotate('+ hour_deg_now+'deg)');
+      // minute.css('transform','rotate('+ minute_deg_now+'deg)');
+      // second.css('transform','rotate('+ second_deg_now+'deg)');
+      // 以上代码为根据系统当前时间设置当前指针位置.
+
+      //让指针动起来
+      var num = 0;
+      function Time(){
+        console.log('1');
+        num++;
+        second.css('transform','rotate('+ (second_deg_now+6*num)+'deg)');
+        minute.css('transform','rotate('+ (minute_deg_now+6*num/60)+'deg)');
+        hour.css('transform','rotate('+ (hour_deg_now+6*num/360)+'deg)');
+        Timer = setTimeout(Time,1000);
+      };
+       Time();
+    </script>
+  </body>
+</html>

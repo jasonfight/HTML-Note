@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>内置对象 math</title>
+</head>
+
+<body>
+    <script>
+        d = Math.min(1, 2, 3, 4);
+        console.log(d);
+
+        d = Math.max(2, 3, 4, 5);
+        console.log(d);
+
+        var nums = [1, 2, 3, 34, 56, 78];
+        d = Math.max.apply(Math, nums);
+        console.log(d);
+        // NOTE: 舍入操作.
+        console.log(Math.ceil(12.1)); //13 向上舍入
+        console.log(Math.floor(12.1)); //12 向上舍入
+        console.log(Math.round(12.1)); //12 四舍五入
+
+
+        //random方法:
+        //产生[0, 11]之间的数
+        num1 = Math.floor(Math.random()*12 + 0);
+        console.log(num1);
+        //产生[2, 10]之间的数
+        num2 = Math.floor(Math.random()*9 + 2);
+        console.log(num2);
+        console.log(Math.floor(-2.1));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+
+/* 循环 */
+
+$name: test1  test2  test3  test4;
+@each $var in $name {
+	.#{$var} {
+		background-image: url("./image/" + $var + ".jpg");
+	}
+}
+
+
+$h: (h1: 1em, h2: 2em, h3:3em);
+@each $key, $value in $h {
+	#{$key} {
+		font-size: $value;
+	}
+}
+
+
+$shadow: (box1 1px 1px 1px green), ( box2  2px 2px 1px blue), (box3 3px 3px 1px yellow);
+
+@each $box, $one,$two,$three,$four in $shadow {
+     .#{$box} {
+     	box-shadow: $one $two $three $four;
+     }
+}
+
+
+
+
+/* @for循环 */
+//循环4次
+@for $i from 1 to 5 {
+	.box-#{$i} {
+		font-size: 10 * $i * 1px;
+	}
+}
+
+
+//循环5次
+@for $i from 1 through 5 {
+	.box-#{$i} {
+		font-size: 10 * $i * 1px;
+	}
+}
+
+
+
+
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>火箭升空</title>
+    <style media="screen">
+      .body{
+        background: lightgreen;
+        height: 1080px;
+        width:100%;
+      }
+      img{
+        position: absolute;
+        bottom: -200px;
+        left: -200px;
+        transform: rotate(45deg);
+        transition: all 1s linear;
+      }
+      .body:hover img{
+        transform: translate(1000px,-500px) rotate(45deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="body">
+      <img src="./image/img1/rocket.png" alt="" />
+    </div>
+
+  </body>
+</html>

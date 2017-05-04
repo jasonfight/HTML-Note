@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+
+    /*
+    // call,apply方法的应用
+    console.log(Math.max.apply(null,[1,2,3,4,5]));
+    console.log(Math.max.call(null,1,2,3,4,5));
+
+    var obj = {num:10};
+    var num = 20;
+
+    function showNum(){
+    	console.log("this.num = " + this.num);
+    }
+
+    showNum();//在window上调用该函数
+    showNum.call(obj);// 在obj对象上调用showNum函数
+    showNum.apply(obj, null);// 在obj对象上调用showNum函数
+    */
+
+
+
+     
+    console.log("/****************借用构造函数继承*****************************/");
+
+    function Super(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    function Sub(name, age, id) {
+        Super.call(this, name, age);
+        this.id = id ;
+    }
+
+    var one = new Sub("lisi", 10, 1000);
+    console.log(one);
+
+
+
+    console.log("/****************原型链继承和借用构造函数继承相结合*************/");
+
+    function F(name) {
+    	this.name = name;
+    	this.colors =  ["red", "green", "blue"];
+    }
+
+    F.prototype.getName = function(){
+    	console.log(this.name);
+    };
+
+
+    function S(name, age) {
+    	F.call(this, name);
+    	this.age = age;
+    }
+
+    S.prototype = new F();
+    S.prototype.constructor = S;
+    S.prototype.getAge = function(){
+    	console.log(this.age);
+    };
+
+
+    one = new S("zhangsan", 33);
+    one.colors.push("black");
+
+    console.log(one);
+    console.log(one.colors);
+    one.getName();
+    one.getAge();
+
+    two = new S("zhangliu", 23);
+    console.log(two.colors);
+
+    console.log(typeof one);
+    console.log(one.constructor);//得到某个对象是有那个构造函数生成
+
+    console.log("/*****************************/");
+    var obj = {
+    	name: 'lisi',
+    	getName: function(){
+    		return this.name;
+    	},
+    	age: 10,
+    	getAge: function (){
+    		return this.age;
+    	}
+    };
+
+   console.log(obj.getName());
+   obj.score = 100;
+   console.log(obj);
+
+
+
+   /* 非对象类型是不可以添加属性和方法
+   var num = 100;
+   num.index = 0;
+   console.log(num.index);
+   */
+
+
+    
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>敏感词查询</title>
+  </head>
+  <style>
+
+  </style>
+  <body>
+    <textarea id='f' rows="8" cols="80" ></textarea> <br><br>
+    <button  class="btn" type="button" name="button">提交</button>
+  </body>
+  <script src='./js/jquery-3.0.0.min.js'></script>
+  <script>
+        var list = ['习近平','薄熙来','周永康'];
+        $('.btn').click(function(){
+            var text = $('#f').val();
+
+        $('#f').val( $('#f').val().replace(/list[0]/ig, '2222'));
+        });
+
+        for (var i = 0; i < list.length; i++) {
+            var a = list[i];
+            while (a.indexOf('习近平') != -1 ) {
+
+              a =a.replace('习近平','<span>习近/平</span>');
+              console.log(a);
+            }
+        }
+
+
+
+  </script>
+</html>

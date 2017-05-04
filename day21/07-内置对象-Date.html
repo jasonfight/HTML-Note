@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>内置对象date</title>
+  </head>
+  <body>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <script>
+      var  d = new Date();
+      var lists = document.getElementsByTagName('p');
+      lists[0].innerHTML='1.提取日期: getDate--->'+d.getDate();//如果是15号,则显示 15
+      lists[1].innerHTML='2.提取星期: getDay--->'+d.getDay();//如果是周三,则显示 3
+      lists[2].innerHTML='3.提取月份: getMonth--->'+d.getMonth();//月份为0-11,如果是3月,则为2
+      lists[3].innerHTML='4.提取年份: getFullYear---> '+d.getFullYear();// 显示年份
+      lists[4].innerHTML='5.提取小时: getHours:--->'+d.getHours();//显示当前小时数,(24小时制)
+      lists[5].innerHTML='6.提取分钟: getMinutes--->'+d.getMinutes();//显示分钟数
+      lists[6].innerHTML='7.提取秒数: getSonconds--->'+d.getSeconds();//显示秒数
+      lists[7].innerHTML='8.提取毫秒数: getMilliseconds--->'+d.getMilliseconds();//显示毫秒数
+      lists[8].innerHTML='9.提取累计秒数: getTime--->'+d.getTime();//显示累计秒数.
+      lists[9].innerHTML='10.提取英文时间: toDateString--->'+d.toDateString(); //Wed Mar 15 2017
+      lists[10].innerHTML='11.提取数字形式时间: toLocaleDateString--->'+d.toLocaleDateString();//2017/3/15
+      lists[11].innerHTML='12.提取时间戳:  toTimeString--->'+d.toTimeString();//15:50:31 GMT+0800 (CST)
+      lists[12].innerHTML='13.提取当地时间: toLocaleTimeString--->'+d.toLocaleTimeString();//下午3:50:31
+      lists[13].innerHTML='14.提取国际时间:  toUTCString--->'+d.toUTCString();//Wed, 15 Mar 2017 07:50:31 GMT  格林威治(国际s)时间
+
+    </script>
+  </body>
+</html>

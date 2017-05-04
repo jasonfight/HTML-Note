@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>offset</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #f {
+        width: 300px;
+        height: 300px;
+        border: 5px solid red;
+        margin: auto;
+        position: relative;
+    }
+
+    #s {
+    	width: 200px;
+    	height: 100px;
+    	border: 1px solid blue;
+    	position: absolute;
+    	top: 10px;
+    	left: 100px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="f">看大家赶快都快结婚看到机会看到机会打开会尽快就带回家肯定会没空回家让客户
+    <div id="s"></div>
+    </div>
+
+    <script type="text/javascript">
+    	var f = document.getElementById("f");
+
+    	//只读属性
+    	console.log("offsetWidth = " + f.offsetWidth);
+    	console.log("offsetHeight = " + f.offsetHeight);
+
+    	var s = document.getElementById("s");
+    	console.log(s.offsetParent);
+    	console.log(s.offsetLeft);
+    	console.log(s.offsetTop);
+
+
+        console.log("/****************************************/")
+
+        //可读可写的属性
+    	s.style.left = "120px";
+    	s.style.top = "20px";
+    	console.log(s.offsetLeft);
+    	console.log(s.offsetTop);
+
+
+      s.style.width = "40px";
+         //s.style.width 必须进行设置之后，才可以访问，否则为空
+    	 console.log("s.style.width = " + s.style.width);
+
+
+    </script>
+</body>
+
+</html>

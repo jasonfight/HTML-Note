@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery选择器</title>
+</head>
+
+<body>
+
+    <div>
+        <span>John,</span>
+        <span>Karl,</span>
+        <span>Brandon</span>
+    </div>
+    <div>
+        <span>Glen,</span>
+        <span>Tane,</span>
+        <span>Ralph</span>
+    </div>
+
+    <script src="./js/jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        console.log($("div span:first-child").text()); //div 中的第一个span:John,Glen
+        console.log($("div span:first").text()); //第一个span:John,
+        console.log($("span:first").text());//第一个span:John,
+    </script>
+</body>
+
+</html>

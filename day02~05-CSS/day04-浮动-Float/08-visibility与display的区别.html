@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>visibility</title>
+    <style>
+      div.visi {
+        width: 300px;
+        height: 300px;
+        background: red;
+        /*visibility: hidden;*/ /*仍然占据页面位置，只是不可见*/
+        visibility: visible;
+      }
+
+      div.block {
+        width: 300px;
+        height: 300px;
+        background: yellow;
+        /*display: none;*/ /*元素隐藏，并且消失，不占据页面位置*/
+        display: block; /*将隐藏显示元素*/
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="visi"></div>
+    <div class="block"></div>
+    <p>到看见过看得见高考大捷</p>
+
+  </body>
+</html>

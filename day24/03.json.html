@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>json</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    // NOTE: jason数据,通过花括号将键值对形式的数据包含在内,然后返回一个对象,通过
+    // NOTE: 对象.key 的形式,可以得到值.
+    var obj = {
+        "name": "lisi",
+        "age": 10,
+        "hobby": ["read", "write", "sport"],
+        "mesg": {
+            "sheng": "beijing",
+            "shi": "beijing",
+            "qu": "海淀区"
+        }
+    };
+
+    console.log(obj.name);
+    console.log(obj.age);
+    console.log(obj.hobby[2]);
+    console.log(obj.mesg.shi);
+
+    console.log(obj["mesg"]);
+
+
+    var stus = [{
+        "name": "lisi",
+        "age": 10
+    }, {
+    	"name": "zang",
+    	"age": 20
+    }, {
+    	"name": "zhao",
+    	"age": 30
+    }];
+
+    for (var i = 0; i < stus.length; i++){
+    	console.log("" + stus[i].name  + ' '+ stus[i].age );
+    }
+    </script>
+</body>
+
+</html>

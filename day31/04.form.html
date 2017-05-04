@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单</title>
+</head>
+<body>
+
+<!-- form 的 novalidate属性决定是否自动校验 -->
+<form id="teacher" action="#" method="get" >
+
+  邮箱： <input autofocus  list="dataId" type="email" name="email" placeholder="输入邮箱"> <br><br>
+          <!-- 提供默认选项 -->
+  			<datalist id="dataId">
+  				<option>xxxx@126.com</option>
+  				<option>yyyy@126.com</option>
+  				<option>zzzz@126.com</option>
+  			</datalist>
+
+
+  url： <input type="url" name="url" required> <br><br>
+
+  <!-- text, url, search等使用  pattern  不用写开始和结束 /  -->
+  工资：<input type="text" name="salary" pattern="\d+\.\d+" > <br><br>
+
+  数字： <input type="number" value="20" min="10" max="25" name="number" step="2"> <br><br> 
+
+  范围:   <input type="range" name="range" value="5" min="0" max="10" step="2"> <br><br>
+
+  date: <input type="date" name="date"> <br><br>
+  month: <input type="month" name="month"> <br><br>
+
+  search: <input type="search" name="search"><br><br>
+
+
+   <input type="submit" value="提交">
+
+   <!--formaction 可以设置多个提交  -->
+   <input type="submit" value="覆盖提交" formaction="01.attr.html">
+
+</form>
+
+
+<!-- form 属性可以让表单提交表单之外的input数据 -->
+其他: <input type="text" name="other" form='teacher'>
+
+
+
+
+	<script type="text/javascript">
+		var  url = document.querySelector("input[name='url']");
+		url.focus();
+
+
+
+
+	</script>
+</body>
+</html>

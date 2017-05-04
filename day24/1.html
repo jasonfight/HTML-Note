@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>match方法</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+    /**********必须记住string.match() 方法的返回值才可以  ********************/
+    var str = "The Quick Brown Fox Jumps Over The Lazy Dog \
+			The Quick Brown Fox Jumps Over The Lazy Dog \
+			The Quick Brown Fox Jumps Over The Lazy Dog";
+    var reg = /quick\s(brown).+?(jumps)/i
+    var found = str.match(reg);
+    console.log(found);
+
+
+    // re = /see chapter \d/i;
+    // found = str.match(re);
+    // console.log(found);
+
+    </script>
+</body>
+
+</html>

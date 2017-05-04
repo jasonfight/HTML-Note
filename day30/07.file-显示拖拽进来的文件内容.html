@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文件</title>
+</head>
+<body>
+
+<input id="files" type="file"  multiple>
+
+<script type="text/javascript">
+	var f = document.querySelector("#files");
+
+	f.onchange = function(event){
+		for (var i = 0; i < f.files.length; i++){
+			//输出选择的文件的名称和大小
+			console.log(f.files[i].name  +  "     " + parseInt(f.files[i].size/1024) + "KB");
+		}
+
+		var file = f.files[0];
+		var reader = new FileReader();
+
+		reader.addEventListener("loadstart", function(){
+			console.log("start ....");
+		});
+
+		reader.addEventListener("progress", function(){
+			console.log("progress ....");
+		});
+
+		reader.addEventListener("load", function(){
+			//只有读取完毕之后，才可以访问result
+			console.log(reader.result);
+		}, false);
+
+        //1.按照文本方式读取文件内容
+		reader.readAsText(file);
+      	//1.按照url读取，用于读取图片
+		// reader.readAsDataURL(file);
+        //3.按照二进制字符串读取
+		// reader.readAsBinaryString(file);
+//
+	}
+
+
+
+
+</script>
+
+</body>
+</html>

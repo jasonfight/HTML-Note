@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var a = [];
+	a = [1,2,3];
+	a = [4,5,6, true, false, "hello",,,, 1.234];// 注意空元素“,”
+
+	console.log(a);
+
+	/*for (var key in a) {
+		console.log(key);
+	}*/
+
+	var b = new Array(10);
+	console.log(b);
+
+	var c = new Array(10,11,12);
+	console.log(c);
+
+
+	var d = ["hello"];
+	d[1] = "world";
+	d[3] = "android";
+	console.log(d);
+
+
+
+  var con = [];
+	for (var i = 0; i < 100; i++){
+		// con[i] = i;
+		con.push(i);
+	}
+	console.log(con);
+
+</script>
+
+</body>
+</html>

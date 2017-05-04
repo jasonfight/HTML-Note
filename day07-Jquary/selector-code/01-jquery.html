@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>jquery的引用</title>
+
+    <!-- css外部文件，浏览器使用单独一个线程加载 -->
+    <link rel="stylesheet" href="./css/01.css">
+    <style> * { margin: 0; padding: 0;} </style>
+</head>
+
+<body>
+    <h3>Jquary的引用</h3>
+
+    <!--
+     async:布尔属性;指示浏览器是否在允许的情况下异步执行该脚本。
+     该属性对于内联脚本无作用 (即没有src属性的脚本）。
+     就是一边加载执行js, 一边加载页面.
+
+     defer: 异步加载js文件，但是执行被延迟到了文档解析完毕之后(对内联代码可能无效).
+
+     文档解析完毕：页面所有的标签都已经被解析，但是并不是所有的资源都已经被加载完成(比如：img标签被加载了，
+     但是指定的图片可能并没有显示出来)
+    -->
+
+    <!-- 通过本地文件导入jquery文件 -->
+    <script src="./js/jquery-3.0.0.min.js">  </script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js" ></script>     -->
+    <!-- 通过cdn导入jquery文件-->
+
+
+    <script type="text/javascript">
+        //应用jquery的代码去完成某些功能
+        $(document).ready(function() {
+            $("<h1>").html("你好, 欢迎来到jQuery世界!").appendTo($("body"));
+        });
+    </script>
+</body>
+
+</html>

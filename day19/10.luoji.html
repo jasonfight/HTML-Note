@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>逻辑运算符</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+	var a = true, b = false;
+	console.log(a && b);
+
+	/*
+    var  value = 10;
+    var  result = value++
+    console.log("-----", result);//10
+    console.log("-----", value);//11
+    */
+
+
+
+   /*
+
+	// &&　具有短路特点
+	var num1 = 0;
+	var num2 = 20;
+
+	var ret = num1 && (num2++);// 最终的值是运算之后的结果 ，不同于其他编程语言，不一定是（ture,false)
+	console.log("ret = ", ret);//0
+	console.log("num2 = ", num2);//20
+
+
+	ret = (num2++) &&　num1;
+	console.log("ret = ", ret);//0
+	console.log("num2 = ", num2);//21
+
+	*/
+
+
+
+    //  or 有短路特点  由左往右,一真则真,不再往下继续判断.后面的表达式也不再执行,
+	var c = true, b = false;
+	console.log(c || b);
+
+	var num1 = 0;
+	var num2 = 20;
+
+	var ret = num1 || (num2++);
+	console.log("ret = ", ret);//20
+	console.log("num2 = ", num2);//21
+
+
+	function  fun(arg){   // NOTE: 用来设置默认值,由参数,则填入参数,没有参数,则填入默认值.
+		arg = arg || 100;
+		console.log(arg);
+	}
+	fun();
+
+
+
+
+</script>
+
+</body>
+</html>

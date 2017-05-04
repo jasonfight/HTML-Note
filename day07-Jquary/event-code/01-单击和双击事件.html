@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>单击和双击事件 click   dblclick</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .f, .f1 {
+          width: 300px;
+          height: 300px;
+          background: yellow;
+          margin-bottom: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+     <div class="f"></div>
+     <div class="f1"></div>
+
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        //注册一个事件
+          $(".f").click(function(){
+            // $(this), 用于将this转换为jQuery对象
+            $(this).css("backgroundColor", "red");
+            console.log($(this));
+          });
+
+          //必须双击
+          $(".f1").dblclick(function(){
+            $(this).css("backgroundColor", "pink");
+            console.log("发生鼠标双击事件....");
+          });
+      });
+    </script>
+</body>
+
+</html>

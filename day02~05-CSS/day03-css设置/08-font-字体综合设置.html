@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>font字体设置</title>
+    <style>
+      div p {
+        /*font-size: 30px;*/
+
+        /*unicode编码中不要添加默认的‘u’*/
+        /*font-family: "\5fae\8f6f\96c5\9ed1", "宋体";
+        font-weight: bolder;
+        font-style: oblique;*/
+
+        /* font综合设置*/
+        font: italic  bolder  30px "微软雅黑";
+        /*font:  30px "微软雅黑";*/
+
+        /*color: red;*/
+        /*color: #ff0000;*/
+        /*color: #00ff00;*/
+        /*color: #0000ff;*/
+        /*color: #d5ae3b;*/
+        /*color: rgb(200,100,50);*/ /*0~255*/
+        color: hsl(240, 100%, 50%);/* 色调(0-360)， 饱和度(0-100%)， 亮度(0-100%)*/
+        /*色调 Hue:0 和 360 为 红色  120 为绿色  240 为蓝色*/
+        /*饱和度 Saturation :  0%是灰度，100%饱和度最高   */
+        /*亮度  Lightness:  0%是最暗，50%均值，100%最亮   */
+        /*letter-spacing: 10px; */
+        word-spacing: 20px;
+
+        line-height: 50px;
+
+        text-align: center;
+      }
+
+      a {
+        font-size: 40px;
+        text-decoration: none;
+      }
+
+      a:hover {
+        /*text-decoration: underline;
+        text-decoration: line-through;
+        text-decoration: overline;*/
+        color: green;
+
+        text-decoration: underline overline line-through;
+      }
+
+
+      .p1 img {
+        vertical-align: middle;
+        /*vertical-align: top;*/
+      }
+
+      .p2 {
+        /*text-indent: 32px;*/
+        /* 1em = 当前元素的字体大小*/
+        text-indent: -2em; /*支持负值*/
+      }
+    </style>
+  </head>
+  <body>
+
+   <div>
+     <p>div中p元素 hello world  android google ios</p>
+   </div>
+
+   <div>
+     <p>第一行<br>第二行</p>
+   </div>
+
+   <a href="#">超链接</a>
+
+
+   <p class="p1">刘强东<img src="./jd.jpg" alt=""></p>
+
+   <p class="p2">司空见惯的空间好看大家好<br> </p>
+
+  </body>
+</html>

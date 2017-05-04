@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>地理定位</title>
+</head>
+<body>
+<div class="">
+	通过navigator.geolocation 来进行地理定位: <br>
+	步骤: <br>
+	1.定义 seccess 和error 两个函数. seccess函数用来在查询成功时发挥经纬速度 <br>
+	2.在success 函数中 定义变量 coords = pos.coords (坐标) <br>
+		coords.latitude 为纬度   coords.longitude 为经度. <br>
+	3.通过 navigator.geolocation.getCurrentPosition(success,error)来获取定位信息.
+
+
+</div>
+<script type="text/javascript">
+	if (navigator.geolocation){
+		console.log("支持地理定位");
+	} else {
+		console.log("您的浏览器不支持地理定位");
+	}
+    function success(pos){
+        var coords = pos.coords;
+        console.log("经度" + coords.longitude + ",纬度" + coords.latitude);
+    }
+    function error(err){
+    	console.log(err.message + "   " + err.code);
+    }
+	navigator.geolocation.getCurrentPosition(success, error);
+</script>
+
+</body>
+</html>

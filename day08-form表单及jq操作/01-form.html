@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>表单
+      文本框:text;密码框:password;
+      单选框:radio;多选框:select(不在input中,选项为option);
+      按钮:button; 提交:submit;重置:reset;
+    </title>
+</head>
+
+<body>
+
+    <form action="./xxx.cgi" method="get">
+        姓名： <input maxlength="8" name="name" type="text"> <br><br>
+        密码： <input readonly value="1234" name="password" type="password"> <br><br>
+
+        <!-- 实现单选按钮，添加相同的name   -->
+        性别： <input name="gender" type="radio" value="man">男
+              <input name="gender" type="radio" value="woman">女 <br><br>
+        爱好： <input name="class" type="checkbox" value="0"> 上课
+              <input name="learn" type="checkbox" value="1"> 学习
+              <input checked name="write" type="checkbox" value="2"> 写代码 <br><br>
+        隐藏： <input type="hidden"> <br><br>
+
+        <!-- <input type="button" value="按钮">
+             <button>按钮</button> -->
+
+        <!-- <input type="image" src="./login.jpg"> -->
+
+
+        <textarea name="weibo" cols="80" rows="6"></textarea>
+
+        <br><br>
+
+
+        <select name="ketang">
+          <option value="0">男</option>
+          <option selected value="1">女</option>
+        </select>
+
+        <br><br>
+
+        <!-- 提交功能-->
+        <input type="submit" value="注册">
+        <!-- 清空功能-->
+        <input disabled type="reset" value="清空">
+    </form>
+
+</body>
+
+</html>

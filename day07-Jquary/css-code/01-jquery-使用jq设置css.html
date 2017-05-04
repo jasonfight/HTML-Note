@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>css的操作</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .f {
+        width: 600px;
+        height: 100px;
+        border: 1px solid red;
+        font-size: 20px;
+        margin: auto;
+        color: red;
+      }
+    </style>
+
+</head>
+<body>
+
+    <div class="f"><h1>这是div中的h1标签</h1></div>
+
+    <script  src="./js/jquery-3.0.0.min.js"></script>
+   <script type="text/javascript">
+      //获得属性值
+      console.log($(".f").css("width"));
+      console.log($(".f").css("height"));
+      console.log($(".f").css("fontSize"));
+      console.log($(".f").css("color"));//rgb表示方法
+
+      var attrs = $(".f").css(["width", "height", "fontSize", "color"]);//一次获得多个属性值
+      console.log(attrs);
+
+
+      //修改css属性值
+      $(".f").css("border", "1px solid blue");//  ******** 属性值，得用引号 *******
+      $(".f").css("width", "1000px");
+
+      $(".f").css({
+        "fontSize": "30px",
+        "backgroundColor": "yellow",
+        // "color": "red"
+      });  //使用花括号的形式,传递多个参数.
+
+   </script>
+</body>
+</html>

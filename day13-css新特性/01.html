@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>边框</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		.f {
+			width: 500px;
+			height: 50px;
+			margin: auto;
+			margin-top: 50px;
+			border: 1px solid gray;
+		}
+
+		.f li {
+			width: 80px;
+			height: 50px;
+			float: left;
+			border: 1px solid  transparent; /*transparent是透明颜色*/
+		}
+
+
+		.f li:hover {
+			/*border: 1px solid red;*/
+
+			border-color: red;
+		}
+
+	</style>
+</head>
+<body>
+
+  <ul class="f">
+  	<li>1</li>
+  	<li>2</li>
+  	<li>3</li>
+  	<li>4</li>
+  	<li>5</li>
+  </ul>
+	
+</body>
+</html>

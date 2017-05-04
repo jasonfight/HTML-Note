@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>变量的作用域问题</title>
+</head>
+
+<body>
+  <div class="">
+    全局变量可以被局部变量调用和改变, <br>
+    如果一个变量在局部内部进行定义,则在范围外,不能进行调用.如果调用,会报错.
+  </div>
+    <script type="text/javascript">
+        var a = 10; //全局变量
+        var b = 11;
+        console.log("外部的 a = " + a);
+        console.log("外部的 b = " + b);
+
+        function fun() {
+            // 函数内部的区域称之为局部作用域
+            // 出现同名变量时，局部变量会覆盖全局变量
+            var a = 20;
+            var c = 33;
+            console.log("内部的 a = " + a);
+            console.log("内部 c = " + c);
+            b = 21;//修改全局变量的值
+        }
+        fun();
+        console.log("外部的 b = " + b);
+        console.log("在外部访问 c = " + c);//c在全局变量没有定义,会报错.
+
+    </script>
+
+</body>
+
+</html>

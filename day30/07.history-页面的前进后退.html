@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+<h1>第二个页面</h1>
+
+<a href="./08.history.html">点击跳转到第三个页面</a>
+
+<button id='qian'>前进</button>
+<button id='hou'>后退</button>
+<br> <br>
+<div class="">
+	history的使用:   history.forward(),history.back()  <br>
+									history.go(1),history.go(-1)
+</div>
+<script type="text/javascript">
+
+  var qian = document.querySelector("#qian");
+  var hou = document.querySelector("#hou");
+
+  qian.onclick = function(){
+  	// history.forward();
+  	history.go(1);
+  }
+
+  hou.onclick = function(){
+  	// history.back();
+  	history.go(-1);
+  }
+
+</script>
+
+</body>
+</html>

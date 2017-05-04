@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>json</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+    /*****************************************************/
+    var obj = {
+        "name": "lisi",
+        "age": 10,
+        "hobby": ["read", "write", "sport"],
+        "mesg": {
+            "sheng": "beijing",
+            "shi": "beijing",
+            "qu": "海淀区"
+        }
+    };
+
+
+    //json的序列化
+  // NOTE: JSON.stringify(json对象)可将jaon对象转换成字符串并返回
+
+    var jsonStr = JSON.stringify(obj);
+    console.log(jsonStr);//字符串
+
+
+
+    /*****************************************************/
+    var str = '{"name": "lisi", "age": 10}';
+    //json的解析
+    // NOTE:  JSON.parse(string),可将字符串转换为json对象并返回.
+    var newJson = JSON.parse(str, function(key, value){
+        if (key === "age") {
+            return value + 3;
+        }
+
+        return value;
+    });
+    console.log(newJson);
+
+
+
+    /*****************************************************/
+    //单引号只能包含双引号，双引号只能包含单引号
+    str = "{'name': 'lisi'}";
+
+    </script>
+</body>
+
+</html>

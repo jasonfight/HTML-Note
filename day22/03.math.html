@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Math</title>
+</head>
+
+<body>
+    <script>
+
+    var d = Math.max(2, 3, 4, 5);
+    console.log(d);
+
+
+
+    var scores = [98,22,67,86,100];
+
+    //apply, 将一个方法或者函数在指定的对象上调用，并且参数是以《《数组》》的形式传递的。
+    d = Math.max.apply(null, scores);
+    console.log(d);
+
+    console.log(Math.ceil(-25.6));//-25
+    console.log(Math.floor(-25.6));//-26
+    console.log(Math.round(-25.6));//-26
+
+
+    // [0,1)
+    for (var i = 0; i < 10; i++){
+    	console.log(Math.random());
+    }
+
+    //[2,33]
+    //产生[2, 33]之间的数
+    setTimeout(function(){
+     num = Math.floor(Math.random()*32+ 2);
+     console.log(num);
+     setTimeout(arguments.callee, 1000);
+    }, 1000);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>table  表格</title>
+      <style media="screen">
+
+
+      </style>
+    </head>
+    <body>
+
+        <table border="1" cellspacing="0" width="400" height="300" align="center" cellpadding="4">
+          <tr align="center">
+            <td> </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+          <tr  align="center">
+            <td> </td>
+            <td>  </td>
+            <td> </td>
+          </tr>
+          <tr  align="center">
+            <td> </td>
+            <td>  </td>
+            <td> </td>
+          </tr>
+          <tralign="center">
+            <td> </td>
+            <td>  </td>
+            <td> </td>
+          </tr>
+          <tr  align="center">
+            <td> </td>
+            <td>  </td>
+            <td> </td>
+          </tr>
+
+      </table>
+      <div class="test">
+
+      </div>
+<script src='./js/jquery-3.0.0.min.js'></script>
+<script>
+
+  $(function(){
+    $('table tr').hover(function(){
+        $(this).css({'background':'yellow','box-shadow':'4px 4px 4px #888888'});
+    },function(){
+        $(this).css({'background':'white','box-shadow':'4px 4px 4px #888888'});
+    });
+  });
+
+
+</script>
+
+    </body>
+  </html>

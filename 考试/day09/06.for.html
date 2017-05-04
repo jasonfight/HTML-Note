@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>for循环</title>
+</head>
+<body>
+
+
+<script src="./js/jquery-3.0.0.min.js"></script>
+<script>
+	
+	$(function(){
+      var a = 1;
+
+      // for条件中的";"不可以省略
+      for (; a < 7 ; a = a + 2) {
+        $("<h" + a + "> 三个将搜狗空间看" + "</h" + a + ">").appendTo("body");
+        console.log(a);
+      }
+
+      console.log("after for ...");
+});
+
+
+</script>
+	
+</body>
+</html>

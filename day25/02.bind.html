@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>函数绑定</title>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <script type="text/javascript">
+    var btn = document.getElementById("btn");
+    btn.data = 20;
+
+
+    var obj = {
+        data: 10,
+        handler: function(){
+            /*handler的执行环境this是不固定的，也就是没有绑定,this.data会跟随不同的this
+            而发生变化
+            */
+            console.log(this.data);
+        }
+    };
+
+    // obj.handler();//10
+
+
+     // 第一种，第二种是等价的，都类似于代码的照搬
+    // 1. 第一种处理函数添加方式  btn.addEventListener("click", obj.handler, false);//20
+
+    //2. 第二种处理函数添加方式
+    // btn.addEventListener("click", function(){
+    //     console.log(this.data);//20
+    // } , false);
+     
+
+
+
+
+    //3, 直接调用对象本身的方法，自然是输出对象本身的属性值
+    // btn.addEventListener("click", function(){
+    //     obj.handler();//10
+    // }, false);
+
+
+
+    //4, ******** 使用内置的bind方法来将一个函数的执行环境(this)进行彻底绑定操作******
+
+    // var newFn = obj.handler.bind(obj);
+    // console.log(newFn);
+
+    // //newFn是将obj进行彻底绑定之后的函数，以后运行newFn的this环境都是obj本身，和其他代码无关
+    // btn.addEventListener("click", newFn, false);//10
+    // newFn();//10
+
+
+    //5, 自定义一个bind函数，实现类似于内置bind的功能
+    function bind(fn, context){
+        return function(){
+            return fn.apply(context, arguments);
+        }
+    }
+
+    var newFn1 = bind(obj.handler, obj);
+    newFn1();//10
+    btn.addEventListener("click", newFn1, false);
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>z-index设置层级(只对设置的position的元素有效)</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      div {
+        height: 300px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .f1 {
+        width: 500px;
+        background: red;
+
+        /*设置层级值*/
+        /*z-index: -1;*/
+      }
+
+      .f2 {
+        width: 400px;
+        background: green;
+      }
+
+      .f3 {
+        width: 300px;
+        background: blue;
+        z-index: -1;
+      }
+
+
+      p {
+        /*z-index只对设置了position的元素有效*/
+        position: relative;
+        z-index: 100;
+      }
+
+    </style>
+  </head>
+  <body>
+
+   <p>开始观看大家好看大家看好尽快好看大家好肯定会尽快就感觉大家好看到机会看到建行卡回家看附件好看返回</p>
+   <div class="f1"></div>
+   <div class="f2"></div>
+   <div class="f3"></div>
+
+  </body>
+</html>

@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+/*
+ 外部文件的导入
+*/
+
+
+/*导入css文件，那么被编译成原始的css import*/
+@import "../css/01.css";
+
+
+/*导入scss文件，那么会将scss文件所有内容包含到当前文件中*/
+// @import "./01";
+@import  "./01.scss";
+
+
+
+
+/*
+  多值变量
+*/
+
+
+$px: 1px 2px 3px 4px 5px;
+$color: red  yellow blue  green;
+
+.class-1 {
+	border-width: nth($px, 2);//位置从1开始
+	border-color: nth($color, 3);
+}
+
+
+
+/*二维嵌套使用*/
+$size: 10px  12px 13px,  14px 15px 16px, 17px 18px 20px;
+//$size: (10px  12px 13px) (14px 15px 16px) (17px 18px 20px);
+
+#f {
+	font-size: nth(nth($size, 2), 1);
+}
+
+
+/*map数据*/
+
+$headings: (h1: 1em, h2: 2em, h3: 3em, h4: 4em);
+
+@each $head, $size in $headings {
+     #{$head} {
+     	font-size: $size;
+     }
+}
+
+
+/*单独提取某一个值*/
+.class-2 {
+	font-size: map-get($headings, h3);
+}
+
+

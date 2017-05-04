@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery中triggerHandler</title>
+</head>
+
+<body>
+    <a id='a' href="https://www.baidu.com">百度</a>
+    <input type="text">
+    <button id="btn">点击</button>
+
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <script>
+    $(function() {
+
+        $("#btn").click(function() {
+            $('#a').trigger("click");
+            // $("a").triggerHandler("click");
+            // $("input").trigger("focus");//可以触发input默认行为
+            // $("input").triggerHandler("focus");//不可以触发input默认行为
+        });
+    });
+    </script>
+</body>
+
+</html>

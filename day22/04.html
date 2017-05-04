@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>查找敏感词</title>
+</head>
+
+<body>
+    <textarea id="con" cols="100" rows="10"></textarea>
+    <button id="btn">点击</button>
+    <p id="newcon"></p>
+
+    <script type="text/javascript">
+    var con = document.getElementById("con");
+    var btn = document.getElementById("btn");
+
+
+    var sen = ["习近平", "薄熙来", "周永康"];
+    var name = "(" + sen.join('|') + ")";
+    var reg = new RegExp(name, 'ig');
+
+    btn.onclick = function() {
+        var str = con.value;//获得字符串
+         //replace字符串替换功能
+        str = str.replace(reg, function(all, p){
+        	return "<span style='color:red;'>" + p  + "</span>";
+        });
+
+        document.getElementById("newcon").innerHTML = str;
+
+    };
+    </script>
+</body>
+
+</html>

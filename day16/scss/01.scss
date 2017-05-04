@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+/*
+  变量的定义，使用
+*/
+
+$fontSize: 50px  !default;
+$fontSizeLittle: 20px;
+$lineHeight: 1.2;
+
+$borderDir: top;
+$borderTopSet: 1px solid red;
+
+$color: red;
+
+h1 {
+	font-size: $fontSize;
+	color: $color;
+}
+
+div {
+	font-size: $fontSizeLittle;
+}
+
+.class-1 {
+
+	/*注意普通变量的使用特殊情况*/
+	//border-$borderDir: 1px solid red;
+	border-#{$borderDir}: $borderTopSet;
+
+	font: #{$fontSize}/#{$lineHeight};
+}

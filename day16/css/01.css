@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/*
+  变量的定义，使用
+*/
+h1 {
+  font-size: 50px;
+  color: red; }
+
+div {
+  font-size: 20px; }
+
+.class-1 {
+  /*注意普通变量的使用特殊情况*/
+  border-top: 1px solid red;
+  font: 50px/1.2; }
+
+/*# sourceMappingURL=01.css.map */

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>滚屏</title>
+    <script src = 'scroll.js'></script>
+    <script src = './js/jquery-3.0.0.min.js'>
+
+    </script>
+    <style >
+      *{
+        margin:0;
+        padding:0;
+      }
+
+      ul{
+        list-style: none;
+      }
+      body,html{
+        height: 100%;
+      }
+      .ul-1{
+        width: 100%;
+        height: 100%;
+      }
+      .ul-1 li{
+        width:100%;
+        height: 100%;
+      }
+      .ul-2{
+        position: fixed;
+        top: 300px;
+        right:20px;
+      }
+      .ul-2 li {
+        line-height: 50px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+<ul class="ul-1" id = u1-id>
+  <li>第一屏</li>
+  <li>第二屏</li>
+  <li>第三屏</li>
+  <li>第四屏</li>
+</ul>
+<ul class="ul-2" id = u2-id>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+</ul>
+
+<script>
+  var colors = ['red','lightblue','gray','lightgreen']
+  var l1s = $('#u1-id').children();
+  var l2s = $('#u2-id').children();
+  var li_height = l1s.eq(0).height();//一个屏幕的高度
+  var current = 0; //用于后面保存当前拖动条的值;
+  var timer = null;
+  window.onscroll = function(){
+    current = getScroll().top; //获取当前屏幕的纵向偏移量
+    console.log(current);
+  };
+  for (var i = 0; i < l1s.length;i++){
+    l1s.eq(i).css('backgroundColor',colors[i]); //设置颜色
+    l2s.eq(i).css('backgroundColor',colors[i]);
+    l2s.eq(i).on('click',i,function(event){
+      var target = event.data * li_height;
+      move(target);
+    })
+  }
+
+  function move(target){
+    clearInterval(timer);
+    timer = setInterval(function(){
+      var speed = (target - current)/10;          //target 和 current 的距离一直在减小,所以速度一直在减小
+      speed = speed > 0?Math.ceil(speed):Math.floor(speed);
+      current += speed;
+      window.scrollTo(0,current);
+      if (target == current) {
+          clearInterval(timer);
+      }
+    },30);
+  }
+
+</script>
+  </body>
+</html>
+  </body>
+</html>

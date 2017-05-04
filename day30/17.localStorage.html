@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		localStorage.setItem("name", "lisi");
+		localStorage.setItem("age", 10)
+		localStorage.score = 100;
+
+        var stu = {"name": "lisi", "age": 10, "score": 100};
+		localStorage.setItem("stu", JSON.stringify(stu));
+
+		//只要是同源的页面，都是可以共享localStorage
+
+	</script>
+	
+</body>
+</html>

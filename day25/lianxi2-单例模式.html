@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>单例模式</title>
+  </head>
+  <body>
+    <script>
+        //创建单例对象的一种方法,使用匿名函数
+        /*使用匿名函数创建一个对象,私有变量直接命名,然后通过函数的返回值的形式
+          来调用,最终接着返回一个对象,对象中包含公共变量和
+
+         */
+        var obj = (function(){
+          var privateA = 1;
+          var privateB = 2;
+
+          function privateFn1(){return privateA;};
+          function privateFn2(){return privateB;};
+
+          return {
+            publicA:3,66
+            publicB:4,
+            // publibFn1:privateFn1(),
+            publicFn1:function(){
+              return privateFn1();
+            },
+            publicFn2:function(){
+              return privateFn2();
+            }
+          }
+        })();
+
+        // obj为匿名函数直接执行后的返回值对象.,
+        console.log(obj);
+        console.log(obj.publicA);
+        console.log(obj.publicB);
+        console.log(obj.publicFn1());
+        console.log(obj.publicFn2());
+
+
+
+    </script>
+  </body>
+</html>

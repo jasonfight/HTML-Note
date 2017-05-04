@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>match方法</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+
+    /**********必须记住string.match() 方法的返回值才可以  ********************/
+
+    var str = 'abc see Chapter 3.4.5.1 abc';
+    // var str = 'hello';
+
+    //直接使用()作为捕获时，小括号的顺序是从左到右,没有嵌套关系
+    // \( \)是作为真正的小括号字符使用
+    var re = /see (chapter \d+(\.\d)* (abc))/i;
+    var found = str.match(re);
+    console.log(found);
+
+
+    // re = /see chapter \d/i;
+    // found = str.match(re);
+    // console.log(found);
+
+    </script>
+</body>
+
+</html>

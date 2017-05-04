@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>before伪元素</title>
+    <style>
+       div::before {
+
+         /* content 必须写*/
+         content: "hello I am before ...";
+       }
+
+       div::after {
+         content: "hello I am after...";
+       }
+    </style>
+  </head>
+  <body>
+
+    <div>
+      <a href="#">百度看见帅哥看得见</a>
+    </div>
+
+  </body>
+</html>

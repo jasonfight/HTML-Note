@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>web worker</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+	var start = 100;
+	var work = new Worker("./worker.js");
+
+    //用于接收子线程发来的数据
+	work.onmessage = function(event){
+		//数据都存储在event.data上
+		console.log(event.data);
+	}
+
+    //给子线程传递数据
+	work.postMessage(start);
+
+	work.onerror = function(event){
+		console.log(event.message, event.filename, event.lineno);
+	}
+
+	setTimeout(function(){
+		//停止一个正在运行的线程
+		work.terminate();
+	}, 5000);
+
+</script>
+	
+</body>
+</html>

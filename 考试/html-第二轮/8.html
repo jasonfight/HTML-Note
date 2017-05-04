@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ajax</title>
+    <script src = './js/jquery-3.0.0.min.js'></script>
+    <script src = './dist/js/bootstrap.min.js' ></script>
+    <link rel="stylesheet" href="./dist/css/bootstrap.min.css">
+  </head>
+  <body>
+    <table class="table table-bordered">
+
+    </table>
+    <script>
+
+        //后台传回的jason字符串为str
+      var str = '{"stus":[{"name":"lisi","age": 10,"score": 88},{"name":"zhangsan","age": 12,"score": 90},{"name":"wangwu","age": 14,\
+              "score": 92}]}'
+      var data = JSON.parse(str); //得到json对象
+      var table = $('table');
+      //获得表头数据.
+      var str = '';
+      for (var a in data.stus[0]) {
+            str += '<td>'+ a + '</td>'
+      }
+      str = '<tr>'+ str + '</tr>';
+      table.append(str);
+
+      //添加内容
+      var str1 = '';
+      for (var i = 0; i < data.stus.length; i++) {
+        str1 += '<tr><td>'+ data.stus[i].name+ '</td>'+ '<td>'+ data.stus[i].age+ '</td>'+ '<td>'+ data.stus[i].score+ '</td></tr>'
+      }
+      table.append(str1);
+
+    </script>
+  </body>
+</html>

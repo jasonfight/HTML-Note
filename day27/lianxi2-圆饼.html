@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+        *{
+          margin:0;
+          padding: 0;
+        }
+        #canvas{
+          margin-top: 100px;
+        }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas">如果该文字显示,则浏览器版本不支持该标签</canvas>
+    <script>
+      // 第一步:获得DOM对象
+      var can = document.querySelector('#canvas');
+      can.width = 600;
+      can.height = 600;   // NOTE: canvas可以在script中直接设置宽高,其他标签需要通过style才能设置.
+      var ctx = can.getContext('2d');
+      var data = [
+            {
+            'value':0.4,
+            'color':'red'
+          },
+            {
+            'value':0.2,
+            'color':'green'
+          },
+            {
+            'value':0.1,
+            'color':'lightblue'
+          },
+            {
+            'value':0.3,
+            'color':'yellow'
+          },
+        ];
+
+      var beginAngle = 0,endAngle = 0,textAngle = 0;
+      var textX,textY;
+
+      var deg = Math.PI/180;
+
+      for (var i =0;i<data.length;i++ ){
+        ctx.beginPath();
+        ctx.moveTo(250,250);
+        endAngle += 360 * data[i].value;
+        ctx.arc(250,250,150,beginAngle*deg,endAngle*deg);
+        ctx.fillStyle = data[i].color;
+        ctx.fill();
+
+        textAngle = (beginAngle+endAngle)/2;
+
+        textX = 250 + 200*Math.cos(textAngle * deg);
+        textY = 250 + 200*Math.sin(textAngle * deg);
+        console.log(textX);
+        console.log(textY);
+        console.log(textAngle);
+
+        ctx.font = '30px 宋体';
+        if (textAngle > 90 && textAngle < 270){
+          ctx.textAlign = 'end';
+        }
+
+        if (textAngle > 300 && textAngle < 360){
+          ctx.textAlign = 'start';
+        }
+
+        ctx.fillText(data[i].value * 100 + '%', textX, textY);
+
+        console.log(data[i].value*100 +'%');
+        beginAngle = endAngle;
+      };
+    </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>京东登录页面</title>
+    <link rel="stylesheet" href="./jd.css" >
+  </head>
+  <body>
+    <div class="body">
+      <div class="logo">
+        <a href="#"> <img src="./logo.png" /> </a>
+        <b></b>
+      </div>
+      <a  class="q-link" href="#">
+        <b></b>登录页面,调查问卷</a>
+    </div>
+    <div id="content">
+      <div class="login-wrap">
+        <div class="login-banner">
+            <div class="body inner">
+                <img src="./image.png" alt="" />
+            </div>
+        </div>
+        <div class="body">
+          <div class="login-form">
+              <div class="login-tab login-tab-l">
+                <a href="#">扫码登录</a>
+              </div>
+              <div class="login-tab login-tab-r">
+                <a href="#">账户登录</a>
+              </div>
+              <div class="login-box">
+                <div class="msg">
+                  <b></b><span>账户名与密码不能为空!</span>
+                </div>
+                <div class="mc">
+                    <div class="account">
+                      <label ></label>
+                      <input  class="text" id="1" type="text" name = 'text' value="">
+                    </div>
+                    <div class="entry">
+                      <label class="label"></label>
+                      <input class="password" id='2' type="password" name = 'passwd' value="">
+                    </div>
+                    <div class="safe">
+                      <span class="left">
+                        <input type="checkbox" name="name" value="">
+                        <label>自动登录</label>
+                      </span>
+                      <span class="right"><a href="#">忘记密码?</a></span>
+                    </div>
+                    <div class="submmit">
+                      <a href="#">登 录</a>
+                    </div>
+                </div>
+                <div class="coagent">
+                  <ul>
+                    <li class="left">
+                      <a class="left-qq" href="#"> <b></b> <span>QQ</span> <span>|</span> </a>
+                      <!-- <span> | </span> -->
+                    </li>
+                    <li class="left">
+
+                      <a  class="left-weixin" href="#"><b></b><span>微信</span></a>
+                    </li>
+                    <li class="right"> <a href="#"> <b> </b>立即注册</a> </li>
+                  </ul>
+                </div>
+
+              </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <script src='./js/jquery-3.0.0.min.js'></script>
+    <script>
+    var x = document.getElementById('1')
+    var y = document.getElementById('2')
+      $(function(){
+        $('.submmit a').click(function(){
+          console.log($(x.value));
+          console.log($(y));
+        });
+      });
+
+    </script>
+  </body>
+</html>

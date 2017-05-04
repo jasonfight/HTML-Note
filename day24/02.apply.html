@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>apply， call</title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+
+		function show(arg1, arg2){
+			console.log(arg1);
+			console.log(arg2);
+		}
+
+		show(10,20);
+		//call方法可以传递数组，只是说参数必须以","作为分隔符而已
+		show.call(null, 2,12);
+
+        //所有的参数都必须传递到一个数组中
+		show.apply(null, [1,2,3]);
+	</script>
+</body>
+</html>

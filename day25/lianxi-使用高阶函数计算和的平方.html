@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>使用高阶函数来计算两个数的和的平方(高阶函数,将函数作为一个参数,并返回一个函数)</title>
+  </head>
+  <body>
+    <script>
+    //计算和.
+      function sum(a,b){
+        return a+b;
+      };
+
+      function square(fn){
+        return function(){
+          var result = fn.apply(null,arguments);
+          return result*result
+      }};
+
+      var m = square(sum);
+      console.log(m(4,2));
+      //
+
+    // </script>
+  </body>
+</html>

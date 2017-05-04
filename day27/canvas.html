@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>canvas</title>
+    <style media="screen">
+      canvas{
+        border: 1px solid red;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <canvas id="canvas" width="300" height="300"></canvas>
+    <script>
+    var can = document.querySelector("#canvas");
+  	var ctx = can.getContext("2d");
+    var img = new Image(200,200);
+    img.onload = function(){
+      ctx.drawImage(img,10,10,100,100);
+    }
+    img.src = './image/img.jpg';
+    </script>
+  </body>
+</html>

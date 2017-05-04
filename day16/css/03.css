@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/*
+ scss嵌套
+*/
+.class-1 div {
+  font-size: 20px;
+  line-height: 1.2;
+  background: green; }
+  .class-1 div ul {
+    list-style: none; }
+    .class-1 div ul li {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center; }
+      .class-1 div ul li a {
+        color: yellow;
+        /*  & 表示当前父元素*/ }
+        .class-1 div ul li a:hover {
+          background: red; }
+        .class-1 div ul li a:visited {
+          background: purple; }
+
+/*
+  属性嵌套
+*/
+.class-2 {
+  border-style: solid;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: yellow;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: yellow; }
+
+.class-3 {
+  color: #f00; }
+  .class-3 div {
+    font-size: 18px;
+    /* @at-root 直接回到顶层*/ }
+    .child {
+      width: 200px; }
+
+.class-4 {
+  color: #f00; }
+  .class-4 div {
+    font-size: 18px;
+    /* @at-root 直接回到顶层*/ }
+    .child-1 {
+      width: 200px; }
+
+    .child-2 {
+      width: 120px; }
+
+    .child-3 {
+      width: 130px; }
+
+/*# sourceMappingURL=03.css.map */

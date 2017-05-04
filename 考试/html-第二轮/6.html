@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>求一个数组中字符串出现的个数</title>
+  </head>
+  <body>
+    <script>
+    var names = ["li", "zhang", "zhao", "li", "zhang", "liu", "zhao"];
+    function arrCheck(arr){
+          var newArr = [];
+
+          for(var i=0;i<arr.length;i++){
+              var temp=arr[i];
+              var count=0;
+                for(var j=0;j<arr.length;j++){
+                    if(arr[j]==temp){
+                      count++;
+                      arr[j]=-1;
+                    }
+                };
+
+                if(temp != -1){
+                    newArr.push(temp+":"+count)
+                  };
+          };
+          return newArr;
+    }
+    var a = arrCheck(names);
+    console.log(a);
+    </script>
+  </body>
+</html>

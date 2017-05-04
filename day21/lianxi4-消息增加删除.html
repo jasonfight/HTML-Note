@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>消息增加删除</title>
+    <style media="screen">
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .f{
+        width: 600px;
+        margin:0 auto;
+        margin-top: 100px;
+        /*border: 1px solid gray;*/
+      }
+      .title{
+        text-align: center;
+        font-weight: 700px;
+        font-size: 30px;
+      }
+      .news{
+        height: 30px;
+        line-height: 30px;
+        width: 100%;
+        border-bottom: 2px dotted gray;
+      }
+      .delete_btn{
+        color: red;
+        float: right;
+        background: none;
+        border: none;
+      }
+    </style>
+  </head>
+  <body><div class="f">
+    <div class="title">   发布消息  </div>
+    <textarea  class= 'textarea' name="name" rows="8" cols="73"></textarea> <br>
+    <button  class="submmit" type="button" name="button"> 发布</button>
+
+    <!--  用来确认基础样式-->
+    <!-- <div class="news">
+      <span></span>
+      <button  class='delete_btn' type="button" name="button">删除</button>
+    </div> -->
+  </div>
+
+  <script src='./js/jquery-3.0.0.min.js'> </script>
+  <script>
+    $(function(){
+
+      //发布消息
+      $('.submmit').click(function(event) {
+          var text = $('.textarea').val()
+          console.log(text);
+           var data = '<div class="news"><span>'+text+'</span><button  class="delete_btn" type="button" name="button">删除</button>';
+          $('.f').append(data);
+          $('.textarea').val('');
+
+                //点击删除按钮,将本行消息删除.
+          $('.delete_btn').click(function(){        // NOTE:为啥放到发布函数外面,不能点击???????
+            $(this).parent().css('display','none');
+          });
+      });
+
+
+
+
+
+
+
+
+
+
+    });
+  </script>
+  </body>
+</html>

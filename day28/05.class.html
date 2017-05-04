@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>class</title>
+	<style type="text/css">
+		.con1 {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+
+<ul class="con">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+</ul>
+	
+
+	<script type="text/javascript">
+		
+		var con = document.querySelector(".con");
+		con.className = "con con1";  //直接使用className  可以获得所有类名
+		console.log(con.className);
+		
+		con.classList.add("one", "two");
+		con.classList.remove("one", "two");
+		con.classList.toggle("first");
+		con.classList.toggle("first");
+		console.log(con.classList.contains("con"));//true, false
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+/*
+ scss嵌套
+*/
+
+.class-1 {
+    div {
+        font-size: 20px;
+        line-height: 1.2;
+        background: green;
+        ul {
+            list-style: none;
+            li {
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                a {
+                    color: yellow;
+                    /*  & 表示当前父元素*/
+                    &:hover {
+                        background: red;
+                    }
+                    &:visited {
+                        background: purple;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*
+  属性嵌套
+*/
+
+.class-2 {
+    border: {
+        style: solid;
+        left: {
+            width: 1px;
+            style: solid;
+            color: yellow;
+        }
+        right: {
+            width: 1px;
+            style: solid;
+            color: yellow;
+        }
+    }
+}
+
+.class-3 {
+    color: #f00;
+    div {
+    	font-size: 18px;
+
+    	/* @at-root 直接回到顶层*/
+        @at-root .child {
+            width: 200px;
+        }
+    }
+}
+
+
+
+.class-4 {
+    color: #f00;
+    div {
+    	font-size: 18px;
+
+    	/* @at-root 直接回到顶层*/
+        @at-root{
+        	.child-1 {
+        		width: 200px;
+        	}
+
+        	.child-2 {
+        		width: 120px;
+        	}
+
+        	.child-3 {
+        		width: 130px;
+        	}
+        }
+    }
+}

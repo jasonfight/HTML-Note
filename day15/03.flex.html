@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flex </title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			list-style: none;
+		}
+		.f {
+			width: 100%;
+			height: 200px;
+			border: 1px solid lightblue;
+			margin: auto;
+			margin-top: 50px;
+			display: flex;/* flex 自动排列宽度,当页面宽度减小到不足子元素的宽度时,子元素自然按比例减低宽度 */
+			
+		}
+		.f > li {
+			width: 250px;
+			height: 150px;
+			background: pink;
+			text-align: center;
+			line-height: 150px;
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+
+
+<ul class="f">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery中自定义事件</title>
+</head>
+
+<body>
+
+    <h1>间隔一秒自增1：<span id="show-num">0</span></h1>
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <script>
+        $(function() {
+            var num = 0;
+            //自定义了一个事件 incNum
+            $("#show-num").on("incNum", function(event) {
+                $(this).html(++num);
+            });
+            setInterval(function() {
+                $("#show-num").trigger("incNum");
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

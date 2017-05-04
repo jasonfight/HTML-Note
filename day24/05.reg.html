@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则表达式</title>
+</head>
+<body>
+
+
+ 输入贷款金额：<input type="text" id="money">
+ <button id="btn">点击申请</button>
+
+<script type="text/javascript">
+	console.log("hello\tworld");
+	console.log("helloworld\r呵呵呵呵呵");
+
+	/*正则表达式的定义方法:
+	1.直接定义:  var reg = /hello/;
+	2.通过 new RegExp(/hello/,i) 来定义
+	两者均返回一个reg对象.*/
+
+    //直接定义正则表达式
+
+	var reg = /hello/;//用于匹配字符串中的"hello"单词
+	console.log(typeof reg);
+	console.log(reg.constructor);
+
+     //.test(str)用于测试字符串中是否包含正则表达式要求的字符
+	console.log(reg.test("googlehelloworld"));
+
+
+	reg = /helloworld/;//必须严格匹配
+	console.log(reg.test("hellogoogleworld")); //false
+
+
+	reg = /123/;
+	console.log(reg.test("hello123world"));//true
+
+	reg = /\d/;
+	console.log(reg.test("abcedefg1"));//true
+
+	console.log('======');
+	reg = /\d{3,4}/;//匹配3位或者4位的数字
+	console.log(reg.test("abcedefg12fff345"));  //true
+
+
+    var btn = document.getElementById("btn");
+    var money = document.getElementById("money");
+
+    btn.onclick = function(){
+    	var reg = /\d{6,}/;  //匹配6位以上数字
+    	if (!reg.test(money.value)){
+    		money.style.border = "2px solid red";
+    	}
+    };
+
+    reg = /hello/ig; //i是忽略大小写, g全局
+    console.log(reg.test("HELLO")); 
+
+    reg = new RegExp("hello", 'i');
+    reg = new RegExp(/hello/, 'i');
+    console.log(reg.test("HELLO"));
+
+
+</script>
+
+</body>
+</html>

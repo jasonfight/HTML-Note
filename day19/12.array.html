@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>数组的主要方法</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    var a = [1, 2, 3];
+    delete a[0]; // NOTE: 直接删除0位置的数据,但是,该位置仍保留,数据为空,
+    console.log(a);
+
+    var b = [1, 2, 3];
+    b.pop();        // NOTE: 删除最后一个数据,包括位置.
+    console.log(b);
+
+    var c = [1, 2, 3];
+    c.shift();        // NOTE: 删除第一个数据,包括位置.后面数据位置前移
+    console.log('c=',c);
+
+
+    var d = [1, 2, 3];
+    d.unshift(4,3,4,5); // NOTE: 在数组前面添加内容.
+    console.log(d);
+
+
+    d = [1, 2, 3, 4];
+
+    console.log(d.join("+"));   // NOTE: 将数组使用'+'符号拼接在一起
+
+    d.reverse();          // NOTE: 将数组的顺序翻转,
+    console.log(d);
+
+    /*
+        sort()
+       d = [10,9,3,12,88,25];
+
+       function compare(a, b){
+       	return a - b;
+       	// return b - a;
+       }
+
+       d.sort(compare);
+       console.log(d);
+
+    */
+
+
+    //slice
+    d = [1, 2, 3, 4, 5];
+    console.log(d.slice(-3)); //[3,4,5]; // NOTE: 从第一位置开始,到最后位置结束,提取出来.
+    console.log(d.slice());
+
+/*
+    //浅复制
+
+    var a1 = {
+        "color": "red",
+        "name": "xiaoming"
+    };
+
+    var a2 = [a1, 2, 3, 4];
+    var a3 = a2.slice(0, 2);
+    a3[0].color = "green"; //slice浅复制，此处修改会影响原先的元素a1
+    console.log(a1);
+
+ */
+
+   /*
+     普通变量，没有浅复制
+
+    var a1 = 10;
+    var a2 = [a1,1,2,3,4];
+    var a3 = a2.slice(0,2);
+    console.log(a3);
+    a3[0] = 100;
+
+    console.log(a1);
+    */
+
+
+    /*数组的splice方法*/
+
+    d = [1,2,3,4,5];
+    ret = d.splice(3,2);  // NOTE: 第三位置开始,删除两个数据,ret为 [4,5]
+    console.log(d);//[1,2,3]
+    console.log(ret); //[4,5]
+
+    d.splice(2,1,6,7,8,9);
+    console.log(d);//[1,2,6,7,8,9]
+
+
+
+
+    </script>
+</body>
+
+</html>

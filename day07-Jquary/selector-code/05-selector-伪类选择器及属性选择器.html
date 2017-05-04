@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery选择器</title>
+  </head>
+  <body>
+
+    <div>老大大</div>
+    <div id="divId" class="f">
+      老大
+    </div>
+    <div name="yangtwo">老二</div>
+    <div name="yangsan">老三</div>
+    <div name="yangsi">老四</div>
+    <p>别人家的老五</p>
+    <div name="yang">老五</div>
+
+
+
+    <script src="./js/jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+     // :first 伪类选择器冒号前边不要加空格
+      console.log($(".f ~ div:first").text());
+      console.log($(".f ~ div:last").text());
+      console.log($(".f ~ div:eq(1)").text());//从0开始计数
+      console.log($(".f ~ div:even").text());//编号偶数
+
+
+      //属性选择器 "[属性名称='属性值' ]", 注意引号的的使用
+      // console.log($("[name='laowu']"));
+
+      console.log($("[name*='yang']").text());
+      console.log($("[name$='si']").text());
+
+    </script>
+  </body>
+</html>

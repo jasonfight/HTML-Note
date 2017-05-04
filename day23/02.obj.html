@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    /***************原型链继承********************************/
+    //Super相当于父类
+    function Super() {
+        this.superName = "super";
+    }
+    Super.prototype.getSuperName = function() {
+
+        console.log(this.superName);
+    };
+
+
+    //Sub 相当于子类
+    function Sub() {
+        this.subName = "sub";
+    }
+
+    Sub.prototype = new Super(); //用于继承来自父类的属性方法的
+
+    Sub.prototype.getSubName = function() {
+        console.log(this.subName);
+    };
+
+    var s = new Sub();
+    console.log(s);
+    /*    s.getSuperName();//super
+        s.getSubName();//sub*/
+
+
+
+    console.log("/***************原型链继承的缺点********************************/");
+    
+    function F() {
+
+    	//对象类型，数组类型和普通类型是不一样的
+        this.colors = ["red", "blue", "black"];
+        this.value = 10;
+    }
+
+    function S() {}
+
+    S.prototype = new F();
+
+    var one = new S();
+    one.colors.push("green");
+
+    one.value = 20;
+    console.log(one);
+
+    var two = new S();
+    console.log(two);
+
+    var three = new S();
+    console.log(three);
+
+    console.log(S.prototype);
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>one绑定事件</title>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+    <script src="./js/jquery-3.0.0.min.js"></script>
+    <script>
+    $(function() {
+        // NOTE:  one方法,one后绑定的事件,只执行一次.之后不再有效,
+       $("#btn").one("click", function(event) {
+            console.log("click exec only one...");
+        });
+
+        // function clickHandler(event) {
+        //     console.log("only one...");
+        //     $("#btn").off("click", clickHandler);
+        // }
+        //
+        // $("#btn").on("click", clickHandler);
+
+
+
+
+    });
+    </script>
+</body>
+
+</html>

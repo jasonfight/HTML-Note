@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>try</title>
+</head>
+<body>
+	<div class="">
+
+		异常嵌套: <br>
+			内部异常如果没有处理程序,则会向外延伸,通过外部的catch来捕捉,然后进行处理.
+	</div>
+
+<script type="text/javascript">
+//内部有catch,则会通过内部的catch 来进行处理.
+/*	try {
+		try {
+			throw new Error("自定义错误");
+		} catch(e){
+			console.log("内部捕获错误", e.message);
+		} finally {
+			console.log("内部的finally");
+		}
+	} catch(e){
+		console.log("外部捕获错误", e.message);
+	}
+*/
+
+
+    //错误是可以向外传递的，如果内层没有捕获错误，那么会传递给外部去捕获处理
+   	try {
+		try {
+			throw new Error("自定义错误");
+		} finally {
+			console.log("内部的finally");
+		}
+	} catch(e){
+		console.log("外部捕获错误", e.message);
+	}
+
+
+	console.log("运行完毕");
+
+</script>
+
+</body>
+</html>

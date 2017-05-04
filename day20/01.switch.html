@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    switch (20) {
+        case 10:
+            console.log(10);
+        case 20:
+            console.log(20);
+        case 30:
+            console.log(30);
+            break;
+        default:
+            console.log("...");
+    }
+
+
+    function fun(arg1, arg2){
+    	console.log(fun.length);//2, 函数的形式参数的个数
+    	console.log(arguments.length);// 0实际传递的参数个数
+    }
+
+    fun();
+    var a
+    a = 0 && 20;
+    console.log(a);  // 0
+
+    a = 20 || 10;
+    console.log(a); // 20
+
+    </script>
+</body>
+
+</html>

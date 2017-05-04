@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>reg</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+	var reg = /\D/; //匹配非数字
+	console.log(reg.test("1!")); //true
+
+	reg = /\s/;	 //匹配任何不可见字符,例如 空格 制表符换页符等
+	console.log(reg.test("12345678\t9!")); //true
+
+	reg = /\w/; //匹配包括下划线在内的任何单词字符,类似当不等价于[a-zA-Z_0-9]
+	console.log(reg.test("abvcksdjkgjkgj"));//true
+
+	reg = /[0-9]/;//匹配一个0-9的数字只要符合[]中的任意一个即可,
+	console.log(reg.test("abc456abg"));//true
+
+	reg = /[a-zA-Z]/;
+console.log('---------------');
+	reg = /o-w/; //匹配符号'-'
+	console.log(reg.test("hello-world"));
+
+
+    reg = /[^123]/; //^填写在[]的开始位置，表示取反
+	console.log(reg.test("123123123!"));
+
+
+	reg = /^hello/;// ^匹配开头
+	console.log(reg.test("worldhello"));
+	console.log(reg.test("helloworld"));
+
+	reg = /hello$/;
+	console.log(reg.test("worldhello"));
+
+	reg = /^hello$/;
+	console.log(reg.test("hello"));
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

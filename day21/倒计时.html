@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>倒计时</title>
+    <meta charset="utf-8">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .colockbox {
+            width: 500px;
+            height: 50px;
+            background: gray;
+            overflow: hidden;
+            color: #000000;
+            margin: 0 auto;
+            margin-top: 100px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .colockbox span {
+            display: inline-block;
+            width: 50px;
+            height: 29px;
+            line-height: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            color: #ffffff;
+        }
+    </style>
+    <script type="text/javascript" src="./js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            countDown("2017/10/11 00:00:00", "#colockbox1");
+        });
+
+        function countDown(time, id) {
+            var day_elem = $(id).find('.day');  //获得对象
+            var hour_elem = $(id).find('.hour');
+            var minute_elem = $(id).find('.minute');
+            var second_elem = $(id).find('.second');
+
+            var end_time = new Date(time).getTime(); //,获得截止时间距离国际时间的毫秒数.
+            sy_second = (end_time - new Date().getTime()) / 1000; //获得距离截止日期的秒数.
+
+            var timer = setInterval(function() {
+                if (sy_second > 1) { //如果倒计时大于一秒,执行函数.小于一秒,执行else语句,关闭倒计时.
+                    sy_second -= 1;
+                    var day = Math.floor((sy_second / 3600) / 24);
+                    var hour = Math.floor((sy_second / 3600) % 24);
+                    var minute = Math.floor((sy_second / 60) % 60);
+                    var second = Math.floor(sy_second % 60);
+
+                    $(day_elem).text(day); //计算天数
+                    $(hour_elem).text(hour < 10 ? "0" + hour: hour); //计算小时数
+                    $(minute_elem).text(minute < 10 ? "0" + minute: minute); //计算分钟数
+                    var a = $(second_elem).text(second < 10 ? "0" + second  : second); //计算秒数
+                } else {
+                    clearInterval(timer);
+                }
+            }, 1000);
+          }
+    </script>
+</head>
+<body>
+    <div class="colockbox" id="colockbox1">
+      距离双十一还有<span class="day">00</span>天
+      <span class="hour">00</span>时
+      <span class="minute">00</span>分
+      <span class="second">00</span>秒
+     </div>
+</body>
+</html>

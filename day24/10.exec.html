@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>exec</title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+	    var str = "The Quick Brown Fox Jumps Over The Lazy Dog \
+			The Quick Brown Fox Jumps Over The Lazy Dog \
+			The Quick Brown Fox Jumps Over The Lazy Dog";
+
+		var reg = /quick\s(brown).+?(jumps)/ig; //.+? 是神马意思?????
+		var result = null;
+
+        // exec要想进行全局匹配，那么必须进行循环操作
+
+		// while ((result = reg.exec(str)) != null ){
+		// 	console.log(result);
+		// }
+		// //
+		//
+		// while ((reg.exec(str)) != null) {
+		// 		// console.log(reg.exec(str));
+		// 		var a = reg.exec(str);
+		// 		console.log(a);
+		// }
+
+    console.log(reg.exec(str)[1]);
+
+
+
+	</script>
+</body>
+</html>
