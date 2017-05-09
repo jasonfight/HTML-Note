@@ -8,13 +8,14 @@
 
 
   <script src="js/jquery-3.0.0.min.js"></script>
-  <script src="js/jquery.min.js"></script> 
-
+  <script src="js/jquery.min.js"></script>
+	<!-- jquery.min.js的版本是2.1.4 -->
   <script>
 
    //查看jQuery的版本
    console.log($.fn.jquery);
    var $$ = jQuery.noConflict();
+		// noConflict 是表示放弃最后一个版本的jquery中的$符号
 
    //$$ 表示的是 2.1.4
    console.log($$.fn.jquery);
